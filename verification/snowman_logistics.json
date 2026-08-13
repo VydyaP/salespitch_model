@@ -1,0 +1,37 @@
+{
+  "company_name": "Snowman Logistics",
+  "gaps_checked": 3,
+  "summary": {
+    "VERIFIED": 3,
+    "WEAK": 0,
+    "UNVERIFIED": 0
+  },
+  "results": [
+    {
+      "title": "Rapid multi-site rollout with no stated unified monitoring platform",
+      "status": "VERIFIED",
+      "overlap_score": 1.0,
+      "unmatched_words": [],
+      "closest_fact_claim": "Beyond Hyderabad, Snowman is expanding in Pune (adding a 5,900-pallet facility by June 2026 on top of an existing 16,000-pallet site) and has projects underway in Kolkata, Krishnapatnam, and Patna.",
+      "closest_fact_score": 0.79
+    },
+    {
+      "title": "Pharma cold-chain compliance load without confirmed automated audit reporting",
+      "status": "VERIFIED",
+      "overlap_score": 1.0,
+      "unmatched_words": [],
+      "closest_fact_claim": "Snowman serves pharmaceuticals, quick-service restaurants (QSR), seafood, and e-commerce clients, and offers value-added services like blast freezing, kitting, labeling, sorting, and repacking.",
+      "closest_fact_score": 0.62
+    },
+    {
+      "title": "600+ vehicle reefer fleet without a stated real-time asset-tracking layer",
+      "status": "VERIFIED",
+      "overlap_score": 0.91,
+      "unmatched_words": [
+        "vehicles."
+      ],
+      "closest_fact_claim": "Snowman operates a fleet of 600+ trucks, including primary and secondary refrigerated (reefer) vehicles, to keep the cold chain unbroken during transport.",
+      "closest_fact_score": 0.91
+    }
+  ]
+}

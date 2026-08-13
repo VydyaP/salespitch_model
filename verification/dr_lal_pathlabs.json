@@ -1,0 +1,31 @@
+{
+  "company_name": "Dr Lal PathLabs",
+  "gaps_checked": 2,
+  "summary": {
+    "VERIFIED": 2,
+    "WEAK": 0,
+    "UNVERIFIED": 0
+  },
+  "results": [
+    {
+      "title": "Massive sample network, only generic 'quality checks' named -- no temperature monitoring",
+      "status": "VERIFIED",
+      "overlap_score": 0.95,
+      "unmatched_words": [
+        "points..."
+      ],
+      "closest_fact_claim": "The company is accredited by NABL, CAP, and ISO9001:2008, operates a National Reference Laboratory at Rohini and a Kolkata Reference Laboratory, and describes its quality process only generically as '50+ Quality Checks' -- no specific temperature-monitoring technology is named.",
+      "closest_fact_score": 0.52
+    },
+    {
+      "title": "Barcode tracking confirms identity, not temperature integrity",
+      "status": "VERIFIED",
+      "overlap_score": 0.95,
+      "unmatched_words": [
+        "model..."
+      ],
+      "closest_fact_claim": "Dr Lal PathLabs operates a hub-and-spoke model -- a reference lab, satellite labs, collection centers, a logistics team, and a home collection team -- with samples barcoded with a unique ID so the company can track every step until the report is uploaded.",
+      "closest_fact_score": 0.95
+    }
+  ]
+}

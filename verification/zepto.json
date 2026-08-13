@@ -1,0 +1,34 @@
+{
+  "company_name": "Zepto",
+  "gaps_checked": 2,
+  "summary": {
+    "VERIFIED": 2,
+    "WEAK": 0,
+    "UNVERIFIED": 0
+  },
+  "results": [
+    {
+      "title": "Documented cold-chain compliance failure, not a hypothetical risk",
+      "status": "VERIFIED",
+      "overlap_score": 0.86,
+      "unmatched_words": [
+        "found...",
+        "stock...",
+        "suspension.",
+        "warehouse..."
+      ],
+      "closest_fact_claim": "On May 31, 2025, the Maharashtra FDA inspected Zepto's (KiranKart Technologies Pvt. Ltd.) Dharavi warehouse in Mumbai and found fungal growth, improper storage, and inadequate cold storage -- dairy products not held at the mandated 0-4\u00b0C and frozen items failing the -18\u00b0C requirement -- plus expired products stored alongside fresh stock, resulting in license suspension under the Food Safety and Standards Act, 2006.",
+      "closest_fact_score": 0.86
+    },
+    {
+      "title": "Doubling dark-store count while under heightened regulatory scrutiny",
+      "status": "VERIFIED",
+      "overlap_score": 0.95,
+      "unmatched_words": [
+        "footprint."
+      ],
+      "closest_fact_claim": "As of March 31, 2026, Zepto operated 1,139 dark stores. The company filed for an IPO (fresh issue of Rs 8,010 crore) allocating Rs 1,629 crore to set up 1,904 new dark stores through FY30 -- nearly doubling its current footprint -- plus Rs 1,734.9 crore for related lease payments.",
+      "closest_fact_score": 0.95
+    }
+  ]
+}

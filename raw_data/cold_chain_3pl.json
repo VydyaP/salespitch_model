@@ -1,0 +1,32 @@
+{
+  "company_name": "Cold Chain 3PL",
+  "founded": "Unknown",
+  "hq": "Unknown",
+  "industry": "Transportation, Logistics, Supply Chain and Storage",
+  "size": "Unknown",
+  "website": "https://coldchain3pl.com",
+  "linkedin_url": "https://www.linkedin.com/company/cold-chain-3pl",
+  "phone": "Unknown",
+  "facts": [
+    {
+      "claim": "Cold Chain 3PL provides storing and transporting temperature\u2011sensitive products, ensuring proper storage, handling, and product transportation in a temperature\u2011controlled environment.",
+      "source_snippet": "Cold Chain 3PL (Third-Party Logistics) refers to storing and transporting temperature-sensitive products that require constant temperature control... includes ensuring proper storage, handling, and product transportation in a temperature-controlled environment to maintain quality and safety.",
+      "source_url": "https://coldchain3pl.com/cold-chain-3pl-and-small-businesses"
+    },
+    {
+      "claim": "The company is classified in the Transportation, Logistics, Supply Chain and Storage industry.",
+      "source_snippet": "Industry Transportation, Logistics, Supply Chain and Storage",
+      "source_url": "https://www.linkedin.com/company/cold-chain-3pl"
+    },
+    {
+      "claim": "Cold Chain 3PL holds certifications including Non\u2011GMO, USDA, SQF, and FDA.",
+      "source_snippet": "We boast certifications like Non\u2011GMO, USDA, SQF, and FDA, providing a level of regulatory assurance critical for sensitive goods.",
+      "source_url": "https://www.fulfill.com/3pl/profile/cold-chain-3pl"
+    },
+    {
+      "claim": "The company integrates directly with major eCommerce platforms such as Amazon, Shopify, WooCommerce, and Walmart, and partners with ShipStation for shipping management.",
+      "source_snippet": "Cold Chain 3PL offers seamless integration with leading eCommerce platforms and essential business tools... integrate directly with popular platforms such as Amazon, Shopify, WooCommerce, and Walmart... partner with ShipStation for optimized shipping management.",
+      "source_url": "https://www.fulfill.com/3pl/profile/cold-chain-3pl"
+    }
+  ]
+}

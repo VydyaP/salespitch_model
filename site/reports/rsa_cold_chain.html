@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RSA Cold Chain — Prospect Report</title>
+<style>
+:root {
+  --paper: #f6f2e7;
+  --paper-alt: #efe6d2;
+  --ink: #2b2118;
+  --ink-secondary: #6b5d4f;
+  --muted: #9c8f7e;
+  --border: #ddd3bf;
+  --accent: #d9622b;
+  --accent-hover: #c2531f;
+  --frost: #1f6e6b;
+  --nav-bg: rgba(246,242,231,0.85);
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --paper: #1c1712; --paper-alt: #262019; --ink: #f2e9d8; --ink-secondary: #c4b7a2;
+    --muted: #8a7c68; --border: #3a3226; --accent: #ff7a3d; --accent-hover: #ff8f5c;
+    --frost: #3fa39e; --nav-bg: rgba(28,23,18,0.85);
+  }
+}
+:root[data-theme="dark"] {
+  --paper: #1c1712; --paper-alt: #262019; --ink: #f2e9d8; --ink-secondary: #c4b7a2;
+  --muted: #8a7c68; --border: #3a3226; --accent: #ff7a3d; --accent-hover: #ff8f5c;
+  --frost: #3fa39e; --nav-bg: rgba(28,23,18,0.85);
+}
+:root[data-theme="light"] {
+  --paper: #f6f2e7; --paper-alt: #efe6d2; --ink: #2b2118; --ink-secondary: #6b5d4f;
+  --muted: #9c8f7e; --border: #ddd3bf; --accent: #d9622b; --accent-hover: #c2531f;
+  --frost: #1f6e6b; --nav-bg: rgba(246,242,231,0.85);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  background: var(--paper);
+  color: var(--ink);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: var(--accent); text-decoration: none; }
+img, svg { max-width: 100%; }
+
+.mono {
+  font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+}
+
+.nav {
+  position: sticky; top: 0; z-index: 100; height: 56px;
+  display: flex; align-items: center; justify-content: center;
+  backdrop-filter: saturate(160%) blur(16px);
+  -webkit-backdrop-filter: saturate(160%) blur(16px);
+  background: var(--nav-bg);
+  border-bottom: 1px solid var(--border);
+}
+.nav-inner {
+  width: 100%; max-width: 1040px; padding: 0 24px;
+  display: flex; align-items: center; justify-content: space-between;
+}
+.nav .brand {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 12.5px; font-weight: 600; color: var(--ink); text-decoration: none;
+  letter-spacing: 0.03em; text-transform: uppercase;
+}
+.nav .actions { display: flex; gap: 10px; }
+
+.btn-pill {
+  display: inline-flex; align-items: center; justify-content: center;
+  border-radius: 8px; padding: 8px 16px; font-size: 12.5px; font-weight: 600;
+  border: 1px solid var(--border); background: var(--paper-alt); color: var(--ink);
+  cursor: pointer; font-family: inherit; transition: background 0.15s ease, border-color 0.15s ease;
+  white-space: nowrap;
+}
+.btn-pill:hover { background: var(--border); }
+.btn-pill:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.btn-pill.filled { background: var(--accent); border-color: var(--accent); color: #fff8f0; }
+.btn-pill.filled:hover { background: var(--accent-hover); }
+
+/* ---- report hero: styled like a manifest / shipping label header ---- */
+.hero {
+  max-width: 900px; margin: 0 auto; padding: 48px 24px 28px;
+}
+.eyebrow {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 11.5px; font-weight: 600; color: var(--muted); letter-spacing: 0.08em; text-transform: uppercase;
+}
+.hero h1 {
+  font-size: clamp(30px, 5vw, 44px); font-weight: 700; letter-spacing: -0.02em;
+  line-height: 1.1; text-wrap: balance; margin-top: 4px;
+}
+.manifest-row {
+  margin-top: 20px; display: flex; flex-wrap: wrap; gap: 10px;
+}
+.manifest-chip {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 12px; color: var(--ink-secondary); background: var(--paper-alt);
+  border: 1px solid var(--border); border-radius: 6px; padding: 5px 10px;
+}
+.manifest-chip strong { color: var(--ink); font-weight: 600; }
+
+/* ---- tab bar ---- */
+.tab-shell { max-width: 900px; margin: 0 auto; padding: 0 24px 80px; }
+.tab-bar {
+  display: flex; gap: 4px; border-bottom: 1px solid var(--border); margin-bottom: 32px;
+  overflow-x: auto;
+}
+.tab-btn {
+  font-family: inherit; font-size: 14.5px; font-weight: 600; color: var(--muted);
+  background: none; border: none; border-bottom: 2.5px solid transparent;
+  padding: 12px 6px; margin-right: 22px; cursor: pointer; white-space: nowrap;
+  display: flex; align-items: center; gap: 8px; transition: color 0.15s ease;
+}
+.tab-btn:hover { color: var(--ink); }
+.tab-btn.active { color: var(--ink); border-bottom-color: var(--accent); }
+.tab-count {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 11px; background: var(--paper-alt); border: 1px solid var(--border);
+  border-radius: 999px; padding: 1px 7px; color: var(--ink-secondary);
+}
+.tab-btn.active .tab-count { border-color: var(--accent); color: var(--accent); }
+
+.section-label {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 11.5px; text-transform: uppercase; letter-spacing: 0.07em;
+  color: var(--muted); font-weight: 600; margin-bottom: 20px;
+}
+.empty { color: var(--muted); font-style: italic; font-size: 15px; }
+
+/* ---- facts ---- */
+.fact-list { display: flex; flex-direction: column; gap: 22px; }
+.fact-item { border-left: 3px solid var(--border); padding-left: 18px; }
+.fact-claim {
+  display: block; font-size: 17px; font-weight: 600; line-height: 1.4; letter-spacing: -0.005em;
+  margin-bottom: 8px; color: var(--ink); text-decoration: underline;
+  text-decoration-color: var(--border); text-decoration-thickness: 1.5px; text-underline-offset: 3px;
+  transition: color 0.15s ease, text-decoration-color 0.15s ease, border-color 0.15s ease;
+}
+.fact-item:has(.fact-claim:hover) { border-left-color: var(--accent); }
+.fact-claim:hover { color: var(--accent); text-decoration-color: var(--accent); }
+.fact-claim::after { content: " \2197"; font-size: 0.65em; color: var(--muted); text-decoration: none; }
+.fact-quote {
+  font-size: 14.5px; color: var(--ink-secondary); font-style: italic; line-height: 1.5;
+}
+
+/* ---- gaps ---- */
+.gap-card { background: var(--paper-alt); border: 1px solid var(--border); border-radius: 10px; margin-bottom: 12px; overflow: hidden; }
+.gap-summary {
+  cursor: pointer; padding: 16px 20px; display: flex; align-items: center; gap: 14px; list-style: none;
+}
+.gap-summary::-webkit-details-marker { display: none; }
+.gap-summary::marker { content: ""; }
+.gap-severity-row { display: flex; align-items: center; gap: 8px; flex-shrink: 0; }
+.severity-gauge { width: 40px; height: 6px; border-radius: 3px; background: var(--border); overflow: hidden; flex-shrink: 0; }
+.gauge-fill { height: 100%; border-radius: 3px; }
+.severity-label {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 10.5px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; white-space: nowrap;
+}
+.gap-summary h3 { font-size: 15.5px; font-weight: 600; letter-spacing: -0.005em; line-height: 1.35; flex: 1; }
+.gap-summary::after {
+  content: "\2304"; color: var(--muted); font-size: 16px; flex-shrink: 0; transition: transform 0.2s ease;
+}
+.gap-card[open] .gap-summary::after { transform: rotate(180deg); }
+.gap-body { padding: 0 20px 20px; border-top: 1px solid var(--border); padding-top: 16px; margin: 0 20px; }
+.gap-detail { font-size: 15px; color: var(--ink-secondary); line-height: 1.55; margin-bottom: 16px; }
+.gap-meta { font-size: 13px; color: var(--muted); display: flex; flex-direction: column; gap: 10px; }
+.gap-meta strong { color: var(--ink-secondary); font-weight: 600; }
+.gap-service-tags { display: flex; gap: 6px; flex-wrap: wrap; }
+.service-tag {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 10px; font-weight: 700; color: #fff8f0; border-radius: 5px; padding: 2px 6px; letter-spacing: 0.02em;
+}
+.gap-based-on { padding-left: 12px; border-left: 2px solid var(--border); font-style: italic; }
+
+/* ---- pitch ---- */
+.pitch-card {
+  background: var(--frost); color: #f2f8f6; border-radius: 14px; padding: 36px 34px;
+}
+.pitch-card .section-label { color: rgba(242,248,246,0.65); }
+.pitch-angle { font-size: clamp(18px, 2.6vw, 22px); font-weight: 500; line-height: 1.5; letter-spacing: -0.005em; margin-bottom: 26px; }
+.pitch-opener-box { background: rgba(0,0,0,0.18); border-radius: 10px; padding: 22px 24px; }
+.pitch-opener-label {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 11px; color: rgba(242,248,246,0.6); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 10px;
+}
+.pitch-opener-text { font-size: 17px; font-style: italic; line-height: 1.5; margin-bottom: 18px; }
+.pitch-card .btn-pill { background: rgba(242,248,246,0.12); border-color: rgba(242,248,246,0.3); color: #f2f8f6; }
+.pitch-card .btn-pill:hover { background: rgba(242,248,246,0.22); }
+
+@media print {
+  .nav, .tab-bar { display: none; }
+  .tab-panel { display: block !important; margin-bottom: 48px; }
+  .gap-body { display: block !important; }
+  .gap-summary::after { display: none; }
+  .pitch-card { background: #eef5f3 !important; color: #12201d !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .pitch-card .section-label, .pitch-opener-label { color: #4a5a56 !important; }
+  .pitch-opener-box { background: #fff !important; border: 1px solid #ccd8d5; }
+  body { background: #fff; }
+}
+</style>
+</head>
+<body>
+<nav class="nav">
+  <div class="nav-inner">
+    <a class="brand" href="../index.html">&larr; Prospect Scan</a>
+    <div class="actions">
+      <button class="btn-pill" onclick="window.print()">Print / PDF</button>
+      <button class="btn-pill filled" onclick="downloadReport('rsa_cold_chain-report.html')">Download</button>
+    </div>
+  </div>
+</nav>
+
+
+<header class="hero">
+  <p class="eyebrow">Prospect report</p>
+  <h1>RSA Cold Chain</h1>
+  <div class="manifest-row"><span class="manifest-chip"><strong>Industry:</strong> Cold chain 3PL — retail/grocery, quick commerce, QSR, HORECA, food producers</span><span class="manifest-chip"><strong>HQ:</strong> Dubai, United Arab Emirates</span><span class="manifest-chip"><strong>Founded:</strong> Parent RSA Global founded 2009; RSA Cold Chain division began operations in 2017</span><span class="manifest-chip"><strong>Size:</strong> 46,000 sqm / 62,000 pallet positions in Dubai; Americold (US, ~1.4B cu ft globally) took a 49% stake in 2023</span></div>
+</header>
+
+<div class="tab-shell">
+  <div class="tab-bar">
+    <button class="tab-btn active" data-tab="gaps" onclick="switchTab('gaps')">Gaps <span class="tab-count">2</span></button>
+    <button class="tab-btn" data-tab="facts" onclick="switchTab('facts')">Facts <span class="tab-count">6</span></button>
+    <button class="tab-btn" data-tab="pitch" onclick="switchTab('pitch')">Pitch</button>
+  </div>
+
+  <div class="tab-panel" id="tab-gaps">
+    <p class="section-label">2 gaps found &middot; 0 high &middot; 1 medium &middot; 1 low</p>
+    <details class="gap-card">
+  <summary class="gap-summary">
+    <div class="gap-severity-row">
+      <div class="severity-gauge"><div class="gauge-fill" style="width:65%;background:#b8860b"></div></div>
+      <span class="severity-label" style="color:#b8860b">Medium</span>
+    </div>
+    <h3>Post-acquisition expansion with no stated plan to keep monitoring consistent</h3>
+  </summary>
+  <div class="gap-body">
+    <p class="gap-detail">In 2023 Americold took a 49% stake specifically to expand RSA locally and connect it to Americold&#x27;s global network -- meaning new facilities and markets beyond the current single Dubai site are coming. RSA&#x27;s marketing already claims continuous monitoring and a real-time WMS today, but nothing describes how that gets replicated consistently as the network grows.</p>
+    <div class="gap-meta">
+      <div class="gap-service-tags"><span class="service-tag" style="background:#8a5a2b">WH</span><span class="service-tag" style="background:#3f7d5c">PL</span><span>Warehouse Management + Platform (ThinxFresh)</span></div>
+      <div class="gap-based-on">&ldquo;In 2023, Americold acquired a 49% minority stake in RSA Cold Chain... with immediate plans to expand locally, connect RSA to its global network, and pursue development opportunities across the Middle East and India.&rdquo;</div>
+    </div>
+  </div>
+</details><details class="gap-card">
+  <summary class="gap-summary">
+    <div class="gap-severity-row">
+      <div class="severity-gauge"><div class="gauge-fill" style="width:32%;background:#3f7d5c"></div></div>
+      <span class="severity-label" style="color:#3f7d5c">Low</span>
+    </div>
+    <h3>Quality certifications are periodic audits, not real-time compliance evidence</h3>
+  </summary>
+  <div class="gap-body">
+    <p class="gap-detail">ISO 9001, ISO 22000, ISO 14001, and OHSAS 18001 are process/quality-management standards verified through periodic audits -- they don&#x27;t generate real-time, audit-ready deviation records on their own. RSA&#x27;s separate claim of &#x27;continuous monitoring&#x27; doesn&#x27;t describe automated compliance reporting tied to those certification requirements.</p>
+    <div class="gap-meta">
+      <div class="gap-service-tags"><span class="service-tag" style="background:#1f6e6b">CC</span><span>Cold Chain Management (ThinxFresh)</span></div>
+      <div class="gap-based-on">&ldquo;The facility holds ISO 9001, ISO 22000, ISO 14001, and OHSAS 18001 certifications; RSA&#x27;s own marketing claims an advanced WMS for real-time inventory visibility and continuous temperature monitoring.&rdquo;</div>
+    </div>
+  </div>
+</details>
+  </div>
+
+  <div class="tab-panel" id="tab-facts" style="display:none">
+    <p class="section-label">Sourced facts</p>
+    <ul class="fact-list" style="list-style:none"><li class="fact-item">
+  <a class="fact-claim" href="https://ir.americold.com/press-releases/news-details/2023/Americold-Announces-Strategic-Investment-in-Dubai-Cold-Storage-Company-RSA-Cold-Chain/default.aspx" target="_blank" rel="noopener">RSA Cold Chain is based in Dubai and began operations in 2017 as a subsidiary of RSA Global, holding HACCP and ISO 22000 certifications, serving packaged food, fresh produce, dairy, and frozen foods.</a>
+  <blockquote class="fact-quote">&ldquo;RSA Cold Chain Background: Based in Dubai; began operations in 2017. Subsidiary of RSA Global (digital supply chain and e-commerce logistics specialist). Holds HACCP and ISO 22000 certifications. Serves packaged food, fresh produce, dairy, and frozen foods sectors.&rdquo;</blockquote>
+</li><li class="fact-item">
+  <a class="fact-claim" href="https://www.rsa.global/cold-storage" target="_blank" rel="noopener">The Dubai facility spans 46,000 sqm with 62,000 pallet positions, offering a flexible -25°C to +25°C range per chamber, with frozen storage at -25°C to -18°C and chilled storage at 0°C to 5°C.</a>
+  <blockquote class="fact-quote">&ldquo;46,000 Sqm Storage Area. 62,000 Pallet Positions with Dubai. -25oC to +25oC Flexible Temperature Range Per Chamber. Frozen Storage: Maintained at -25 to -18C. Chilled Storage: Maintained between 0C and 5C.&rdquo;</blockquote>
+</li><li class="fact-item">
+  <a class="fact-claim" href="https://www.rsa.global/cold-storage" target="_blank" rel="noopener">The facility holds ISO 9001, ISO 22000, ISO 14001, and OHSAS 18001 certifications.</a>
+  <blockquote class="fact-quote">&ldquo;ISO 9001 (Quality Management), ISO 22000 (Food Safety Management System), ISO 14001 (Environmental Management System), OHSAS 18001 (Operation &amp; Health &amp; Safety Management).&rdquo;</blockquote>
+</li><li class="fact-item">
+  <a class="fact-claim" href="https://www.rsa.global/cold-storage" target="_blank" rel="noopener">RSA&#x27;s own marketing claims an advanced WMS for real-time inventory visibility, continuous temperature monitoring, and a single-integration API for real-time inventory data.</a>
+  <blockquote class="fact-quote">&ldquo;Real-Time Inventory Tracking: Advanced WMS for real-time inventory visibility. Temperature Monitoring: Continuous monitoring to ensure product integrity. Single-integration API that is all you need to get real-time inventory data.&rdquo;</blockquote>
+</li><li class="fact-item">
+  <a class="fact-claim" href="https://www.rsa.global/cold-storage" target="_blank" rel="noopener">RSA Cold Chain serves Retail &amp; Grocery, Wholesale &amp; Distributors, Quick Commerce, QSR, HORECA, and food producers -- pharmaceuticals is not listed among its served industries.</a>
+  <blockquote class="fact-quote">&ldquo;Industries Served: Retail &amp; Grocery, Wholesale &amp; Distributors, Quick Commerce, Quick Service Restaurants, HORECA, and Producers.&rdquo;</blockquote>
+</li><li class="fact-item">
+  <a class="fact-claim" href="https://ir.americold.com/press-releases/news-details/2023/Americold-Announces-Strategic-Investment-in-Dubai-Cold-Storage-Company-RSA-Cold-Chain/default.aspx" target="_blank" rel="noopener">In 2023, Americold acquired a 49% minority stake in RSA Cold Chain for $3.9 million, with immediate plans to expand locally, connect RSA to its global network, and pursue development opportunities across the Middle East and India, leveraging a concurrent partnership with DP World.</a>
+  <blockquote class="fact-quote">&ldquo;Americold acquired a 49% minority ownership stake. Investment amount: $3.9 million at closing. Americold will take a minority ownership position in RSA Cold Chain with immediate plans to expand locally, connect RSA to its global network, and pursue strategic development opportunities in the Middle East and surrounding markets.&rdquo;</blockquote>
+</li></ul>
+  </div>
+
+  <div class="tab-panel" id="tab-pitch" style="display:none">
+    <p class="section-label">Pitch</p>
+    <div class="pitch-card">
+      <p class="pitch-angle">RSA Cold Chain already invests seriously in tech -- a real-time WMS, continuous monitoring, an API for live inventory -- and just brought on Americold as a 49% partner specifically to expand into new markets and connect to a global network. That&#x27;s exactly the moment a fast-growing operator needs monitoring and compliance to scale with the network instead of being rebuilt site by site. GND&#x27;s ThinxFresh wouldn&#x27;t be introducing monitoring to RSA -- it&#x27;d be the layer that keeps every new site as consistent and audit-ready as the flagship Dubai facility, from day one.</p>
+      <div class="pitch-opener-box">
+        <div class="pitch-opener-label">Opener</div>
+        <p class="pitch-opener-text" id="pitch-opener">With Americold now backing your expansion into new markets, how are you planning to keep monitoring and compliance consistent as new sites come online -- same system everywhere, or rebuilt per facility?</p>
+        <button class="btn-pill" onclick="copyOpener(this)">Copy opener</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+function copyOpener(btn) {
+  var text = document.getElementById('pitch-opener').innerText;
+  navigator.clipboard.writeText(text).then(function () {
+    var original = btn.textContent;
+    btn.textContent = 'Copied';
+    setTimeout(function () { btn.textContent = original; }, 1500);
+  });
+}
+function downloadReport(filename) {
+  var html = '<!DOCTYPE html>\n' + document.documentElement.outerHTML;
+  var blob = new Blob([html], { type: 'text/html' });
+  var url = URL.createObjectURL(blob);
+  var a = document.createElement('a');
+  a.href = url;
+  a.download = filename;
+  a.click();
+  URL.revokeObjectURL(url);
+}
+function switchTab(name) {
+  document.querySelectorAll('.tab-panel').forEach(function (p) { p.style.display = 'none'; });
+  document.querySelectorAll('.tab-btn').forEach(function (b) { b.classList.remove('active'); });
+  document.getElementById('tab-' + name).style.display = 'block';
+  document.querySelector('.tab-btn[data-tab="' + name + '"]').classList.add('active');
+}
+
+function saveCompany(slug, btn) {
+  btn.disabled = true;
+  btn.textContent = 'Saving\u2026';
+  fetch('/api/save?slug=' + encodeURIComponent(slug), { method: 'POST' })
+    .then(function (r) { return r.json(); })
+    .then(function () { window.location.href = '/reports/' + slug + '.html'; })
+    .catch(function () { btn.disabled = false; btn.textContent = 'Save to corpus'; });
+}
+function discardCompany(slug, btn) {
+  if (!confirm('Discard this research? Nothing will be saved.')) return;
+  btn.disabled = true;
+  fetch('/api/discard?slug=' + encodeURIComponent(slug), { method: 'POST' })
+    .then(function () { window.location.href = '/'; });
+}
+</script>
+</body>
+</html>

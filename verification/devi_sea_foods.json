@@ -1,0 +1,27 @@
+{
+  "company_name": "Devi Sea Foods",
+  "gaps_checked": 2,
+  "summary": {
+    "VERIFIED": 2,
+    "WEAK": 0,
+    "UNVERIFIED": 0
+  },
+  "results": [
+    {
+      "title": "Five-stage cold chain across separate facility types, no stated unified tracking",
+      "status": "VERIFIED",
+      "overlap_score": 1.0,
+      "unmatched_words": [],
+      "closest_fact_claim": "Devi Sea Foods started in 1992 and is vertically integrated across five facility types: a shrimp hatchery (established 1994, Kakinada), captive farming (~200 acres near Ongole), processing plants in Singarayakonda (1997) and Tanuku (2000), and feed manufacturing units near Kakinada (2005) and Ongole (2018).",
+      "closest_fact_score": 1.0
+    },
+    {
+      "title": "Four parallel international food-safety standards for a highly perishable product",
+      "status": "VERIFIED",
+      "overlap_score": 1.0,
+      "unmatched_words": [],
+      "closest_fact_claim": "The company operates two modern shrimp processing facilities that comply with internationally recognized food safety accreditations including BRC, BAP, and IFS, and supports BAP and ASC certification programs, alongside multiple MPEDA (Government of India) export performance awards.",
+      "closest_fact_score": 1.0
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "company_name": "Radhakrishna Foodland",
+  "founded": "1966 (Radhakrishna Group founded); cold chain, QSR service, and food retail operations started 1986",
+  "hq": "India (multi-city operations; expanded to the Middle East in 2021)",
+  "industry": "Cold chain warehousing and food distribution logistics -- serving QSRs, cafes, hotels, cloud kitchens, retail, FMCG, and food service",
+  "size": "3,000+ trained employees; 2M+ sq ft of warehousing across 30+ distribution centers; 600+ multi-temperature transport assets",
+  "facts": [
+    {
+      "claim": "The Radhakrishna Group was founded in 1966, with the company's modern cold chain, QSR service, and food retail operations beginning in 1986 -- giving it 38+ years of cold chain industry experience.",
+      "source_snippet": "Foundation of the group [1966]... Started cold chain, QSR service and Food Retail Operations [1986]... 38+ years of industry experience.",
+      "source_url": "https://rkfoodland.com/"
+    },
+    {
+      "claim": "The company operates 2 million+ square feet of warehousing space across 30+ distribution centers in India, reaching over 300 cities and 5,000+ drop points/restaurants, staffed by 3,000+ trained employees.",
+      "source_snippet": "300+ cities with 5,000+ restaurants served... 2M square feet across 30+ distribution centers... 3,000+ trained employees.",
+      "source_url": "https://rkfoodland.com/"
+    },
+    {
+      "claim": "Radhakrishna Foodland runs 600+ multi-temperature transport assets and reports a 99% on-time delivery performance rate.",
+      "source_snippet": "600+ multi-temperature transport assets... 99% on-time performance rate.",
+      "source_url": "https://rkfoodland.com/"
+    },
+    {
+      "claim": "Warehousing covers frozen, chilled, tropical, and ambient storage, and the operation is BRCGS certified and FSSAI compliant for food safety.",
+      "source_snippet": "frozen, chilled, tropical, and ambient storage... BRCGS certified... FSSAI compliant operations... storage and inventory management solutions specifically designed for food and near-food products.",
+      "source_url": "https://rkfoodland.com/solutions/cold-chain-warehousing"
+    },
+    {
+      "claim": "The company describes using 'advanced inventory management technologies' for real-time visibility and control, claiming 99.8%+ inventory accuracy, though it does not name a specific IoT or monitoring platform.",
+      "source_snippet": "advanced inventory management technologies... real-time visibility and control... 99.8%+ [inventory accuracy].",
+      "source_url": "https://rkfoodland.com/solutions/cold-chain-warehousing"
+    },
+    {
+      "claim": "In 2024 the company introduced its own 'Foodland Operating System' and a supply-chain 'control tower' for data-driven visibility, having expanded operations into the Middle East in 2021.",
+      "source_snippet": "Foodland Operating System and various digital solutions [2024]... control tower [for] supply chain visibility... data-driven strategies... Expanded footprint overseas, started operations in the Middle East [2021].",
+      "source_url": "https://rkfoodland.com/"
+    }
+  ]
+}

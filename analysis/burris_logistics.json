@@ -1,0 +1,36 @@
+{
+  "gaps": [
+    {
+      "title": "Limited real\u2011time cold\u2011chain visibility",
+      "detail": "Burris manages over 60\u202fM\u202fcf of freezer warehousing across 13 East\u2011Coast sites, but there is no evidence of IoT\u2011driven temperature monitoring, which can lead to compliance risk and product loss.",
+      "severity": "high",
+      "gnd_service": "Cold Chain Management",
+      "based_on": "offers over 60\u202fmillion cubic feet of freezer warehousing space in 13 strategic locations along the East Coast"
+    },
+    {
+      "title": "Fragmented warehouse operations",
+      "detail": "With multiple temperature\u2011controlled facilities and a broad retail distribution network, Burris likely relies on manual inventory processes lacking a unified IoT dashboard for real\u2011time stock visibility.",
+      "severity": "medium",
+      "gnd_service": "Warehouse Management",
+      "based_on": "custom retail distribution, foodservice redistribution, public refrigerated warehousing and transportation solutions"
+    },
+    {
+      "title": "No real\u2011time asset/fleet tracking",
+      "detail": "The company lists a dedicated fleet as a key specialty, yet there is no mention of GPS or sensor\u2011based tracking that could prevent theft, reduce idle time, and improve route efficiency.",
+      "severity": "medium",
+      "gnd_service": "Asset Tracking & Monitoring",
+      "based_on": "Logistics, Freight Brokerage, Logistics Technology, Foodservice Redistribution , Supply Chain, Purchasing Team, and Dedicated Fleet"
+    },
+    {
+      "title": "Disjointed technology across three subsidiaries",
+      "detail": "Burris operates Honor Foods, Trinity Logistics, and Eagle Business Credit under the ONEBURRIS brand, but the lack of a single analytics platform may hinder cross\u2011company data sharing and decision\u2011making.",
+      "severity": "low",
+      "gnd_service": "Platform",
+      "based_on": "Through our three companies... innovative technology to keep businesses moving"
+    }
+  ],
+  "pitch": {
+    "angle": "After divesting its e\u2011commerce arm, Burris is sharpening focus on core cold\u2011storage and freight services. Deploying GND\u2019s ThinxFresh cold\u2011chain platform and real\u2011time asset tracking can safeguard its 60\u202fM\u202fcf freezer capacity, tighten regulatory compliance, and unlock efficiency across its three business units.",
+    "opener": "I noticed Burris oversees 60\u202fM\u202fcf of freezer space across 13 East\u2011Coast sites\u2014imagine instantly seeing every pallet\u2019s temperature and location from a single dashboard."
+  }
+}

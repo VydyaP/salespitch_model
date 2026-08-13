@@ -1,0 +1,29 @@
+{
+  "company_name": "Dr Lal PathLabs",
+  "founded": "1949 (founder Dr. Major S.K. Lal)",
+  "hq": "New Delhi, India",
+  "industry": "Diagnostics & pathology -- clinical labs, sample collection & cold-chain transport network",
+  "size": "310+ satellite labs, 7,725+ patient service centres, 13,930+ pick-up points, 94.5M+ samples collected, operations in 28+ countries",
+  "facts": [
+    {
+      "claim": "Dr Lal PathLabs was founded in 1949 by Dr. (Major) S.K. Lal, who laid the foundation of what became the first respected pathology lab in Delhi and Northern India.",
+      "source_snippet": "Late Dr. (Major) S.K. Lal, a pioneer in the field of pathology who had been trained in the army and later at the Cook County Hospital, Chicago, USA, laid the foundation stone of Dr Lal PathLabs in 1949.",
+      "source_url": "https://www.lalpathlabs.com/blog/a-quick-glance-the-foundation-of-dr-lal-pathlabs/"
+    },
+    {
+      "claim": "The company now operates 310+ satellite labs, 7,725+ patient service centres, and 13,930+ pick-up points, has collected 94.5M+ samples across 30.3M+ customers, and operates in 28+ countries.",
+      "source_snippet": "310+ satellite labs. 7725+ patient service centres. 13930+ pick-up points. 30.3M+ total customers. 94.5M+ samples collected. 28+ countries where they operate.",
+      "source_url": "https://www.lalpathlabs.com/"
+    },
+    {
+      "claim": "The company is accredited by NABL, CAP, and ISO9001:2008, operates a National Reference Laboratory at Rohini and a Kolkata Reference Laboratory, and describes its quality process only generically as '50+ Quality Checks' -- no specific temperature-monitoring technology is named.",
+      "source_snippet": "NABL, CAP, and ISO9001:2008... National Reference Laboratory at Rohini, Kolkata... Kolkata Reference Laboratory... 50+ Quality Checks... Quality Checks & Processes on Every Sample.",
+      "source_url": "https://www.lalpathlabs.com/"
+    },
+    {
+      "claim": "Dr Lal PathLabs operates a hub-and-spoke model -- a reference lab, satellite labs, collection centers, a logistics team, and a home collection team -- with samples barcoded with a unique ID so the company can track every step until the report is uploaded.",
+      "source_snippet": "Dr Lal PathLabs operates a hub and spoke model, with a reference lab, satellite labs, collection centers, a logistics team to transport samples, and a home collection team to pick up samples from homes. Bar coding samples with unique ID helps the company track every step until the report is finally uploaded onto the system.",
+      "source_url": "https://d3.harvard.edu/platform-rctom/submission/dr-lal-pathlabs-achieving-scale-in-indian-diagnostics-market/"
+    }
+  ]
+}

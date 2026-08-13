@@ -1,0 +1,29 @@
+{
+  "company_name": "Cool Chain Logistics",
+  "gaps_checked": 2,
+  "summary": {
+    "VERIFIED": 2,
+    "WEAK": 0,
+    "UNVERIFIED": 0
+  },
+  "results": [
+    {
+      "title": "Passive packaging performance, not necessarily active real-time alerting",
+      "status": "VERIFIED",
+      "overlap_score": 0.94,
+      "unmatched_words": [
+        "horas."
+      ],
+      "closest_fact_claim": "The company uses a reusable high-performance equipment system claiming '100% monitoring of interior temperature' for all shipments, with autonomous temperature maintenance for a minimum of 120 hours -- part of a reuse model that reports 375 tonnes of CO2 reduction and 10,166 fewer boxes destroyed compared to single-use packaging.",
+      "closest_fact_score": 0.94
+    },
+    {
+      "title": "Four countries, three regulatory regimes, one claimed monitoring standard",
+      "status": "VERIFIED",
+      "overlap_score": 1.0,
+      "unmatched_words": [],
+      "closest_fact_claim": "The company operates logistics centers in Spain (Madrid-Barcelona), the UK (York), the USA (Indianapolis), and Germany (Darmstadt), with solutions reaching Europe, North America, and South-east Asia.",
+      "closest_fact_score": 1.0
+    }
+  ]
+}

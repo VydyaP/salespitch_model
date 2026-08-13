@@ -1,0 +1,34 @@
+{
+  "company_name": "Hatsun Agro Product",
+  "founded": "1970",
+  "hq": "Chennai, Tamil Nadu, India",
+  "industry": "Dairy — milk procurement, processing, and cold chain (India's largest private-sector dairy)",
+  "size": "4+ lakh farmers, 10,000+ village milk banks, 1,348+ contract vehicles, 20 manufacturing plants across 7 states",
+  "facts": [
+    {
+      "claim": "Hatsun Agro Product was established in 1970 and is the largest private-sector dairy in India, headquartered in Chennai.",
+      "source_snippet": "established in 1970... the largest private sector dairy in India.",
+      "source_url": "https://www.ibef.org/industry/indian-food-industry/showcase/hatsun-agro"
+    },
+    {
+      "claim": "Over 4 lakh (400,000+) farmers deliver milk daily across more than 10,000 Hatsun Milk Banks (HMBs) covering over 10,000 villages, via more than 1,100 rural milk procurement routes.",
+      "source_snippet": "Every day more than 4 lakh farmers pour their milk at these HMBs... Hatsun has around 10,000 plus Hatsun Milk Banks (HMBs) covering over 10,000 villages... Hatsun operates more than 1,100 rural milk procurement routes.",
+      "source_url": "https://www.hap.in/milk-procurement.php"
+    },
+    {
+      "claim": "Hatsun deploys Active Bulk Coolers (ABC) at more than 1,100 village-level locations for instant chilling of milk within 2 hours of collection.",
+      "source_snippet": "A new and advanced process of procuring and chilling the milk at the village level using ABC (Active Bulk Cooler) has been introduced at more than 1100 locations... Instant chilling at Village level within 2 hours.",
+      "source_url": "https://www.hap.in/milk-procurement.php"
+    },
+    {
+      "claim": "The farmers' database is managed through a cloud-based software system with data transferred daily via EKO machines; milk is tested for fat and SNF at collection points, with additional testing at Milk Chilling Centers before tanker transport to facilities.",
+      "source_snippet": "The entire farmers' database is managed through a state-of-the-art computer software system with data transferred to cloud servers daily via EKO machines... tests milk for Fat and SNF (solids not fat) at collection points and performs additional testing at Milk Chilling Centers before tanker transport.",
+      "source_url": "https://www.hap.in/milk-procurement.php"
+    },
+    {
+      "claim": "Hatsun operates chilling centres in more than 68 locations with over 1,348 contract vehicles, milk sheds across 10 districts in Tamil Nadu and 3 districts in Karnataka, and 20 manufacturing plants across 7 states as of 2025.",
+      "source_snippet": "chilling centres in more than 68 locations... over 1,348 contract vehicles... milk sheds spread over 10 districts in Tamil Nadu and three districts in Karnataka... operates 20 manufacturing plants across multiple states including Tamil Nadu, Andhra Pradesh, Telangana, Karnataka, Maharashtra, Odisha, and others as of 2025.",
+      "source_url": "https://www.ibef.org/industry/indian-food-industry/showcase/hatsun-agro"
+    }
+  ]
+}

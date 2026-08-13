@@ -1,0 +1,22 @@
+{
+  "gaps": [
+    {
+      "title": "Two brand-new warehouses in under a year, no stated monitoring standard set from day one",
+      "detail": "Hyperpure signed two five-year warehouse leases totaling 5+ lakh sq ft in under 12 months (Palava in February 2025, Bhiwandi in August 2025) -- both facilities are being built out right now, with no operating history yet. That's the ideal window to standardize temperature monitoring and compliance reporting across every new site from day one, rather than retrofitting later once each facility has its own systems and habits.",
+      "severity": "high",
+      "gnd_service": "Warehouse Management + Cold Chain Management (ThinxFresh)",
+      "based_on": "In under a year, Zomato Hyperpure leased more than 5 lakh sq ft of warehousing across two sites in the Mumbai Metropolitan Region: 2.5 lakh sq ft in Bhiwandi... and 2.53 lakh sq ft in Palava."
+    },
+    {
+      "title": "Meat and seafood distribution through brand-new sites with no named cold-chain monitoring system",
+      "detail": "The Bhiwandi facility explicitly handles meat and seafood alongside produce and groceries -- categories with the least tolerance for temperature deviation -- for hotel and restaurant customers. As a newly leased site with no legacy system to migrate away from, whatever monitoring gets set up now becomes the standard for how Hyperpure protects its highest-risk product categories going forward.",
+      "severity": "medium",
+      "gnd_service": "Cold Chain Management (ThinxFresh)",
+      "based_on": "The Bhiwandi warehouse will support Hyperpure's sourcing and distribution of fresh and packaged products -- fruits, vegetables, meat, seafood, groceries, and essentials -- for hotels, restaurants, caterers, and food businesses."
+    }
+  ],
+  "pitch": {
+    "angle": "Hyperpure just leased two brand-new warehouses -- over 5 lakh sq ft -- in under a year, right as its parent group rebrands and quick commerce becomes the dominant growth engine. Both facilities handle meat and seafood, the categories with zero tolerance for a temperature slip, and neither has an operating history yet. That's the exact moment to build in real-time monitoring and auto-generated compliance reporting from day one -- cheaper and cleaner than retrofitting six months from now once habits and gaps are already baked in.",
+    "opener": "With two brand-new warehouses coming online this year handling meat and seafood, are you setting up temperature monitoring and compliance reporting as a standard from day one, or per facility as you go?"
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "company_name": "CWT Limited",
+  "gaps_checked": 2,
+  "summary": {
+    "VERIFIED": 2,
+    "WEAK": 0,
+    "UNVERIFIED": 0
+  },
+  "results": [
+    {
+      "title": "Temperature monitoring described generically, no specifics on alerting or compliance automation",
+      "status": "VERIFIED",
+      "overlap_score": 1.0,
+      "unmatched_words": [],
+      "closest_fact_claim": "The facility uses a front-end iSCM platform linked to customer ERP systems, a WMS for cargo movements, and a temperature monitoring and tracking system, though no specifics on deviation-alert speed or automated compliance reporting are given.",
+      "closest_fact_score": 1.0
+    },
+    {
+      "title": "Multiple parallel compliance regimes in one facility, no stated unified audit trail",
+      "status": "VERIFIED",
+      "overlap_score": 1.0,
+      "unmatched_words": [],
+      "closest_fact_claim": "The facility holds six separate certifications -- ISO9001, ISO14001, ISO22000, ISO22339, ISO45000, and HACCP -- and maintains separate storage for Halal and non-Halal products alongside an on-site AVA (food safety authority) Inspection Room.",
+      "closest_fact_score": 1.0
+    }
+  ]
+}

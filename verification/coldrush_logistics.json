@@ -1,0 +1,34 @@
+{
+  "company_name": "Coldrush Logistics",
+  "gaps_checked": 2,
+  "summary": {
+    "VERIFIED": 2,
+    "WEAK": 0,
+    "UNVERIFIED": 0
+  },
+  "results": [
+    {
+      "title": "Vague, unnamed monitoring tech for a pharma-heavy fleet with dedicated vaccine trucks",
+      "status": "VERIFIED",
+      "overlap_score": 0.81,
+      "unmatched_words": [
+        "naming",
+        "pharma",
+        "platform.",
+        "vaccines",
+        "vehicles...",
+        "without"
+      ],
+      "closest_fact_claim": "The company operates 202 vehicles (Ashok Leyland and Tata Motors chassis), including 20 newly developed reefer trucks specifically for safe handling of pharmaceutical products, especially vaccines.",
+      "closest_fact_score": 0.44
+    },
+    {
+      "title": "Aggressive 5-year growth plan risks outpacing monitoring infrastructure",
+      "status": "VERIFIED",
+      "overlap_score": 1.0,
+      "unmatched_words": [],
+      "closest_fact_claim": "Coldrush plans to add another 150-200 trucks to reach 100,000 pallets of capacity within five years, and to open cold storages and branch offices in the capital city of each north-eastern 'seven sisters' state within 3-5 years.",
+      "closest_fact_score": 1.0
+    }
+  ]
+}

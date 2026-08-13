@@ -1,0 +1,31 @@
+{
+  "company_name": "Hatsun Agro Product",
+  "gaps_checked": 2,
+  "summary": {
+    "VERIFIED": 2,
+    "WEAK": 0,
+    "UNVERIFIED": 0
+  },
+  "results": [
+    {
+      "title": "First-mile chilling solved; no stated monitoring for the transport and processing legs",
+      "status": "VERIFIED",
+      "overlap_score": 0.95,
+      "unmatched_words": [
+        "vehicles."
+      ],
+      "closest_fact_claim": "Hatsun deploys Active Bulk Coolers (ABC) at more than 1,100 village-level locations for instant chilling of milk within 2 hours of collection.",
+      "closest_fact_score": 0.71
+    },
+    {
+      "title": "Multi-state, multi-district network with no unified real-time view",
+      "status": "VERIFIED",
+      "overlap_score": 0.96,
+      "unmatched_words": [
+        "operates..."
+      ],
+      "closest_fact_claim": "Hatsun operates chilling centres in more than 68 locations with over 1,348 contract vehicles, milk sheds across 10 districts in Tamil Nadu and 3 districts in Karnataka, and 20 manufacturing plants across 7 states as of 2025.",
+      "closest_fact_score": 0.96
+    }
+  ]
+}

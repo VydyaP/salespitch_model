@@ -1,0 +1,31 @@
+{
+  "company_name": "Karras Cold Logistics",
+  "gaps_checked": 2,
+  "summary": {
+    "VERIFIED": 2,
+    "WEAK": 0,
+    "UNVERIFIED": 0
+  },
+  "results": [
+    {
+      "title": "Legacy, word-of-mouth-grown operator now under an automation-focused parent",
+      "status": "VERIFIED",
+      "overlap_score": 0.88,
+      "unmatched_words": [
+        "newcold...",
+        "storage...",
+        "which"
+      ],
+      "closest_fact_claim": "Karras describes its technology only as scanning products accurately into the warehouse with system integrations offered, with no specifics on real-time monitoring or deviation alerting.",
+      "closest_fact_score": 0.62
+    },
+    {
+      "title": "Four-city, 25,000-pallet network with no stated real-time monitoring",
+      "status": "VERIFIED",
+      "overlap_score": 1.0,
+      "unmatched_words": [],
+      "closest_fact_claim": "Karras has a combined storage capacity of over 25,000 pallets across Sydney, Melbourne, and Brisbane warehouses (plus an Adelaide location), offering chilled storage (0 to 4 degrees) and frozen storage (-18 to -24 degrees).",
+      "closest_fact_score": 1.0
+    }
+  ]
+}

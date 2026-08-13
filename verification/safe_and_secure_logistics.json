@@ -1,0 +1,22 @@
+{
+  "company_name": "Safe & Secure Logistics",
+  "gaps_checked": 1,
+  "summary": {
+    "VERIFIED": 1,
+    "WEAK": 0,
+    "UNVERIFIED": 0
+  },
+  "results": [
+    {
+      "title": "15-minute interval logging, not real-time deviation alerting",
+      "status": "VERIFIED",
+      "overlap_score": 0.87,
+      "unmatched_words": [
+        "0.3%",
+        "shipments."
+      ],
+      "closest_fact_claim": "Safe & Secure offers temperature-controlled transport across three ranges (2C-8C, 15C-25C, -18C) under WHO Good Distribution Practice (GDP) guidelines, with validated temperature mapping and digital logging at 15-minute intervals, reporting a temperature excursion rate of less than 0.3%.",
+      "closest_fact_score": 0.73
+    }
+  ]
+}

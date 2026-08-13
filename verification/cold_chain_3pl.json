@@ -1,0 +1,35 @@
+{
+  "company_name": "Cold Chain 3PL",
+  "gaps_checked": 3,
+  "summary": {
+    "VERIFIED": 3,
+    "WEAK": 0,
+    "UNVERIFIED": 0
+  },
+  "results": [
+    {
+      "title": "Lack of real\u2011time temperature monitoring & alerts",
+      "status": "VERIFIED",
+      "overlap_score": 1.0,
+      "unmatched_words": [],
+      "closest_fact_claim": "Cold Chain 3PL provides storing and transporting temperature\u2011sensitive products, ensuring proper storage, handling, and product transportation in a temperature\u2011controlled environment.",
+      "closest_fact_score": 1.0
+    },
+    {
+      "title": "Limited real\u2011time asset and fleet visibility",
+      "status": "VERIFIED",
+      "overlap_score": 1.0,
+      "unmatched_words": [],
+      "closest_fact_claim": "Cold Chain 3PL provides storing and transporting temperature\u2011sensitive products, ensuring proper storage, handling, and product transportation in a temperature\u2011controlled environment.",
+      "closest_fact_score": 1.0
+    },
+    {
+      "title": "Manual compliance reporting for regulatory audits",
+      "status": "VERIFIED",
+      "overlap_score": 1.0,
+      "unmatched_words": [],
+      "closest_fact_claim": "Cold Chain 3PL holds certifications including Non\u2011GMO, USDA, SQF, and FDA.",
+      "closest_fact_score": 1.0
+    }
+  ]
+}

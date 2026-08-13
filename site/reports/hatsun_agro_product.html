@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hatsun Agro Product — Prospect Report</title>
+<style>
+:root {
+  --paper: #f6f2e7;
+  --paper-alt: #efe6d2;
+  --ink: #2b2118;
+  --ink-secondary: #6b5d4f;
+  --muted: #9c8f7e;
+  --border: #ddd3bf;
+  --accent: #d9622b;
+  --accent-hover: #c2531f;
+  --frost: #1f6e6b;
+  --nav-bg: rgba(246,242,231,0.85);
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --paper: #1c1712; --paper-alt: #262019; --ink: #f2e9d8; --ink-secondary: #c4b7a2;
+    --muted: #8a7c68; --border: #3a3226; --accent: #ff7a3d; --accent-hover: #ff8f5c;
+    --frost: #3fa39e; --nav-bg: rgba(28,23,18,0.85);
+  }
+}
+:root[data-theme="dark"] {
+  --paper: #1c1712; --paper-alt: #262019; --ink: #f2e9d8; --ink-secondary: #c4b7a2;
+  --muted: #8a7c68; --border: #3a3226; --accent: #ff7a3d; --accent-hover: #ff8f5c;
+  --frost: #3fa39e; --nav-bg: rgba(28,23,18,0.85);
+}
+:root[data-theme="light"] {
+  --paper: #f6f2e7; --paper-alt: #efe6d2; --ink: #2b2118; --ink-secondary: #6b5d4f;
+  --muted: #9c8f7e; --border: #ddd3bf; --accent: #d9622b; --accent-hover: #c2531f;
+  --frost: #1f6e6b; --nav-bg: rgba(246,242,231,0.85);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  background: var(--paper);
+  color: var(--ink);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: var(--accent); text-decoration: none; }
+img, svg { max-width: 100%; }
+
+.mono {
+  font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+}
+
+.nav {
+  position: sticky; top: 0; z-index: 100; height: 56px;
+  display: flex; align-items: center; justify-content: center;
+  backdrop-filter: saturate(160%) blur(16px);
+  -webkit-backdrop-filter: saturate(160%) blur(16px);
+  background: var(--nav-bg);
+  border-bottom: 1px solid var(--border);
+}
+.nav-inner {
+  width: 100%; max-width: 1040px; padding: 0 24px;
+  display: flex; align-items: center; justify-content: space-between;
+}
+.nav .brand {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 12.5px; font-weight: 600; color: var(--ink); text-decoration: none;
+  letter-spacing: 0.03em; text-transform: uppercase;
+}
+.nav .actions { display: flex; gap: 10px; }
+
+.btn-pill {
+  display: inline-flex; align-items: center; justify-content: center;
+  border-radius: 8px; padding: 8px 16px; font-size: 12.5px; font-weight: 600;
+  border: 1px solid var(--border); background: var(--paper-alt); color: var(--ink);
+  cursor: pointer; font-family: inherit; transition: background 0.15s ease, border-color 0.15s ease;
+  white-space: nowrap;
+}
+.btn-pill:hover { background: var(--border); }
+.btn-pill:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.btn-pill.filled { background: var(--accent); border-color: var(--accent); color: #fff8f0; }
+.btn-pill.filled:hover { background: var(--accent-hover); }
+
+/* ---- report hero: styled like a manifest / shipping label header ---- */
+.hero {
+  max-width: 900px; margin: 0 auto; padding: 48px 24px 28px;
+}
+.eyebrow {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 11.5px; font-weight: 600; color: var(--muted); letter-spacing: 0.08em; text-transform: uppercase;
+}
+.hero h1 {
+  font-size: clamp(30px, 5vw, 44px); font-weight: 700; letter-spacing: -0.02em;
+  line-height: 1.1; text-wrap: balance; margin-top: 4px;
+}
+.manifest-row {
+  margin-top: 20px; display: flex; flex-wrap: wrap; gap: 10px;
+}
+.manifest-chip {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 12px; color: var(--ink-secondary); background: var(--paper-alt);
+  border: 1px solid var(--border); border-radius: 6px; padding: 5px 10px;
+}
+.manifest-chip strong { color: var(--ink); font-weight: 600; }
+
+/* ---- tab bar ---- */
+.tab-shell { max-width: 900px; margin: 0 auto; padding: 0 24px 80px; }
+.tab-bar {
+  display: flex; gap: 4px; border-bottom: 1px solid var(--border); margin-bottom: 32px;
+  overflow-x: auto;
+}
+.tab-btn {
+  font-family: inherit; font-size: 14.5px; font-weight: 600; color: var(--muted);
+  background: none; border: none; border-bottom: 2.5px solid transparent;
+  padding: 12px 6px; margin-right: 22px; cursor: pointer; white-space: nowrap;
+  display: flex; align-items: center; gap: 8px; transition: color 0.15s ease;
+}
+.tab-btn:hover { color: var(--ink); }
+.tab-btn.active { color: var(--ink); border-bottom-color: var(--accent); }
+.tab-count {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 11px; background: var(--paper-alt); border: 1px solid var(--border);
+  border-radius: 999px; padding: 1px 7px; color: var(--ink-secondary);
+}
+.tab-btn.active .tab-count { border-color: var(--accent); color: var(--accent); }
+
+.section-label {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 11.5px; text-transform: uppercase; letter-spacing: 0.07em;
+  color: var(--muted); font-weight: 600; margin-bottom: 20px;
+}
+.empty { color: var(--muted); font-style: italic; font-size: 15px; }
+
+/* ---- facts ---- */
+.fact-list { display: flex; flex-direction: column; gap: 22px; }
+.fact-item { border-left: 3px solid var(--border); padding-left: 18px; }
+.fact-claim {
+  display: block; font-size: 17px; font-weight: 600; line-height: 1.4; letter-spacing: -0.005em;
+  margin-bottom: 8px; color: var(--ink); text-decoration: underline;
+  text-decoration-color: var(--border); text-decoration-thickness: 1.5px; text-underline-offset: 3px;
+  transition: color 0.15s ease, text-decoration-color 0.15s ease, border-color 0.15s ease;
+}
+.fact-item:has(.fact-claim:hover) { border-left-color: var(--accent); }
+.fact-claim:hover { color: var(--accent); text-decoration-color: var(--accent); }
+.fact-claim::after { content: " \2197"; font-size: 0.65em; color: var(--muted); text-decoration: none; }
+.fact-quote {
+  font-size: 14.5px; color: var(--ink-secondary); font-style: italic; line-height: 1.5;
+}
+
+/* ---- gaps ---- */
+.gap-card { background: var(--paper-alt); border: 1px solid var(--border); border-radius: 10px; margin-bottom: 12px; overflow: hidden; }
+.gap-summary {
+  cursor: pointer; padding: 16px 20px; display: flex; align-items: center; gap: 14px; list-style: none;
+}
+.gap-summary::-webkit-details-marker { display: none; }
+.gap-summary::marker { content: ""; }
+.gap-severity-row { display: flex; align-items: center; gap: 8px; flex-shrink: 0; }
+.severity-gauge { width: 40px; height: 6px; border-radius: 3px; background: var(--border); overflow: hidden; flex-shrink: 0; }
+.gauge-fill { height: 100%; border-radius: 3px; }
+.severity-label {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 10.5px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; white-space: nowrap;
+}
+.gap-summary h3 { font-size: 15.5px; font-weight: 600; letter-spacing: -0.005em; line-height: 1.35; flex: 1; }
+.gap-summary::after {
+  content: "\2304"; color: var(--muted); font-size: 16px; flex-shrink: 0; transition: transform 0.2s ease;
+}
+.gap-card[open] .gap-summary::after { transform: rotate(180deg); }
+.gap-body { padding: 0 20px 20px; border-top: 1px solid var(--border); padding-top: 16px; margin: 0 20px; }
+.gap-detail { font-size: 15px; color: var(--ink-secondary); line-height: 1.55; margin-bottom: 16px; }
+.gap-meta { font-size: 13px; color: var(--muted); display: flex; flex-direction: column; gap: 10px; }
+.gap-meta strong { color: var(--ink-secondary); font-weight: 600; }
+.gap-service-tags { display: flex; gap: 6px; flex-wrap: wrap; }
+.service-tag {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 10px; font-weight: 700; color: #fff8f0; border-radius: 5px; padding: 2px 6px; letter-spacing: 0.02em;
+}
+.gap-based-on { padding-left: 12px; border-left: 2px solid var(--border); font-style: italic; }
+
+/* ---- pitch ---- */
+.pitch-card {
+  background: var(--frost); color: #f2f8f6; border-radius: 14px; padding: 36px 34px;
+}
+.pitch-card .section-label { color: rgba(242,248,246,0.65); }
+.pitch-angle { font-size: clamp(18px, 2.6vw, 22px); font-weight: 500; line-height: 1.5; letter-spacing: -0.005em; margin-bottom: 26px; }
+.pitch-opener-box { background: rgba(0,0,0,0.18); border-radius: 10px; padding: 22px 24px; }
+.pitch-opener-label {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 11px; color: rgba(242,248,246,0.6); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 10px;
+}
+.pitch-opener-text { font-size: 17px; font-style: italic; line-height: 1.5; margin-bottom: 18px; }
+.pitch-card .btn-pill { background: rgba(242,248,246,0.12); border-color: rgba(242,248,246,0.3); color: #f2f8f6; }
+.pitch-card .btn-pill:hover { background: rgba(242,248,246,0.22); }
+
+@media print {
+  .nav, .tab-bar { display: none; }
+  .tab-panel { display: block !important; margin-bottom: 48px; }
+  .gap-body { display: block !important; }
+  .gap-summary::after { display: none; }
+  .pitch-card { background: #eef5f3 !important; color: #12201d !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .pitch-card .section-label, .pitch-opener-label { color: #4a5a56 !important; }
+  .pitch-opener-box { background: #fff !important; border: 1px solid #ccd8d5; }
+  body { background: #fff; }
+}
+</style>
+</head>
+<body>
+<nav class="nav">
+  <div class="nav-inner">
+    <a class="brand" href="../index.html">&larr; Prospect Scan</a>
+    <div class="actions">
+      <button class="btn-pill" onclick="window.print()">Print / PDF</button>
+      <button class="btn-pill filled" onclick="downloadReport('hatsun_agro_product-report.html')">Download</button>
+    </div>
+  </div>
+</nav>
+
+
+<header class="hero">
+  <p class="eyebrow">Prospect report</p>
+  <h1>Hatsun Agro Product</h1>
+  <div class="manifest-row"><span class="manifest-chip"><strong>Industry:</strong> Dairy — milk procurement, processing, and cold chain (India&#x27;s largest private-sector dairy)</span><span class="manifest-chip"><strong>HQ:</strong> Chennai, Tamil Nadu, India</span><span class="manifest-chip"><strong>Founded:</strong> 1970</span><span class="manifest-chip"><strong>Size:</strong> 4+ lakh farmers, 10,000+ village milk banks, 1,348+ contract vehicles, 20 manufacturing plants across 7 states</span></div>
+</header>
+
+<div class="tab-shell">
+  <div class="tab-bar">
+    <button class="tab-btn active" data-tab="gaps" onclick="switchTab('gaps')">Gaps <span class="tab-count">2</span></button>
+    <button class="tab-btn" data-tab="facts" onclick="switchTab('facts')">Facts <span class="tab-count">5</span></button>
+    <button class="tab-btn" data-tab="pitch" onclick="switchTab('pitch')">Pitch</button>
+  </div>
+
+  <div class="tab-panel" id="tab-gaps">
+    <p class="section-label">2 gaps found &middot; 1 high &middot; 1 medium &middot; 0 low</p>
+    <details class="gap-card" open>
+  <summary class="gap-summary">
+    <div class="gap-severity-row">
+      <div class="severity-gauge"><div class="gauge-fill" style="width:100%;background:#c23b22"></div></div>
+      <span class="severity-label" style="color:#c23b22">High</span>
+    </div>
+    <h3>First-mile chilling solved; no stated monitoring for the transport and processing legs</h3>
+  </summary>
+  <div class="gap-body">
+    <p class="gap-detail">Hatsun has genuinely solved the hardest first-mile problem in dairy -- instant village-level chilling within 2 hours via Active Bulk Coolers at 1,100+ locations, backed by a cloud farmer database. But nothing describes what happens to that milk&#x27;s temperature integrity afterward, across 1,348+ vehicles and 68+ chilling centers on the way to 20 manufacturing plants in 7 states. A 2-hour chill target at the village means little if the multi-state transport network downstream isn&#x27;t tracked the same way.</p>
+    <div class="gap-meta">
+      <div class="gap-service-tags"><span class="service-tag" style="background:#1f6e6b">CC</span><span class="service-tag" style="background:#c23b22">AT</span><span>Cold Chain Management (ThinxFresh) + Asset Tracking &amp; Monitoring</span></div>
+      <div class="gap-based-on">&ldquo;Hatsun deploys Active Bulk Coolers (ABC) at more than 1,100 village-level locations for instant chilling of milk within 2 hours of collection; Hatsun operates chilling centres in more than 68 locations with over 1,348 contract vehicles.&rdquo;</div>
+    </div>
+  </div>
+</details><details class="gap-card">
+  <summary class="gap-summary">
+    <div class="gap-severity-row">
+      <div class="severity-gauge"><div class="gauge-fill" style="width:65%;background:#b8860b"></div></div>
+      <span class="severity-label" style="color:#b8860b">Medium</span>
+    </div>
+    <h3>Multi-state, multi-district network with no unified real-time view</h3>
+  </summary>
+  <div class="gap-body">
+    <p class="gap-detail">The network spans 10,000+ villages, 10 districts in Tamil Nadu plus 3 in Karnataka, and 20 manufacturing plants across 7 states. Consistency of cold chain integrity across a footprint this distributed is a real operational challenge without one system giving visibility across every leg at once.</p>
+    <div class="gap-meta">
+      <div class="gap-service-tags"><span class="service-tag" style="background:#1f6e6b">CC</span><span class="service-tag" style="background:#8a5a2b">WH</span><span>Warehouse Management + Cold Chain Management (ThinxFresh)</span></div>
+      <div class="gap-based-on">&ldquo;Hatsun operates... milk sheds spread over 10 districts in Tamil Nadu and three districts in Karnataka... 20 manufacturing plants across multiple states including Tamil Nadu, Andhra Pradesh, Telangana, Karnataka, Maharashtra, Odisha, and others as of 2025.&rdquo;</div>
+    </div>
+  </div>
+</details>
+  </div>
+
+  <div class="tab-panel" id="tab-facts" style="display:none">
+    <p class="section-label">Sourced facts</p>
+    <ul class="fact-list" style="list-style:none"><li class="fact-item">
+  <a class="fact-claim" href="https://www.ibef.org/industry/indian-food-industry/showcase/hatsun-agro" target="_blank" rel="noopener">Hatsun Agro Product was established in 1970 and is the largest private-sector dairy in India, headquartered in Chennai.</a>
+  <blockquote class="fact-quote">&ldquo;established in 1970... the largest private sector dairy in India.&rdquo;</blockquote>
+</li><li class="fact-item">
+  <a class="fact-claim" href="https://www.hap.in/milk-procurement.php" target="_blank" rel="noopener">Over 4 lakh (400,000+) farmers deliver milk daily across more than 10,000 Hatsun Milk Banks (HMBs) covering over 10,000 villages, via more than 1,100 rural milk procurement routes.</a>
+  <blockquote class="fact-quote">&ldquo;Every day more than 4 lakh farmers pour their milk at these HMBs... Hatsun has around 10,000 plus Hatsun Milk Banks (HMBs) covering over 10,000 villages... Hatsun operates more than 1,100 rural milk procurement routes.&rdquo;</blockquote>
+</li><li class="fact-item">
+  <a class="fact-claim" href="https://www.hap.in/milk-procurement.php" target="_blank" rel="noopener">Hatsun deploys Active Bulk Coolers (ABC) at more than 1,100 village-level locations for instant chilling of milk within 2 hours of collection.</a>
+  <blockquote class="fact-quote">&ldquo;A new and advanced process of procuring and chilling the milk at the village level using ABC (Active Bulk Cooler) has been introduced at more than 1100 locations... Instant chilling at Village level within 2 hours.&rdquo;</blockquote>
+</li><li class="fact-item">
+  <a class="fact-claim" href="https://www.hap.in/milk-procurement.php" target="_blank" rel="noopener">The farmers&#x27; database is managed through a cloud-based software system with data transferred daily via EKO machines; milk is tested for fat and SNF at collection points, with additional testing at Milk Chilling Centers before tanker transport to facilities.</a>
+  <blockquote class="fact-quote">&ldquo;The entire farmers&#x27; database is managed through a state-of-the-art computer software system with data transferred to cloud servers daily via EKO machines... tests milk for Fat and SNF (solids not fat) at collection points and performs additional testing at Milk Chilling Centers before tanker transport.&rdquo;</blockquote>
+</li><li class="fact-item">
+  <a class="fact-claim" href="https://www.ibef.org/industry/indian-food-industry/showcase/hatsun-agro" target="_blank" rel="noopener">Hatsun operates chilling centres in more than 68 locations with over 1,348 contract vehicles, milk sheds across 10 districts in Tamil Nadu and 3 districts in Karnataka, and 20 manufacturing plants across 7 states as of 2025.</a>
+  <blockquote class="fact-quote">&ldquo;chilling centres in more than 68 locations... over 1,348 contract vehicles... milk sheds spread over 10 districts in Tamil Nadu and three districts in Karnataka... operates 20 manufacturing plants across multiple states including Tamil Nadu, Andhra Pradesh, Telangana, Karnataka, Maharashtra, Odisha, and others as of 2025.&rdquo;</blockquote>
+</li></ul>
+  </div>
+
+  <div class="tab-panel" id="tab-pitch" style="display:none">
+    <p class="section-label">Pitch</p>
+    <div class="pitch-card">
+      <p class="pitch-angle">Hatsun already solved the hardest first-mile problem in dairy -- instant village-level chilling within 2 hours, a cloud-based farmer database, 10,000+ milk banks feeding into the network. What&#x27;s not described anywhere is what happens to that milk&#x27;s temperature integrity between the village Active Bulk Cooler and the 20 manufacturing plants spread across 7 states -- a journey through 1,348+ vehicles and 68+ chilling centers. GND&#x27;s ThinxFresh picks up exactly where Hatsun&#x27;s first-mile tech stops: real-time monitoring and instant deviation alerts for the transport and processing legs, not just the village collection point.</p>
+      <div class="pitch-opener-box">
+        <div class="pitch-opener-label">Opener</div>
+        <p class="pitch-opener-text" id="pitch-opener">You&#x27;ve nailed instant chilling at the village level within 2 hours -- what happens to that temperature data between the village cooler and your processing plants across seven states?</p>
+        <button class="btn-pill" onclick="copyOpener(this)">Copy opener</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+function copyOpener(btn) {
+  var text = document.getElementById('pitch-opener').innerText;
+  navigator.clipboard.writeText(text).then(function () {
+    var original = btn.textContent;
+    btn.textContent = 'Copied';
+    setTimeout(function () { btn.textContent = original; }, 1500);
+  });
+}
+function downloadReport(filename) {
+  var html = '<!DOCTYPE html>\n' + document.documentElement.outerHTML;
+  var blob = new Blob([html], { type: 'text/html' });
+  var url = URL.createObjectURL(blob);
+  var a = document.createElement('a');
+  a.href = url;
+  a.download = filename;
+  a.click();
+  URL.revokeObjectURL(url);
+}
+function switchTab(name) {
+  document.querySelectorAll('.tab-panel').forEach(function (p) { p.style.display = 'none'; });
+  document.querySelectorAll('.tab-btn').forEach(function (b) { b.classList.remove('active'); });
+  document.getElementById('tab-' + name).style.display = 'block';
+  document.querySelector('.tab-btn[data-tab="' + name + '"]').classList.add('active');
+}
+
+function saveCompany(slug, btn) {
+  btn.disabled = true;
+  btn.textContent = 'Saving\u2026';
+  fetch('/api/save?slug=' + encodeURIComponent(slug), { method: 'POST' })
+    .then(function (r) { return r.json(); })
+    .then(function () { window.location.href = '/reports/' + slug + '.html'; })
+    .catch(function () { btn.disabled = false; btn.textContent = 'Save to corpus'; });
+}
+function discardCompany(slug, btn) {
+  if (!confirm('Discard this research? Nothing will be saved.')) return;
+  btn.disabled = true;
+  fetch('/api/discard?slug=' + encodeURIComponent(slug), { method: 'POST' })
+    .then(function () { window.location.href = '/'; });
+}
+</script>
+</body>
+</html>

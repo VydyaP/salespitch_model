@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Safe &amp; Secure Logistics — Prospect Report</title>
+<style>
+:root {
+  --paper: #f6f2e7;
+  --paper-alt: #efe6d2;
+  --ink: #2b2118;
+  --ink-secondary: #6b5d4f;
+  --muted: #9c8f7e;
+  --border: #ddd3bf;
+  --accent: #d9622b;
+  --accent-hover: #c2531f;
+  --frost: #1f6e6b;
+  --nav-bg: rgba(246,242,231,0.85);
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --paper: #1c1712; --paper-alt: #262019; --ink: #f2e9d8; --ink-secondary: #c4b7a2;
+    --muted: #8a7c68; --border: #3a3226; --accent: #ff7a3d; --accent-hover: #ff8f5c;
+    --frost: #3fa39e; --nav-bg: rgba(28,23,18,0.85);
+  }
+}
+:root[data-theme="dark"] {
+  --paper: #1c1712; --paper-alt: #262019; --ink: #f2e9d8; --ink-secondary: #c4b7a2;
+  --muted: #8a7c68; --border: #3a3226; --accent: #ff7a3d; --accent-hover: #ff8f5c;
+  --frost: #3fa39e; --nav-bg: rgba(28,23,18,0.85);
+}
+:root[data-theme="light"] {
+  --paper: #f6f2e7; --paper-alt: #efe6d2; --ink: #2b2118; --ink-secondary: #6b5d4f;
+  --muted: #9c8f7e; --border: #ddd3bf; --accent: #d9622b; --accent-hover: #c2531f;
+  --frost: #1f6e6b; --nav-bg: rgba(246,242,231,0.85);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  background: var(--paper);
+  color: var(--ink);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: var(--accent); text-decoration: none; }
+img, svg { max-width: 100%; }
+
+.mono {
+  font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+}
+
+.nav {
+  position: sticky; top: 0; z-index: 100; height: 56px;
+  display: flex; align-items: center; justify-content: center;
+  backdrop-filter: saturate(160%) blur(16px);
+  -webkit-backdrop-filter: saturate(160%) blur(16px);
+  background: var(--nav-bg);
+  border-bottom: 1px solid var(--border);
+}
+.nav-inner {
+  width: 100%; max-width: 1040px; padding: 0 24px;
+  display: flex; align-items: center; justify-content: space-between;
+}
+.nav .brand {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 12.5px; font-weight: 600; color: var(--ink); text-decoration: none;
+  letter-spacing: 0.03em; text-transform: uppercase;
+}
+.nav .actions { display: flex; gap: 10px; }
+
+.btn-pill {
+  display: inline-flex; align-items: center; justify-content: center;
+  border-radius: 8px; padding: 8px 16px; font-size: 12.5px; font-weight: 600;
+  border: 1px solid var(--border); background: var(--paper-alt); color: var(--ink);
+  cursor: pointer; font-family: inherit; transition: background 0.15s ease, border-color 0.15s ease;
+  white-space: nowrap;
+}
+.btn-pill:hover { background: var(--border); }
+.btn-pill:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.btn-pill.filled { background: var(--accent); border-color: var(--accent); color: #fff8f0; }
+.btn-pill.filled:hover { background: var(--accent-hover); }
+
+/* ---- report hero: styled like a manifest / shipping label header ---- */
+.hero {
+  max-width: 900px; margin: 0 auto; padding: 48px 24px 28px;
+}
+.eyebrow {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 11.5px; font-weight: 600; color: var(--muted); letter-spacing: 0.08em; text-transform: uppercase;
+}
+.hero h1 {
+  font-size: clamp(30px, 5vw, 44px); font-weight: 700; letter-spacing: -0.02em;
+  line-height: 1.1; text-wrap: balance; margin-top: 4px;
+}
+.manifest-row {
+  margin-top: 20px; display: flex; flex-wrap: wrap; gap: 10px;
+}
+.manifest-chip {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 12px; color: var(--ink-secondary); background: var(--paper-alt);
+  border: 1px solid var(--border); border-radius: 6px; padding: 5px 10px;
+}
+.manifest-chip strong { color: var(--ink); font-weight: 600; }
+
+/* ---- tab bar ---- */
+.tab-shell { max-width: 900px; margin: 0 auto; padding: 0 24px 80px; }
+.tab-bar {
+  display: flex; gap: 4px; border-bottom: 1px solid var(--border); margin-bottom: 32px;
+  overflow-x: auto;
+}
+.tab-btn {
+  font-family: inherit; font-size: 14.5px; font-weight: 600; color: var(--muted);
+  background: none; border: none; border-bottom: 2.5px solid transparent;
+  padding: 12px 6px; margin-right: 22px; cursor: pointer; white-space: nowrap;
+  display: flex; align-items: center; gap: 8px; transition: color 0.15s ease;
+}
+.tab-btn:hover { color: var(--ink); }
+.tab-btn.active { color: var(--ink); border-bottom-color: var(--accent); }
+.tab-count {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 11px; background: var(--paper-alt); border: 1px solid var(--border);
+  border-radius: 999px; padding: 1px 7px; color: var(--ink-secondary);
+}
+.tab-btn.active .tab-count { border-color: var(--accent); color: var(--accent); }
+
+.section-label {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 11.5px; text-transform: uppercase; letter-spacing: 0.07em;
+  color: var(--muted); font-weight: 600; margin-bottom: 20px;
+}
+.empty { color: var(--muted); font-style: italic; font-size: 15px; }
+
+/* ---- facts ---- */
+.fact-list { display: flex; flex-direction: column; gap: 22px; }
+.fact-item { border-left: 3px solid var(--border); padding-left: 18px; }
+.fact-claim {
+  display: block; font-size: 17px; font-weight: 600; line-height: 1.4; letter-spacing: -0.005em;
+  margin-bottom: 8px; color: var(--ink); text-decoration: underline;
+  text-decoration-color: var(--border); text-decoration-thickness: 1.5px; text-underline-offset: 3px;
+  transition: color 0.15s ease, text-decoration-color 0.15s ease, border-color 0.15s ease;
+}
+.fact-item:has(.fact-claim:hover) { border-left-color: var(--accent); }
+.fact-claim:hover { color: var(--accent); text-decoration-color: var(--accent); }
+.fact-claim::after { content: " \2197"; font-size: 0.65em; color: var(--muted); text-decoration: none; }
+.fact-quote {
+  font-size: 14.5px; color: var(--ink-secondary); font-style: italic; line-height: 1.5;
+}
+
+/* ---- gaps ---- */
+.gap-card { background: var(--paper-alt); border: 1px solid var(--border); border-radius: 10px; margin-bottom: 12px; overflow: hidden; }
+.gap-summary {
+  cursor: pointer; padding: 16px 20px; display: flex; align-items: center; gap: 14px; list-style: none;
+}
+.gap-summary::-webkit-details-marker { display: none; }
+.gap-summary::marker { content: ""; }
+.gap-severity-row { display: flex; align-items: center; gap: 8px; flex-shrink: 0; }
+.severity-gauge { width: 40px; height: 6px; border-radius: 3px; background: var(--border); overflow: hidden; flex-shrink: 0; }
+.gauge-fill { height: 100%; border-radius: 3px; }
+.severity-label {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 10.5px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; white-space: nowrap;
+}
+.gap-summary h3 { font-size: 15.5px; font-weight: 600; letter-spacing: -0.005em; line-height: 1.35; flex: 1; }
+.gap-summary::after {
+  content: "\2304"; color: var(--muted); font-size: 16px; flex-shrink: 0; transition: transform 0.2s ease;
+}
+.gap-card[open] .gap-summary::after { transform: rotate(180deg); }
+.gap-body { padding: 0 20px 20px; border-top: 1px solid var(--border); padding-top: 16px; margin: 0 20px; }
+.gap-detail { font-size: 15px; color: var(--ink-secondary); line-height: 1.55; margin-bottom: 16px; }
+.gap-meta { font-size: 13px; color: var(--muted); display: flex; flex-direction: column; gap: 10px; }
+.gap-meta strong { color: var(--ink-secondary); font-weight: 600; }
+.gap-service-tags { display: flex; gap: 6px; flex-wrap: wrap; }
+.service-tag {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 10px; font-weight: 700; color: #fff8f0; border-radius: 5px; padding: 2px 6px; letter-spacing: 0.02em;
+}
+.gap-based-on { padding-left: 12px; border-left: 2px solid var(--border); font-style: italic; }
+
+/* ---- pitch ---- */
+.pitch-card {
+  background: var(--frost); color: #f2f8f6; border-radius: 14px; padding: 36px 34px;
+}
+.pitch-card .section-label { color: rgba(242,248,246,0.65); }
+.pitch-angle { font-size: clamp(18px, 2.6vw, 22px); font-weight: 500; line-height: 1.5; letter-spacing: -0.005em; margin-bottom: 26px; }
+.pitch-opener-box { background: rgba(0,0,0,0.18); border-radius: 10px; padding: 22px 24px; }
+.pitch-opener-label {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 11px; color: rgba(242,248,246,0.6); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 10px;
+}
+.pitch-opener-text { font-size: 17px; font-style: italic; line-height: 1.5; margin-bottom: 18px; }
+.pitch-card .btn-pill { background: rgba(242,248,246,0.12); border-color: rgba(242,248,246,0.3); color: #f2f8f6; }
+.pitch-card .btn-pill:hover { background: rgba(242,248,246,0.22); }
+
+@media print {
+  .nav, .tab-bar { display: none; }
+  .tab-panel { display: block !important; margin-bottom: 48px; }
+  .gap-body { display: block !important; }
+  .gap-summary::after { display: none; }
+  .pitch-card { background: #eef5f3 !important; color: #12201d !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .pitch-card .section-label, .pitch-opener-label { color: #4a5a56 !important; }
+  .pitch-opener-box { background: #fff !important; border: 1px solid #ccd8d5; }
+  body { background: #fff; }
+}
+</style>
+</head>
+<body>
+<nav class="nav">
+  <div class="nav-inner">
+    <a class="brand" href="../index.html">&larr; Prospect Scan</a>
+    <div class="actions">
+      <button class="btn-pill" onclick="window.print()">Print / PDF</button>
+      <button class="btn-pill filled" onclick="downloadReport('safe_and_secure_logistics-report.html')">Download</button>
+    </div>
+  </div>
+</nav>
+
+
+<header class="hero">
+  <p class="eyebrow">Prospect report</p>
+  <h1>Safe &amp; Secure Logistics</h1>
+  <div class="manifest-row"><span class="manifest-chip"><strong>Industry:</strong> Pharma cold chain logistics &amp; distribution (WHO-GDP compliant)</span><span class="manifest-chip"><strong>HQ:</strong> Mumbai, Maharashtra, India (Wadala Truck Terminal)</span><span class="manifest-chip"><strong>Founded:</strong> 1951</span><span class="manifest-chip"><strong>Size:</strong> 2,700+ fleet (475 reefers), 70+ warehouses / 185,000 MT capacity, 27 states / 13,850+ pincodes, Rs 1,354 Cr+ revenue (FY26), 12,500+ workforce</span></div>
+</header>
+
+<div class="tab-shell">
+  <div class="tab-bar">
+    <button class="tab-btn active" data-tab="gaps" onclick="switchTab('gaps')">Gaps <span class="tab-count">1</span></button>
+    <button class="tab-btn" data-tab="facts" onclick="switchTab('facts')">Facts <span class="tab-count">4</span></button>
+    <button class="tab-btn" data-tab="pitch" onclick="switchTab('pitch')">Pitch</button>
+  </div>
+
+  <div class="tab-panel" id="tab-gaps">
+    <p class="section-label">1 gaps found &middot; 0 high &middot; 1 medium &middot; 0 low</p>
+    <details class="gap-card">
+  <summary class="gap-summary">
+    <div class="gap-severity-row">
+      <div class="severity-gauge"><div class="gauge-fill" style="width:65%;background:#b8860b"></div></div>
+      <span class="severity-label" style="color:#b8860b">Medium</span>
+    </div>
+    <h3>15-minute interval logging, not real-time deviation alerting</h3>
+  </summary>
+  <div class="gap-body">
+    <p class="gap-detail">Safe &amp; Secure already runs genuinely strong pharma-grade infrastructure -- validated temperature mapping with a 0.3% excursion rate across 30,000+ daily shipments. But digital logging happens every 15 minutes, not instantly: a deviation is caught at the next check-in, not the moment it starts. Even at a 0.3% excursion rate, that&#x27;s roughly 90 shipments a day where real-time alerting could mean catching and correcting a problem minutes sooner, before it ever registers as a logged excursion.</p>
+    <div class="gap-meta">
+      <div class="gap-service-tags"><span class="service-tag" style="background:#1f6e6b">CC</span><span>Cold Chain Management (ThinxFresh)</span></div>
+      <div class="gap-based-on">&ldquo;validated temperature mapping, 15-minute interval digital logging... SSL&#x27;s excursion rate is less than 0.3%; 30,000+ Daily Shipments.&rdquo;</div>
+    </div>
+  </div>
+</details>
+  </div>
+
+  <div class="tab-panel" id="tab-facts" style="display:none">
+    <p class="section-label">Sourced facts</p>
+    <ul class="fact-list" style="list-style:none"><li class="fact-item">
+  <a class="fact-claim" href="https://safeandsecure.in/pharma-logistics-india/" target="_blank" rel="noopener">Safe &amp; Secure Logistics has operated since 1951, headquartered at Wadala Truck Terminal, Mumbai.</a>
+  <blockquote class="fact-quote">&ldquo;Since 1951... BGTA Ganga Premises Cooperative Society, A3, Office no 115, Wadala Truck Terminal, near Indian Oil Petrol Pump, Mumbai 37.&rdquo;</blockquote>
+</li><li class="fact-item">
+  <a class="fact-claim" href="https://safeandsecure.in/pharma-logistics-india/" target="_blank" rel="noopener">The company operates a 2,700+ owned fleet including 475 reefers (temperature-controlled vehicles), 700+ owned 40ft containers, and 70+ warehouses totaling 185,000 MT of storage capacity.</a>
+  <blockquote class="fact-quote">&ldquo;2,700+ Owned Fleet. 475 Reefers. 70+ Warehouses / 185,000 MT. 700+ Owned 40ft Containers.&rdquo;</blockquote>
+</li><li class="fact-item">
+  <a class="fact-claim" href="https://safeandsecure.in/pharma-logistics-india/" target="_blank" rel="noopener">Safe &amp; Secure offers temperature-controlled transport across three ranges (2C-8C, 15C-25C, -18C) under WHO Good Distribution Practice (GDP) guidelines, with validated temperature mapping and digital logging at 15-minute intervals, reporting a temperature excursion rate of less than 0.3%.</a>
+  <blockquote class="fact-quote">&ldquo;temperature-controlled transport (2C-8C, 15C-25C, -18C)... WHO Good Distribution Practice (GDP) guidelines... validated temperature mapping, 15-minute interval digital logging... SSL&#x27;s excursion rate is less than 0.3%.&rdquo;</blockquote>
+</li><li class="fact-item">
+  <a class="fact-claim" href="https://safeandsecure.in/pharma-logistics-india/" target="_blank" rel="noopener">The company covers 27 states and 13,850+ pincodes across India, including major pharma manufacturing hubs Hyderabad, Ahmedabad/Gujarat, and Baddi-BBN (Himachal Pradesh), reporting Rs 1,354 Cr+ group consolidated revenue (FY26), 30,000+ daily shipments, 2,500+ enterprise clients, and a 12,500+ workforce.</a>
+  <blockquote class="fact-quote">&ldquo;27 States / 13,850+ Pincodes... Hyderabad, Ahmedabad/Gujarat, Baddi-BBN (Himachal Pradesh), Pune, and Mumbai... Rs 1,354 Cr+ Group Consolidated Revenue (FY26)... 30,000+ Daily Shipments... 2,500+ Enterprise Clients... 12,500+ Workforce.&rdquo;</blockquote>
+</li></ul>
+  </div>
+
+  <div class="tab-panel" id="tab-pitch" style="display:none">
+    <p class="section-label">Pitch</p>
+    <div class="pitch-card">
+      <p class="pitch-angle">Safe &amp; Secure already runs pharma-grade cold chain at a scale most competitors can&#x27;t touch -- 475 reefers, 70+ warehouses, WHO-GDP compliance, and a genuinely strong 0.3% excursion rate across 30,000+ daily shipments. That excursion rate is checked every 15 minutes, though, not instantly -- at that volume, moving from interval logging to real-time deviation alerts is the difference between catching a problem the moment it starts and catching it up to 15 minutes late, across roughly 90 shipments a day that currently register as excursions. GND&#x27;s ThinxFresh doesn&#x27;t replace SSL&#x27;s infrastructure -- it closes that 15-minute gap.</p>
+      <div class="pitch-opener-box">
+        <div class="pitch-opener-label">Opener</div>
+        <p class="pitch-opener-text" id="pitch-opener">With a 0.3% excursion rate across 30,000+ daily shipments, how much of that is caught by 15-minute interval logging versus instant, real-time alerts?</p>
+        <button class="btn-pill" onclick="copyOpener(this)">Copy opener</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+function copyOpener(btn) {
+  var text = document.getElementById('pitch-opener').innerText;
+  navigator.clipboard.writeText(text).then(function () {
+    var original = btn.textContent;
+    btn.textContent = 'Copied';
+    setTimeout(function () { btn.textContent = original; }, 1500);
+  });
+}
+function downloadReport(filename) {
+  var html = '<!DOCTYPE html>\n' + document.documentElement.outerHTML;
+  var blob = new Blob([html], { type: 'text/html' });
+  var url = URL.createObjectURL(blob);
+  var a = document.createElement('a');
+  a.href = url;
+  a.download = filename;
+  a.click();
+  URL.revokeObjectURL(url);
+}
+function switchTab(name) {
+  document.querySelectorAll('.tab-panel').forEach(function (p) { p.style.display = 'none'; });
+  document.querySelectorAll('.tab-btn').forEach(function (b) { b.classList.remove('active'); });
+  document.getElementById('tab-' + name).style.display = 'block';
+  document.querySelector('.tab-btn[data-tab="' + name + '"]').classList.add('active');
+}
+
+function saveCompany(slug, btn) {
+  btn.disabled = true;
+  btn.textContent = 'Saving\u2026';
+  fetch('/api/save?slug=' + encodeURIComponent(slug), { method: 'POST' })
+    .then(function (r) { return r.json(); })
+    .then(function () { window.location.href = '/reports/' + slug + '.html'; })
+    .catch(function () { btn.disabled = false; btn.textContent = 'Save to corpus'; });
+}
+function discardCompany(slug, btn) {
+  if (!confirm('Discard this research? Nothing will be saved.')) return;
+  btn.disabled = true;
+  fetch('/api/discard?slug=' + encodeURIComponent(slug), { method: 'POST' })
+    .then(function () { window.location.href = '/'; });
+}
+</script>
+</body>
+</html>

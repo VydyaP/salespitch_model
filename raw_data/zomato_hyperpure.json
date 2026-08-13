@@ -1,0 +1,29 @@
+{
+  "company_name": "Zomato Hyperpure",
+  "founded": "B2B supply vertical of Zomato; parent company incorporated 2010, renamed Eternal Limited (name change effective March 20, 2025, announced Feb 6, 2025)",
+  "hq": "Registered office New Delhi; corporate office Gurugram, Haryana, India",
+  "industry": "B2B food supply chain -- fresh/frozen ingredients (fruits, vegetables, meat, seafood) for restaurants, hotels, caterers",
+  "size": "5+ lakh sq ft of new warehousing leased across 2 sites in under a year; part of Eternal Limited (parent of Zomato, Blinkit, District), ~$25B market cap group",
+  "facts": [
+    {
+      "claim": "Zomato Ltd's shareholders approved renaming the company to Eternal Limited (announced Feb 6, 2025, effective March 20, 2025); Hyperpure operates as the B2B venture within the Eternal group alongside Blinkit (quick commerce) and District (events), while the Zomato brand continues for food delivery.",
+      "source_snippet": "The quick-commerce unit Blinkit has become the dominant business driver... Hyperpure operates as a 'business-to-business venture' within the Eternal corporate group. The rebrand encompasses multiple business lines under one parent entity -- Blinkit (quick commerce), Hyperpure (B2B), and District (events) -- while the Zomato app and brand name remain unchanged for food delivery services.",
+      "source_url": "https://techcrunch.com/2025/02/06/indias-zomato-to-rebrand-as-eternal"
+    },
+    {
+      "claim": "Eternal Limited's registered office is in New Delhi with a corporate office in Gurugram; the company was incorporated in 2010 and formally renamed from Zomato Limited on March 20, 2025.",
+      "source_snippet": "Eternal Limited is a public limited company incorporated in 2010 and listed in India, with its registered office in New Delhi and corporate office in Gurugram... the Company changed its name to Eternal Limited on March 20, 2025.",
+      "source_url": "https://en.wikipedia.org/wiki/Eternal_Limited"
+    },
+    {
+      "claim": "In under a year, Zomato Hyperpure leased more than 5 lakh sq ft of warehousing across two sites in the Mumbai Metropolitan Region: 2.5 lakh sq ft in Bhiwandi (5-year lease signed August 2025, ~Rs 66.21 lakh/month rent from March 2026) and 2.53 lakh sq ft in Palava (5-year lease from February 15, 2025, ~Rs 85.3 lakh/month), both with 5% annual rent escalation.",
+      "source_snippet": "Together, Zomato Hyperpure has leased more than 5 lakh sq ft of modern warehousing space in less than a year... Bhiwandi Lease: 2.5 lakh sq ft... five-year lease signed in August 2025... Palava Lease: 2.53 lakh sq ft... a five-year lease, beginning February 15, 2025.",
+      "source_url": "https://leasewarehouse.in/blog/post_details/246"
+    },
+    {
+      "claim": "The Bhiwandi warehouse will support Hyperpure's sourcing and distribution of fresh and packaged products -- fruits, vegetables, meat, seafood, groceries, and essentials -- for hotels, restaurants, caterers, and food businesses.",
+      "source_snippet": "The warehouse will support Zomato Hyperpure's operations in sourcing and distributing fresh and packaged products, ranging from fruits, vegetables, meat, and seafood to groceries and essentials, catering to hotels, restaurants, caterers, and food businesses.",
+      "source_url": "https://www.logisticsinsider.in/zomato-hyperpure-expands-b2b-supply-chain-with-major-warehouse-lease-in-bhiwandi/"
+    }
+  ]
+}

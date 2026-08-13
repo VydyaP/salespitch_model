@@ -1,0 +1,22 @@
+{
+  "gaps": [
+    {
+      "title": "Five-stage cold chain across separate facility types, no stated unified tracking",
+      "detail": "Shrimp moves through a hatchery, captive farms, two processing plants, and two feed mills spread across five towns in Andhra Pradesh before export. Each handoff between stages is a point where temperature and quality data could go untracked unless one system follows the product from farm to frozen shipment -- nothing in available research names a system that does that end-to-end.",
+      "severity": "high",
+      "gnd_service": "Warehouse Management + Cold Chain Management (ThinxFresh)",
+      "based_on": "Devi Sea Foods started in 1992 and is vertically integrated across five facility types: a shrimp hatchery (established 1994, Kakinada), captive farming (~200 acres near Ongole), processing plants in Singarayakonda (1997) and Tanuku (2000), and feed manufacturing units near Kakinada (2005) and Ongole (2018)."
+    },
+    {
+      "title": "Four parallel international food-safety standards for a highly perishable product",
+      "detail": "Processing facilities comply with BRC, BAP, IFS, and ASC certification programs simultaneously, on top of MPEDA government export requirements. Seafood has less tolerance for a temperature slip than most cold-chain products -- proving compliance across four standards at once, per shipment, is a heavier and more time-sensitive documentation burden than most cold-chain exporters face.",
+      "severity": "medium",
+      "gnd_service": "Cold Chain Management (ThinxFresh)",
+      "based_on": "The company operates two modern shrimp processing facilities that comply with internationally recognized food safety accreditations including BRC, BAP, and IFS, and supports BAP and ASC certification programs, alongside multiple MPEDA export performance awards."
+    }
+  ],
+  "pitch": {
+    "angle": "Devi's shrimp travels through five distinct stages before it's frozen for export -- hatchery, farm, processing plant, and the feed operations feeding the farms -- spread across five different towns in Andhra Pradesh, certified to BRC, BAP, IFS, and ASC standards simultaneously. Seafood has less tolerance for a temperature slip than almost any other cold-chain product; one unified deviation-alert and compliance-reporting system across every stage, not just the final freezer, is what actually protects a shipment from farm to a US retail shelf.",
+    "opener": "With shrimp moving through five separate facility types before export, how are you tracking temperature and compliance consistently from farm to frozen shipment today?"
+  }
+}

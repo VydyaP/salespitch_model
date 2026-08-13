@@ -1,0 +1,29 @@
+{
+  "company_name": "Vadilal Industries",
+  "founded": "1907 (first ice cream made); publicly listed via 1989 IPO",
+  "hq": "Ahmedabad, Gujarat, India",
+  "industry": "Ice cream & frozen foods manufacturing (frozen desserts, processed fruit/vegetables, ready meals)",
+  "size": "3 manufacturing plants, 1.25 lakh litres/day capacity, ~23 C&FA, 500+ distributors, 40,000+ retail outlets; ~25% of India's ice cream market",
+  "facts": [
+    {
+      "claim": "Vadilal made its first ice cream in 1907 in Ahmedabad using the traditional kothi method with a hand-cranked machine, founded by Vadilal Gandhi; the company went public via a 1989 IPO and trades on both BSE and NSE.",
+      "source_snippet": "In 1907, Vadilal made its first ice cream 'using the traditional kothi method', with a hand-cranked machine... Its stock trades on two Indian exchanges: the Bombay Stock Exchange (ticker: 519156) and the National Stock Exchange of India (ticker: VADILALIND). The company went public through an initial public offering in 1989.",
+      "source_url": "https://en.wikipedia.org/wiki/Vadilal"
+    },
+    {
+      "claim": "Vadilal operates a Cold Chain Network comprising three manufacturing plants (Pundhra and Dharampur in Gujarat, and Bareilly in Uttar Pradesh) totaling a production capacity of 1.25 lakh litres per day, about 23 C&FA, more than 500 distributors, and over 40,000 retailers.",
+      "source_snippet": "a Cold Chain Network comprising three manufacturing plants [totaling a production capacity of 1.25 lakh litre per day], about 23 C&FA, more than 500 Distributors and over 40,000 Retailers.",
+      "source_url": "https://www.indiamart.com/vadilal-industries-ltd-ahmedabad/aboutus.html"
+    },
+    {
+      "claim": "Vadilal offers 120+ flavors across more than 250 pack forms, and holds roughly a quarter of India's Rs. 15 billion (US$330 million) ice cream industry.",
+      "source_snippet": "120 plus flavors, in a variety of more than 250 packs and forms... The Ice Cream industry in India today has a turnover of Rs. 15 billion [US$ 330 million]. A quarter of this comes from the house of Vadilal alone.",
+      "source_url": "https://www.indiamart.com/vadilal-industries-ltd-ahmedabad/aboutus.html"
+    },
+    {
+      "claim": "The Pundhra plant holds Export Inspection Council of India certification for exports, and Vadilal is recognized as one of the pioneers of India's frozen food export market, including processed vegetables, fruit, ready meals, snacks, ice cream and desserts.",
+      "source_snippet": "Export Inspection Council of India certification for exports... Vadilal is recognised as one of the pioneers of the frozen food export market in India, including processed vegetables, fruit, ready meals, snacks, ice cream and desserts.",
+      "source_url": "https://www.indiamart.com/vadilal-industries-ltd-ahmedabad/aboutus.html"
+    }
+  ]
+}

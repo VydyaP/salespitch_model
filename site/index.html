@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Prospect Scan</title>
+<style>
+:root {
+  --paper: #f6f2e7;
+  --paper-alt: #efe6d2;
+  --ink: #2b2118;
+  --ink-secondary: #6b5d4f;
+  --muted: #9c8f7e;
+  --border: #ddd3bf;
+  --accent: #d9622b;
+  --accent-hover: #c2531f;
+  --frost: #1f6e6b;
+  --nav-bg: rgba(246,242,231,0.85);
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --paper: #1c1712; --paper-alt: #262019; --ink: #f2e9d8; --ink-secondary: #c4b7a2;
+    --muted: #8a7c68; --border: #3a3226; --accent: #ff7a3d; --accent-hover: #ff8f5c;
+    --frost: #3fa39e; --nav-bg: rgba(28,23,18,0.85);
+  }
+}
+:root[data-theme="dark"] {
+  --paper: #1c1712; --paper-alt: #262019; --ink: #f2e9d8; --ink-secondary: #c4b7a2;
+  --muted: #8a7c68; --border: #3a3226; --accent: #ff7a3d; --accent-hover: #ff8f5c;
+  --frost: #3fa39e; --nav-bg: rgba(28,23,18,0.85);
+}
+:root[data-theme="light"] {
+  --paper: #f6f2e7; --paper-alt: #efe6d2; --ink: #2b2118; --ink-secondary: #6b5d4f;
+  --muted: #9c8f7e; --border: #ddd3bf; --accent: #d9622b; --accent-hover: #c2531f;
+  --frost: #1f6e6b; --nav-bg: rgba(246,242,231,0.85);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  background: var(--paper);
+  color: var(--ink);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: var(--accent); text-decoration: none; }
+img, svg { max-width: 100%; }
+
+.mono {
+  font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+}
+
+.nav {
+  position: sticky; top: 0; z-index: 100; height: 56px;
+  display: flex; align-items: center; justify-content: center;
+  backdrop-filter: saturate(160%) blur(16px);
+  -webkit-backdrop-filter: saturate(160%) blur(16px);
+  background: var(--nav-bg);
+  border-bottom: 1px solid var(--border);
+}
+.nav-inner {
+  width: 100%; max-width: 1040px; padding: 0 24px;
+  display: flex; align-items: center; justify-content: space-between;
+}
+.nav .brand {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 12.5px; font-weight: 600; color: var(--ink); text-decoration: none;
+  letter-spacing: 0.03em; text-transform: uppercase;
+}
+.nav .actions { display: flex; gap: 10px; }
+
+.btn-pill {
+  display: inline-flex; align-items: center; justify-content: center;
+  border-radius: 8px; padding: 8px 16px; font-size: 12.5px; font-weight: 600;
+  border: 1px solid var(--border); background: var(--paper-alt); color: var(--ink);
+  cursor: pointer; font-family: inherit; transition: background 0.15s ease, border-color 0.15s ease;
+  white-space: nowrap;
+}
+.btn-pill:hover { background: var(--border); }
+.btn-pill:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.btn-pill.filled { background: var(--accent); border-color: var(--accent); color: #fff8f0; }
+.btn-pill.filled:hover { background: var(--accent-hover); }
+
+/* ---- report hero: styled like a manifest / shipping label header ---- */
+.hero {
+  max-width: 900px; margin: 0 auto; padding: 48px 24px 28px;
+}
+.eyebrow {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 11.5px; font-weight: 600; color: var(--muted); letter-spacing: 0.08em; text-transform: uppercase;
+}
+.hero h1 {
+  font-size: clamp(30px, 5vw, 44px); font-weight: 700; letter-spacing: -0.02em;
+  line-height: 1.1; text-wrap: balance; margin-top: 4px;
+}
+.manifest-row {
+  margin-top: 20px; display: flex; flex-wrap: wrap; gap: 10px;
+}
+.manifest-chip {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 12px; color: var(--ink-secondary); background: var(--paper-alt);
+  border: 1px solid var(--border); border-radius: 6px; padding: 5px 10px;
+}
+.manifest-chip strong { color: var(--ink); font-weight: 600; }
+
+/* ---- tab bar ---- */
+.tab-shell { max-width: 900px; margin: 0 auto; padding: 0 24px 80px; }
+.tab-bar {
+  display: flex; gap: 4px; border-bottom: 1px solid var(--border); margin-bottom: 32px;
+  overflow-x: auto;
+}
+.tab-btn {
+  font-family: inherit; font-size: 14.5px; font-weight: 600; color: var(--muted);
+  background: none; border: none; border-bottom: 2.5px solid transparent;
+  padding: 12px 6px; margin-right: 22px; cursor: pointer; white-space: nowrap;
+  display: flex; align-items: center; gap: 8px; transition: color 0.15s ease;
+}
+.tab-btn:hover { color: var(--ink); }
+.tab-btn.active { color: var(--ink); border-bottom-color: var(--accent); }
+.tab-count {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 11px; background: var(--paper-alt); border: 1px solid var(--border);
+  border-radius: 999px; padding: 1px 7px; color: var(--ink-secondary);
+}
+.tab-btn.active .tab-count { border-color: var(--accent); color: var(--accent); }
+
+.section-label {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 11.5px; text-transform: uppercase; letter-spacing: 0.07em;
+  color: var(--muted); font-weight: 600; margin-bottom: 20px;
+}
+.empty { color: var(--muted); font-style: italic; font-size: 15px; }
+
+/* ---- facts ---- */
+.fact-list { display: flex; flex-direction: column; gap: 22px; }
+.fact-item { border-left: 3px solid var(--border); padding-left: 18px; }
+.fact-claim {
+  display: block; font-size: 17px; font-weight: 600; line-height: 1.4; letter-spacing: -0.005em;
+  margin-bottom: 8px; color: var(--ink); text-decoration: underline;
+  text-decoration-color: var(--border); text-decoration-thickness: 1.5px; text-underline-offset: 3px;
+  transition: color 0.15s ease, text-decoration-color 0.15s ease, border-color 0.15s ease;
+}
+.fact-item:has(.fact-claim:hover) { border-left-color: var(--accent); }
+.fact-claim:hover { color: var(--accent); text-decoration-color: var(--accent); }
+.fact-claim::after { content: " \2197"; font-size: 0.65em; color: var(--muted); text-decoration: none; }
+.fact-quote {
+  font-size: 14.5px; color: var(--ink-secondary); font-style: italic; line-height: 1.5;
+}
+
+/* ---- gaps ---- */
+.gap-card { background: var(--paper-alt); border: 1px solid var(--border); border-radius: 10px; margin-bottom: 12px; overflow: hidden; }
+.gap-summary {
+  cursor: pointer; padding: 16px 20px; display: flex; align-items: center; gap: 14px; list-style: none;
+}
+.gap-summary::-webkit-details-marker { display: none; }
+.gap-summary::marker { content: ""; }
+.gap-severity-row { display: flex; align-items: center; gap: 8px; flex-shrink: 0; }
+.severity-gauge { width: 40px; height: 6px; border-radius: 3px; background: var(--border); overflow: hidden; flex-shrink: 0; }
+.gauge-fill { height: 100%; border-radius: 3px; }
+.severity-label {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 10.5px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; white-space: nowrap;
+}
+.gap-summary h3 { font-size: 15.5px; font-weight: 600; letter-spacing: -0.005em; line-height: 1.35; flex: 1; }
+.gap-summary::after {
+  content: "\2304"; color: var(--muted); font-size: 16px; flex-shrink: 0; transition: transform 0.2s ease;
+}
+.gap-card[open] .gap-summary::after { transform: rotate(180deg); }
+.gap-body { padding: 0 20px 20px; border-top: 1px solid var(--border); padding-top: 16px; margin: 0 20px; }
+.gap-detail { font-size: 15px; color: var(--ink-secondary); line-height: 1.55; margin-bottom: 16px; }
+.gap-meta { font-size: 13px; color: var(--muted); display: flex; flex-direction: column; gap: 10px; }
+.gap-meta strong { color: var(--ink-secondary); font-weight: 600; }
+.gap-service-tags { display: flex; gap: 6px; flex-wrap: wrap; }
+.service-tag {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 10px; font-weight: 700; color: #fff8f0; border-radius: 5px; padding: 2px 6px; letter-spacing: 0.02em;
+}
+.gap-based-on { padding-left: 12px; border-left: 2px solid var(--border); font-style: italic; }
+
+/* ---- pitch ---- */
+.pitch-card {
+  background: var(--frost); color: #f2f8f6; border-radius: 14px; padding: 36px 34px;
+}
+.pitch-card .section-label { color: rgba(242,248,246,0.65); }
+.pitch-angle { font-size: clamp(18px, 2.6vw, 22px); font-weight: 500; line-height: 1.5; letter-spacing: -0.005em; margin-bottom: 26px; }
+.pitch-opener-box { background: rgba(0,0,0,0.18); border-radius: 10px; padding: 22px 24px; }
+.pitch-opener-label {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 11px; color: rgba(242,248,246,0.6); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 10px;
+}
+.pitch-opener-text { font-size: 17px; font-style: italic; line-height: 1.5; margin-bottom: 18px; }
+.pitch-card .btn-pill { background: rgba(242,248,246,0.12); border-color: rgba(242,248,246,0.3); color: #f2f8f6; }
+.pitch-card .btn-pill:hover { background: rgba(242,248,246,0.22); }
+
+@media print {
+  .nav, .tab-bar { display: none; }
+  .tab-panel { display: block !important; margin-bottom: 48px; }
+  .gap-body { display: block !important; }
+  .gap-summary::after { display: none; }
+  .pitch-card { background: #eef5f3 !important; color: #12201d !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .pitch-card .section-label, .pitch-opener-label { color: #4a5a56 !important; }
+  .pitch-opener-box { background: #fff !important; border: 1px solid #ccd8d5; }
+  body { background: #fff; }
+}
+
+.index-hero { text-align: center; padding: 90px 24px 0; max-width: 900px; margin: 0 auto; }
+.index-hero h1 { font-size: clamp(38px, 6.5vw, 58px); font-weight: 700; letter-spacing: -0.025em; line-height: 1.05; text-wrap: balance; }
+.index-hero p { font-size: 18px; color: var(--ink-secondary); margin-top: 14px; }
+.suggest-wrap { position: relative; margin: 32px auto 0; max-width: 480px; }
+.search-pill {
+  display: flex; align-items: center; gap: 10px;
+  background: var(--paper-alt); border: 1px solid var(--border); border-radius: 10px; padding: 13px 18px;
+}
+.search-pill svg { flex-shrink: 0; color: var(--muted); }
+.search-pill input {
+  border: none; background: transparent; outline: none; font-size: 16px; width: 100%;
+  color: var(--ink); font-family: inherit;
+}
+.suggest-dropdown {
+  display: none; position: absolute; top: calc(100% + 8px); left: 0; right: 0;
+  background: var(--paper); border: 1px solid var(--border); border-radius: 10px;
+  box-shadow: 0 12px 32px rgba(43,33,24,0.16); overflow: hidden; z-index: 50; text-align: left;
+}
+.suggest-item {
+  padding: 12px 18px; cursor: pointer; display: flex; align-items: center;
+  justify-content: space-between; gap: 12px; font-size: 14.5px; border-top: 1px solid var(--border);
+}
+.suggest-item:first-child { border-top: none; }
+.suggest-item:hover { background: var(--paper-alt); }
+.suggest-name { font-weight: 600; }
+.suggest-tag {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 10.5px; padding: 3px 8px; border-radius: 5px; color: var(--muted);
+  border: 1px solid var(--border); flex-shrink: 0; white-space: nowrap;
+}
+.suggest-tag.corpus { color: var(--accent); border-color: var(--accent); }
+
+.engine-select-wrap {
+  display: flex; align-items: center; justify-content: center; gap: 8px;
+  margin-top: 16px; font-size: 12.5px; color: var(--muted); font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+}
+.engine-select {
+  font-family: inherit; font-size: 12px; font-weight: 600; color: var(--ink);
+  background: var(--paper-alt); border: 1px solid var(--border); border-radius: 6px;
+  padding: 5px 10px; cursor: pointer;
+}
+.engine-select option:disabled { color: var(--muted); }
+
+.scan-overlay {
+  position: fixed; inset: 0; background: rgba(43,33,24,0.45); backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px); display: flex; align-items: center; justify-content: center;
+  z-index: 1000; opacity: 0; pointer-events: none; transition: opacity 0.25s ease;
+}
+.scan-overlay.active { opacity: 1; pointer-events: auto; }
+.scan-modal {
+  background: var(--paper); border: 1px solid var(--border); border-radius: 14px; padding: 40px 44px; text-align: center;
+  max-width: 380px; box-shadow: 0 20px 60px rgba(43,33,24,0.3);
+}
+.scan-dots { display: flex; gap: 8px; justify-content: center; margin-bottom: 22px; }
+.scan-dots span {
+  width: 10px; height: 10px; border-radius: 50%; background: var(--accent);
+  animation: scan-pulse 1.4s ease-in-out infinite;
+}
+.scan-dots span:nth-child(2) { animation-delay: 0.2s; }
+.scan-dots span:nth-child(3) { animation-delay: 0.4s; }
+@keyframes scan-pulse {
+  0%, 80%, 100% { opacity: 0.25; transform: scale(0.8); }
+  40% { opacity: 1; transform: scale(1); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .scan-dots span { animation: none; opacity: 0.7; }
+}
+.scan-company { font-size: 18px; font-weight: 700; margin-bottom: 8px; letter-spacing: -0.005em; }
+.scan-status { font-size: 13.5px; color: var(--ink-secondary); }
+.scan-error { display: none; margin-top: 14px; font-size: 13px; color: #c23b22; }
+.scan-close { margin-top: 20px; }
+.scan-confirm-text { font-size: 13.5px; color: var(--ink-secondary); line-height: 1.5; margin: 10px 0 22px; }
+.scan-confirm-text strong { color: var(--ink); }
+.scan-confirm-actions { display: flex; gap: 10px; justify-content: center; }
+
+.company-grid {
+  max-width: 1040px; margin: 0 auto; padding: 60px 24px 100px;
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(270px, 1fr)); gap: 16px;
+}
+.company-card {
+  background: var(--paper-alt); border: 1px solid var(--border); border-radius: 12px; padding: 24px 22px;
+  display: block; color: inherit; text-decoration: none; transition: transform 0.18s ease, border-color 0.18s ease;
+}
+.company-card:hover { transform: rotate(-0.4deg) translateY(-2px); border-color: var(--accent); }
+.company-card h3 { font-size: 18px; font-weight: 700; letter-spacing: -0.01em; margin-bottom: 6px; }
+.company-meta { font-size: 13.5px; color: var(--ink-secondary); margin-bottom: 18px; }
+.severity-row { display: flex; gap: 12px; flex-wrap: wrap; }
+.severity-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; display: inline-block; }
+.severity-chip {
+  display: inline-flex; align-items: center; gap: 6px; font-size: 12px; color: var(--muted);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+}
+#empty-state { display: none; text-align: center; color: var(--muted); padding: 60px 24px; font-size: 15px; }
+</style>
+</head>
+<body>
+<nav class="nav">
+  <div class="nav-inner">
+    <a class="brand" href="#">Prospect Scan</a>
+  </div>
+</nav>
+
+<header class="index-hero">
+  <h1>Prospect Scan</h1>
+  <p>25 researched companies — cold chain, logistics &amp; pharma</p>
+  <div class="suggest-wrap">
+    <div class="search-pill">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+      <input id="search" type="text" placeholder="Search a company — in the corpus or new" oninput="onSearchInput()" onkeydown="searchKeydown(event)" autocomplete="off">
+    </div>
+    <div id="suggestions" class="suggest-dropdown"></div>
+  </div>
+  <div class="engine-select-wrap">
+    <label for="engine-select">Search engine</label>
+    <select id="engine-select" class="engine-select" title="Only Groq's search is live today; other engines are wired up but not yet enabled here.">
+      <option value="groq" selected>Groq &middot; compound-mini</option>
+      <option value="gemini" disabled>Gemini &middot; coming soon</option>
+      <option value="claude" disabled>Claude &middot; needs API budget</option>
+    </select>
+  </div>
+</header>
+
+<div class="company-grid"><a class="company-card" href="reports/blue_dart_express.html" data-search="blue dart express express air &amp; ground parcel/courier logistics (primary business); temperature-controlled logistics for pharma/clinical shipments (secondary, specialized service) mumbai, maharashtra, india">
+  <h3>Blue Dart Express</h3>
+  <div class="company-meta">Express air &amp; ground parcel/courier logistics (primary business); temperature-controlled logistics for pharma/clinical shipments (secondary, specialized service) &middot; Mumbai, Maharashtra, India</div>
+  <div class="severity-row"><span class="severity-chip"><span class="severity-dot" style="background:#b8860b"></span>1 medium</span></div>
+</a><a class="company-card" href="reports/burris_logistics.html" data-search="burris logistics transportation, logistics, supply chain and storage 501 se 5th street, milford, de 19963, united states">
+  <h3>Burris Logistics</h3>
+  <div class="company-meta">Transportation, Logistics, Supply Chain and Storage &middot; 501 SE 5th Street, Milford, DE 19963, United States</div>
+  <div class="severity-row"><span class="severity-chip"><span class="severity-dot" style="background:#c23b22"></span>1 high</span><span class="severity-chip"><span class="severity-dot" style="background:#b8860b"></span>2 medium</span><span class="severity-chip"><span class="severity-dot" style="background:#3f7d5c"></span>1 low</span></div>
+</a><a class="company-card" href="reports/cold_chain_3pl.html" data-search="cold chain 3pl transportation, logistics, supply chain and storage unknown">
+  <h3>Cold Chain 3PL</h3>
+  <div class="company-meta">Transportation, Logistics, Supply Chain and Storage &middot; Unknown</div>
+  <div class="severity-row"><span class="severity-chip"><span class="severity-dot" style="background:#c23b22"></span>2 high</span><span class="severity-chip"><span class="severity-dot" style="background:#b8860b"></span>1 medium</span></div>
+</a><a class="company-card" href="reports/coldrush_logistics.html" data-search="coldrush logistics cold chain logistics — pharma (incl. vaccines), fmcg, agro/horticulture, meat/seafood, dairy, qsr lower parel, mumbai, maharashtra, india">
+  <h3>Coldrush Logistics</h3>
+  <div class="company-meta">Cold chain logistics — pharma (incl. vaccines), FMCG, agro/horticulture, meat/seafood, dairy, QSR &middot; Lower Parel, Mumbai, Maharashtra, India</div>
+  <div class="severity-row"><span class="severity-chip"><span class="severity-dot" style="background:#c23b22"></span>1 high</span><span class="severity-chip"><span class="severity-dot" style="background:#b8860b"></span>1 medium</span></div>
+</a><a class="company-card" href="reports/cool_chain_logistics.html" data-search="cool chain logistics pharma cold chain logistics -- biological samples, vaccines, medicines (gdp-compliant) getafe, madrid, spain (also barcelona)">
+  <h3>Cool Chain Logistics</h3>
+  <div class="company-meta">Pharma cold chain logistics -- biological samples, vaccines, medicines (GDP-compliant) &middot; Getafe, Madrid, Spain (also Barcelona)</div>
+  <div class="severity-row"><span class="severity-chip"><span class="severity-dot" style="background:#b8860b"></span>2 medium</span></div>
+</a><a class="company-card" href="reports/cwt_limited.html" data-search="cwt limited cold chain / integrated logistics — food manufacturers, wholesalers, retailers singapore">
+  <h3>CWT Limited</h3>
+  <div class="company-meta">Cold chain / integrated logistics — food manufacturers, wholesalers, retailers &middot; Singapore</div>
+  <div class="severity-row"><span class="severity-chip"><span class="severity-dot" style="background:#b8860b"></span>2 medium</span></div>
+</a><a class="company-card" href="reports/devi_sea_foods.html" data-search="devi sea foods shrimp aquaculture, processing &amp; export -- vertically integrated: hatchery, farms, feed mills, processing, distribution andhra pradesh, india (facilities in kakinada, singarayakonda, tanuku, ongole, and peddapuram)">
+  <h3>Devi Sea Foods</h3>
+  <div class="company-meta">Shrimp aquaculture, processing &amp; export -- vertically integrated: hatchery, farms, feed mills, processing, distribution &middot; Andhra Pradesh, India (facilities in Kakinada, Singarayakonda, Tanuku, Ongole, and Peddapuram)</div>
+  <div class="severity-row"><span class="severity-chip"><span class="severity-dot" style="background:#c23b22"></span>1 high</span><span class="severity-chip"><span class="severity-dot" style="background:#b8860b"></span>1 medium</span></div>
+</a><a class="company-card" href="reports/dr_lal_pathlabs.html" data-search="dr lal pathlabs diagnostics &amp; pathology -- clinical labs, sample collection &amp; cold-chain transport network new delhi, india">
+  <h3>Dr Lal PathLabs</h3>
+  <div class="company-meta">Diagnostics &amp; pathology -- clinical labs, sample collection &amp; cold-chain transport network &middot; New Delhi, India</div>
+  <div class="severity-row"><span class="severity-chip"><span class="severity-dot" style="background:#c23b22"></span>1 high</span><span class="severity-chip"><span class="severity-dot" style="background:#b8860b"></span>1 medium</span></div>
+</a><a class="company-card" href="reports/frigorifico_allana.html" data-search="frigorifico allana frozen/chilled meat processing &amp; export (buffalo, lamb, mutton, goat); part of india&#x27;s largest private food conglomerate mumbai, maharashtra, india (allana centre, mg road); frozen meat processing facility in khalapur, maharashtra">
+  <h3>Frigorifico Allana</h3>
+  <div class="company-meta">Frozen/chilled meat processing &amp; export (buffalo, lamb, mutton, goat); part of India&#x27;s largest private food conglomerate &middot; Mumbai, Maharashtra, India (Allana Centre, MG Road); frozen meat processing facility in Khalapur, Maharashtra</div>
+  <div class="severity-row"><span class="severity-chip"><span class="severity-dot" style="background:#c23b22"></span>1 high</span><span class="severity-chip"><span class="severity-dot" style="background:#b8860b"></span>1 medium</span></div>
+</a><a class="company-card" href="reports/frostbite_cold_storage_solutions.html" data-search="frostbite cold storage solutions cold storage and emergency refrigeration services warrington, united kingdom">
+  <h3>Frostbite Cold Storage Solutions</h3>
+  <div class="company-meta">Cold storage and emergency refrigeration services &middot; Warrington, United Kingdom</div>
+  <div class="severity-row"><span class="severity-chip"><span class="severity-dot" style="background:#c23b22"></span>1 high</span><span class="severity-chip"><span class="severity-dot" style="background:#b8860b"></span>2 medium</span><span class="severity-chip"><span class="severity-dot" style="background:#3f7d5c"></span>1 low</span></div>
+</a><a class="company-card" href="reports/gubba_cold_storage.html" data-search="gubba cold storage cold storage — seed preservation, pharmaceutical/vaccine warehousing, food storage hyderabad/secunderabad, telangana, india">
+  <h3>Gubba Cold Storage</h3>
+  <div class="company-meta">Cold storage — seed preservation, pharmaceutical/vaccine warehousing, food storage &middot; Hyderabad/Secunderabad, Telangana, India</div>
+  <div class="severity-row"><span class="severity-chip"><span class="severity-dot" style="background:#c23b22"></span>1 high</span><span class="severity-chip"><span class="severity-dot" style="background:#b8860b"></span>2 medium</span></div>
+</a><a class="company-card" href="reports/hatsun_agro_product.html" data-search="hatsun agro product dairy — milk procurement, processing, and cold chain (india&#x27;s largest private-sector dairy) chennai, tamil nadu, india">
+  <h3>Hatsun Agro Product</h3>
+  <div class="company-meta">Dairy — milk procurement, processing, and cold chain (India&#x27;s largest private-sector dairy) &middot; Chennai, Tamil Nadu, India</div>
+  <div class="severity-row"><span class="severity-chip"><span class="severity-dot" style="background:#c23b22"></span>1 high</span><span class="severity-chip"><span class="severity-dot" style="background:#b8860b"></span>1 medium</span></div>
+</a><a class="company-card" href="reports/ini_farms.html" data-search="ini farms horticulture -- pomegranate &amp; banana export (brand: kimaye), expanding into vegetables mumbai, maharashtra, india">
+  <h3>INI Farms</h3>
+  <div class="company-meta">Horticulture -- pomegranate &amp; banana export (brand: Kimaye), expanding into vegetables &middot; Mumbai, Maharashtra, India</div>
+  <div class="severity-row"><span class="severity-chip"><span class="severity-dot" style="background:#c23b22"></span>1 high</span><span class="severity-chip"><span class="severity-dot" style="background:#b8860b"></span>1 medium</span></div>
+</a><a class="company-card" href="reports/interstate_cold_storage.html" data-search="interstate cold storage cold storage warehousing -- family-owned, midwest regional (multi-temp, food industry) fort wayne, indiana, usa">
+  <h3>Interstate Cold Storage</h3>
+  <div class="company-meta">Cold storage warehousing -- family-owned, Midwest regional (multi-temp, food industry) &middot; Fort Wayne, Indiana, USA</div>
+  <div class="severity-row"><span class="severity-chip"><span class="severity-dot" style="background:#c23b22"></span>1 high</span><span class="severity-chip"><span class="severity-dot" style="background:#b8860b"></span>1 medium</span></div>
+</a><a class="company-card" href="reports/karras_cold_logistics.html" data-search="karras cold logistics refrigerated transport &amp; cold storage — dairy, seafood, poultry, confectionery smithfield, sydney, new south wales, australia">
+  <h3>Karras Cold Logistics</h3>
+  <div class="company-meta">Refrigerated transport &amp; cold storage — dairy, seafood, poultry, confectionery &middot; Smithfield, Sydney, New South Wales, Australia</div>
+  <div class="severity-row"><span class="severity-chip"><span class="severity-dot" style="background:#c23b22"></span>1 high</span><span class="severity-chip"><span class="severity-dot" style="background:#b8860b"></span>1 medium</span></div>
+</a><a class="company-card" href="reports/preferred_freezer_services.html" data-search="preferred freezer services temperature-controlled logistics chatham, new jersey, united states">
+  <h3>Preferred Freezer Services</h3>
+  <div class="company-meta">Temperature-controlled logistics &middot; Chatham, New Jersey, United States</div>
+  <div class="severity-row"><span class="severity-chip"><span class="severity-dot" style="background:#c23b22"></span>1 high</span><span class="severity-chip"><span class="severity-dot" style="background:#b8860b"></span>2 medium</span></div>
+</a><a class="company-card" href="reports/radhakrishna_foodland.html" data-search="radhakrishna foodland cold chain warehousing and food distribution logistics -- serving qsrs, cafes, hotels, cloud kitchens, retail, fmcg, and food service india (multi-city operations; expanded to the middle east in 2021)">
+  <h3>Radhakrishna Foodland</h3>
+  <div class="company-meta">Cold chain warehousing and food distribution logistics -- serving QSRs, cafes, hotels, cloud kitchens, retail, FMCG, and food service &middot; India (multi-city operations; expanded to the Middle East in 2021)</div>
+  <div class="severity-row"><span class="severity-chip"><span class="severity-dot" style="background:#c23b22"></span>1 high</span><span class="severity-chip"><span class="severity-dot" style="background:#b8860b"></span>2 medium</span></div>
+</a><a class="company-card" href="reports/rsa_cold_chain.html" data-search="rsa cold chain cold chain 3pl — retail/grocery, quick commerce, qsr, horeca, food producers dubai, united arab emirates">
+  <h3>RSA Cold Chain</h3>
+  <div class="company-meta">Cold chain 3PL — retail/grocery, quick commerce, QSR, HORECA, food producers &middot; Dubai, United Arab Emirates</div>
+  <div class="severity-row"><span class="severity-chip"><span class="severity-dot" style="background:#b8860b"></span>1 medium</span><span class="severity-chip"><span class="severity-dot" style="background:#3f7d5c"></span>1 low</span></div>
+</a><a class="company-card" href="reports/safe_and_secure_logistics.html" data-search="safe &amp; secure logistics pharma cold chain logistics &amp; distribution (who-gdp compliant) mumbai, maharashtra, india (wadala truck terminal)">
+  <h3>Safe &amp; Secure Logistics</h3>
+  <div class="company-meta">Pharma cold chain logistics &amp; distribution (WHO-GDP compliant) &middot; Mumbai, Maharashtra, India (Wadala Truck Terminal)</div>
+  <div class="severity-row"><span class="severity-chip"><span class="severity-dot" style="background:#b8860b"></span>1 medium</span></div>
+</a><a class="company-card" href="reports/snowman_logistics.html" data-search="snowman logistics cold chain / temperature-controlled logistics (pharma, food, quick commerce) bengaluru, karnataka, india">
+  <h3>Snowman Logistics</h3>
+  <div class="company-meta">Cold chain / temperature-controlled logistics (pharma, food, quick commerce) &middot; Bengaluru, Karnataka, India</div>
+  <div class="severity-row"><span class="severity-chip"><span class="severity-dot" style="background:#c23b22"></span>2 high</span><span class="severity-chip"><span class="severity-dot" style="background:#b8860b"></span>1 medium</span></div>
+</a><a class="company-card" href="reports/tci_cold_chain_solutions.html" data-search="tci cold chain solutions cold chain logistics (pharma, fresh food, dairy, meat, aqua, quick commerce) gurugram, haryana, india (tci group hq)">
+  <h3>TCI Cold Chain Solutions</h3>
+  <div class="company-meta">Cold chain logistics (pharma, fresh food, dairy, meat, aqua, quick commerce) &middot; Gurugram, Haryana, India (TCI Group HQ)</div>
+  <div class="severity-row"><span class="severity-chip"><span class="severity-dot" style="background:#c23b22"></span>1 high</span><span class="severity-chip"><span class="severity-dot" style="background:#b8860b"></span>1 medium</span></div>
+</a><a class="company-card" href="reports/vadilal_industries.html" data-search="vadilal industries ice cream &amp; frozen foods manufacturing (frozen desserts, processed fruit/vegetables, ready meals) ahmedabad, gujarat, india">
+  <h3>Vadilal Industries</h3>
+  <div class="company-meta">Ice cream &amp; frozen foods manufacturing (frozen desserts, processed fruit/vegetables, ready meals) &middot; Ahmedabad, Gujarat, India</div>
+  <div class="severity-row"><span class="severity-chip"><span class="severity-dot" style="background:#c23b22"></span>1 high</span><span class="severity-chip"><span class="severity-dot" style="background:#b8860b"></span>1 medium</span></div>
+</a><a class="company-card" href="reports/venkys_india.html" data-search="venky&#x27;s (india) limited poultry -- breeding, hatcheries, processed chicken, animal health, feed (largest fully integrated poultry group in asia) pune, maharashtra, india">
+  <h3>Venky&#x27;s (India) Limited</h3>
+  <div class="company-meta">Poultry -- breeding, hatcheries, processed chicken, animal health, feed (largest fully integrated poultry group in Asia) &middot; Pune, Maharashtra, India</div>
+  <div class="severity-row"><span class="severity-chip"><span class="severity-dot" style="background:#b8860b"></span>1 medium</span></div>
+</a><a class="company-card" href="reports/zepto.html" data-search="zepto quick commerce -- 10-minute grocery delivery via dark stores (direct-to-consumer) bengaluru, karnataka, india (started as a mumbai-based startup)">
+  <h3>Zepto</h3>
+  <div class="company-meta">Quick commerce -- 10-minute grocery delivery via dark stores (direct-to-consumer) &middot; Bengaluru, Karnataka, India (started as a Mumbai-based startup)</div>
+  <div class="severity-row"><span class="severity-chip"><span class="severity-dot" style="background:#c23b22"></span>2 high</span></div>
+</a><a class="company-card" href="reports/zomato_hyperpure.html" data-search="zomato hyperpure b2b food supply chain -- fresh/frozen ingredients (fruits, vegetables, meat, seafood) for restaurants, hotels, caterers registered office new delhi; corporate office gurugram, haryana, india">
+  <h3>Zomato Hyperpure</h3>
+  <div class="company-meta">B2B food supply chain -- fresh/frozen ingredients (fruits, vegetables, meat, seafood) for restaurants, hotels, caterers &middot; Registered office New Delhi; corporate office Gurugram, Haryana, India</div>
+  <div class="severity-row"><span class="severity-chip"><span class="severity-dot" style="background:#c23b22"></span>1 high</span><span class="severity-chip"><span class="severity-dot" style="background:#b8860b"></span>1 medium</span></div>
+</a></div>
+<div id="empty-state">No companies match your search.</div>
+
+<div id="scan-overlay" class="scan-overlay">
+  <div class="scan-modal">
+    <div id="scan-progress">
+      <div class="scan-dots"><span></span><span></span><span></span></div>
+      <div class="scan-company" id="scan-company"></div>
+      <div class="scan-status" id="scan-status"></div>
+      <div class="scan-error" id="scan-error"></div>
+      <button class="btn-pill scan-close" id="scan-close-btn" onclick="closeScanOverlay()">Cancel</button>
+    </div>
+    <div id="scan-confirm" style="display:none">
+      <div class="scan-company" id="scan-confirm-company"></div>
+      <p class="scan-confirm-text" id="scan-confirm-text"></p>
+      <div class="scan-confirm-actions">
+        <button class="btn-pill" onclick="confirmCancel()">Cancel</button>
+        <button class="btn-pill filled" onclick="confirmContinue()">Continue anyway</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+function filterCompanies() {
+  var q = document.getElementById('search').value.trim().toLowerCase();
+  var cards = document.querySelectorAll('.company-card');
+  var visible = 0;
+  cards.forEach(function (card) {
+    var haystack = card.getAttribute('data-search');
+    var match = haystack.indexOf(q) !== -1;
+    card.style.display = match ? '' : 'none';
+    if (match) visible++;
+  });
+  document.getElementById('empty-state').style.display = visible === 0 ? 'block' : 'none';
+}
+
+var currentSuggestions = [];
+var suggestTimer = null;
+
+function onSearchInput() {
+  filterCompanies();
+  clearTimeout(suggestTimer);
+  suggestTimer = setTimeout(fetchSuggestions, 250);
+}
+
+function fetchSuggestions() {
+  var q = document.getElementById('search').value.trim();
+  var box = document.getElementById('suggestions');
+  if (!q) { box.style.display = 'none'; box.innerHTML = ''; return; }
+  fetch('/api/suggest?q=' + encodeURIComponent(q))
+    .then(function (r) { return r.json(); })
+    .then(function (data) {
+      currentSuggestions = data.items || [];
+      renderSuggestions(currentSuggestions);
+    })
+    .catch(function () { box.style.display = 'none'; });
+}
+
+function escapeHtml(s) {
+  var d = document.createElement('div');
+  d.textContent = s;
+  return d.innerHTML;
+}
+
+function renderSuggestions(items) {
+  var box = document.getElementById('suggestions');
+  if (!items.length) { box.style.display = 'none'; box.innerHTML = ''; return; }
+  box.innerHTML = items.map(function (item, i) {
+    var tag = item.source === 'corpus' ? 'In corpus' : 'Search the web';
+    return '<div class="suggest-item" onclick="selectSuggestion(' + i + ')">' +
+      '<span class="suggest-name">' + escapeHtml(item.name) + '</span>' +
+      '<span class="suggest-tag ' + item.source + '">' + tag + '</span></div>';
+  }).join('');
+  box.style.display = 'block';
+}
+
+function selectSuggestion(i) {
+  var item = currentSuggestions[i];
+  document.getElementById('suggestions').style.display = 'none';
+  if (item.source === 'corpus') {
+    window.location.href = 'reports/' + item.slug + '.html';
+  } else {
+    startScan(item.name);
+  }
+}
+
+function searchKeydown(e) {
+  if (e.key === 'Enter') searchSubmit();
+}
+
+function searchSubmit() {
+  var q = document.getElementById('search').value.trim();
+  if (!q) return;
+  var exact = null;
+  for (var i = 0; i < currentSuggestions.length; i++) {
+    if (currentSuggestions[i].source === 'corpus' && currentSuggestions[i].name.toLowerCase() === q.toLowerCase()) {
+      exact = currentSuggestions[i];
+      break;
+    }
+  }
+  if (exact) { window.location.href = 'reports/' + exact.slug + '.html'; return; }
+  startScan(q);
+}
+
+var SCAN_STAGE_TEXT = {
+  searching: 'Searching the web for facts\u2026',
+  analyzing: 'Reasoning about gaps against GND\'s services\u2026',
+  verifying: 'Fact-checking citations\u2026',
+  saving: 'Saving to the corpus\u2026'
+};
+
+var pendingCompany = null;
+
+function showProgressPanel() {
+  document.getElementById('scan-progress').style.display = 'block';
+  document.getElementById('scan-confirm').style.display = 'none';
+  document.getElementById('scan-error').style.display = 'none';
+  document.getElementById('scan-close-btn').style.display = '';
+}
+
+function handleScanEvent(es, data) {
+  if (data.stage === 'done') {
+    document.getElementById('scan-status').textContent = 'Done';
+    es.close();
+    setTimeout(function () { window.location.href = 'reports/' + data.slug + '.html'; }, 400);
+  } else if (data.stage === 'ready_for_review') {
+    document.getElementById('scan-status').textContent = 'Ready for review';
+    es.close();
+    setTimeout(function () { window.location.href = '/preview/' + data.slug; }, 400);
+  } else if (data.stage === 'error') {
+    es.close();
+    var errBox = document.getElementById('scan-error');
+    errBox.textContent = data.message || 'Something went wrong.';
+    errBox.style.display = 'block';
+    document.getElementById('scan-status').textContent = 'Failed';
+  } else if (data.stage === 'confirm') {
+    es.close();
+    document.getElementById('scan-progress').style.display = 'none';
+    document.getElementById('scan-confirm').style.display = 'block';
+    document.getElementById('scan-confirm-company').textContent = data.company_name;
+    document.getElementById('scan-confirm-text').innerHTML =
+      'Researched industry: <strong>' + escapeHtml(data.industry) + '</strong>.<br>' +
+      'This doesn\'t look like cold-chain, logistics, or pharma \u2014 GND\'s Phase 1 scope. Continue anyway?';
+  } else {
+    document.getElementById('scan-status').textContent = SCAN_STAGE_TEXT[data.stage] || data.stage;
+  }
+}
+
+function startScan(company) {
+  document.getElementById('suggestions').style.display = 'none';
+  pendingCompany = company;
+  var overlay = document.getElementById('scan-overlay');
+  showProgressPanel();
+  document.getElementById('scan-company').textContent = company;
+  document.getElementById('scan-status').textContent = 'Starting\u2026';
+  overlay.classList.add('active');
+
+  var es = new EventSource('/api/scan/research?company=' + encodeURIComponent(company));
+  es.onmessage = function (e) { handleScanEvent(es, JSON.parse(e.data)); };
+  es.onerror = function () {
+    document.getElementById('scan-status').textContent = 'Connection lost \u2014 is server.py running?';
+    es.close();
+  };
+}
+
+function confirmContinue() {
+  showProgressPanel();
+  document.getElementById('scan-company').textContent = pendingCompany;
+  document.getElementById('scan-status').textContent = 'Continuing\u2026';
+
+  var es = new EventSource('/api/scan/continue?company=' + encodeURIComponent(pendingCompany));
+  es.onmessage = function (e) { handleScanEvent(es, JSON.parse(e.data)); };
+  es.onerror = function () {
+    document.getElementById('scan-status').textContent = 'Connection lost \u2014 is server.py running?';
+    es.close();
+  };
+}
+
+function confirmCancel() {
+  fetch('/api/scan/cancel?company=' + encodeURIComponent(pendingCompany), { method: 'POST' })
+    .finally(function () { closeScanOverlay(); });
+}
+
+function closeScanOverlay() {
+  document.getElementById('scan-overlay').classList.remove('active');
+}
+</script>
+</body>
+</html>

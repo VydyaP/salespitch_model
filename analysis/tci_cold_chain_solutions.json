@@ -1,0 +1,22 @@
+{
+  "gaps": [
+    {
+      "title": "Strong per-facility monitoring, no stated unified cross-network view",
+      "detail": "TCI clearly invests in serious facility-level tech (SCADA-based monitoring, VESDA smoke detection, 600+ CCTV cameras at the new Gurugram site) — but the network has grown from 12M sq ft in 2021 to 17M+ sq ft today across many separately-built facilities, each likely running its own building-management stack. There's no stated single dashboard giving instant deviation alerts or a consistent audit trail across all 22,000+ pallet positions network-wide.",
+      "severity": "medium",
+      "gnd_service": "Warehouse Management + Platform (ThinxFresh)",
+      "based_on": "TCI Cold Chain Solutions now manages 17 million sq. ft. with 22,000+ pallet positions; at the time of Mitsui's Nov 2021 investment TCI CCS had 12 million sq. ft.; the Dec 2025 Taj Nagar, Gurugram facility features SCADA-based monitoring and 600+ CCTV cameras."
+    },
+    {
+      "title": "Four-standard pharma compliance burden without stated automated audit reporting",
+      "detail": "TCI explicitly serves pharmaceuticals and health sciences under FDA, FSSAI, NBC, and CMVR compliance across a -18°C to +25°C, 35-65% RH network. At 22,000+ pallet positions, compiling deviation history and audit trails for four separate regulatory regimes by hand is a heavy administrative lift unless every zone auto-generates compliance-ready records.",
+      "severity": "high",
+      "gnd_service": "Cold Chain Management (ThinxFresh)",
+      "based_on": "TCI follows compliance with FDA, FSSAI, NBC, and CMVR standards with internal audits, serving pharmaceuticals and health sciences; temperature range -18°C to +25°C with 35%-65% RH humidity control."
+    }
+  ],
+  "pitch": {
+    "angle": "TCI has clearly invested in serious facility-level infrastructure — SCADA, VESDA, hundreds of CCTV cameras — as it's grown from 12M to 17M+ sq ft since the Mitsui JV in 2021. But that scale and pace of expansion is exactly where facility-by-facility systems start to show cracks: an auditor asking for one deviation report across the whole -18°C to +25°C network is a very different request than pulling logs from 20+ separately-built sites. GND's ThinxFresh doesn't replace what TCI already has — it sits on top, turning per-site SCADA/CCTV investment into one real-time, audit-ready view across FDA, FSSAI, NBC, and CMVR compliance at once.",
+    "opener": "You've clearly invested in serious per-facility monitoring at sites like Taj Nagar — as the network scales past 17 million sq ft, how are you pulling one compliance report across all of it for FDA, FSSAI, NBC, and CMVR simultaneously?"
+  }
+}

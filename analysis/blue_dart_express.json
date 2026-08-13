@@ -1,0 +1,15 @@
+{
+  "gaps": [
+    {
+      "title": "Temperature-controlled shipments get retrospective logs, not live deviation alerts",
+      "detail": "Fit note: Blue Dart's core business is express parcel and e-commerce logistics (Rs 5,720 Cr FY25 revenue, ~8% of India's e-commerce shipments) -- temperature-controlled logistics is a real but secondary, specialized service line, not the company's identity. Within that one service line, though, there's a concrete gap: temperature logger graphs only reach the shipper 24-48 hours after delivery, not during transit. For life-saving drugs, blood, plasma, or tissue shipments, a temperature excursion is discovered only after the fact -- too late to intervene. This is a narrow, single-service-line opportunity, not a company-wide platform fit.",
+      "severity": "medium",
+      "gnd_service": "Cold Chain Management (ThinxFresh)",
+      "based_on": "Blue Dart offers Temperature Controlled Logistics... for pharmaceuticals, clinical research organizations, and hospitals, covering items like blood, plasma, tissues, life-saving drugs, and diagnostics kits; temperature logger graphs are only delivered to the shipper 24-48 hours after the shipment has already been delivered."
+    }
+  ],
+  "pitch": {
+    "angle": "Blue Dart's core business is express parcel and e-commerce logistics, not cold-chain -- so this isn't a company-wide strategic fit for GND the way a dedicated cold-chain operator is. But its Temperature Controlled Logistics service moves blood, plasma, tissues, and life-saving drugs under real regulatory scrutiny, and today a temperature excursion is only visible in a logger graph 24-48 hours after delivery -- too late to intervene or salvage anything. This is a narrow, single-service-line opportunity: instant deviation alerts on the temp-controlled lane specifically, not a platform sale across the whole business.",
+    "opener": "Your temperature-controlled service currently sends logger graphs 24-48 hours after delivery -- for shipments like blood, plasma, or life-saving drugs, what happens if there's a deviation you only find out about two days later?"
+  }
+}

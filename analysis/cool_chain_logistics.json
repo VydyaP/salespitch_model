@@ -1,0 +1,22 @@
+{
+  "gaps": [
+    {
+      "title": "Passive packaging performance, not necessarily active real-time alerting",
+      "detail": "Cool Chain's '100% monitoring' claim describes a reusable package that autonomously holds temperature for a minimum of 120 hours -- strong passive engineering. But holding temperature on its own is different from someone getting an instant alert the moment a shipment actually drifts. There's no stated system for active, real-time deviation notification during transit, only the packaging's own endurance.",
+      "severity": "medium",
+      "gnd_service": "Cold Chain Management (ThinxFresh)",
+      "based_on": "un sistema de reutilizacion de equipos de alto rendimiento [with] monitorizacion del 100% de la temperatura interior [and the ability to] mantener la temperatura de manera autonoma un minimo de 120 horas."
+    },
+    {
+      "title": "Four countries, three regulatory regimes, one claimed monitoring standard",
+      "detail": "Operations span Spain, the UK, the USA, and Germany -- EU GDP, post-Brexit UK, and US FDA requirements all apply depending on the shipment. Maintaining one consistent monitoring and compliance-reporting standard across four physical hubs and three distinct regulatory regimes is a real operational challenge worth confirming, not assuming.",
+      "severity": "medium",
+      "gnd_service": "Cold Chain Management (ThinxFresh) + Warehouse Management",
+      "based_on": "The organization maintains logistic centers across Spain (Madrid-Barcelona), UK (York), USA (Indianapolis), and Germany (Darmstadt)."
+    }
+  ],
+  "pitch": {
+    "angle": "Cool Chain Logistics already engineers serious passive cold-chain packaging -- reusable systems that autonomously hold temperature for a minimum of 120 hours, with '100% monitoring of interior temperature' as a stated claim. But that's the packaging performing on its own; it's not the same as an instant alert reaching someone the moment a shipment drifts, across four countries and three regulatory regimes. GND's ThinxFresh adds the active layer on top of Cool Chain's already-strong passive engineering -- turning 'the box can survive 120 hours cold' into 'someone knows within seconds if it doesn't.'",
+    "opener": "Your reusable packaging holds temperature autonomously for 120 hours -- if a shipment does drift outside that window across Spain, the UK, the US, or Germany, who finds out first, and how fast?"
+  }
+}

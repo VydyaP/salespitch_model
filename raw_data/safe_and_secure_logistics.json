@@ -1,0 +1,29 @@
+{
+  "company_name": "Safe & Secure Logistics",
+  "founded": "1951",
+  "hq": "Mumbai, Maharashtra, India (Wadala Truck Terminal)",
+  "industry": "Pharma cold chain logistics & distribution (WHO-GDP compliant)",
+  "size": "2,700+ fleet (475 reefers), 70+ warehouses / 185,000 MT capacity, 27 states / 13,850+ pincodes, Rs 1,354 Cr+ revenue (FY26), 12,500+ workforce",
+  "facts": [
+    {
+      "claim": "Safe & Secure Logistics has operated since 1951, headquartered at Wadala Truck Terminal, Mumbai.",
+      "source_snippet": "Since 1951... BGTA Ganga Premises Cooperative Society, A3, Office no 115, Wadala Truck Terminal, near Indian Oil Petrol Pump, Mumbai 37.",
+      "source_url": "https://safeandsecure.in/pharma-logistics-india/"
+    },
+    {
+      "claim": "The company operates a 2,700+ owned fleet including 475 reefers (temperature-controlled vehicles), 700+ owned 40ft containers, and 70+ warehouses totaling 185,000 MT of storage capacity.",
+      "source_snippet": "2,700+ Owned Fleet. 475 Reefers. 70+ Warehouses / 185,000 MT. 700+ Owned 40ft Containers.",
+      "source_url": "https://safeandsecure.in/pharma-logistics-india/"
+    },
+    {
+      "claim": "Safe & Secure offers temperature-controlled transport across three ranges (2C-8C, 15C-25C, -18C) under WHO Good Distribution Practice (GDP) guidelines, with validated temperature mapping and digital logging at 15-minute intervals, reporting a temperature excursion rate of less than 0.3%.",
+      "source_snippet": "temperature-controlled transport (2C-8C, 15C-25C, -18C)... WHO Good Distribution Practice (GDP) guidelines... validated temperature mapping, 15-minute interval digital logging... SSL's excursion rate is less than 0.3%.",
+      "source_url": "https://safeandsecure.in/pharma-logistics-india/"
+    },
+    {
+      "claim": "The company covers 27 states and 13,850+ pincodes across India, including major pharma manufacturing hubs Hyderabad, Ahmedabad/Gujarat, and Baddi-BBN (Himachal Pradesh), reporting Rs 1,354 Cr+ group consolidated revenue (FY26), 30,000+ daily shipments, 2,500+ enterprise clients, and a 12,500+ workforce.",
+      "source_snippet": "27 States / 13,850+ Pincodes... Hyderabad, Ahmedabad/Gujarat, Baddi-BBN (Himachal Pradesh), Pune, and Mumbai... Rs 1,354 Cr+ Group Consolidated Revenue (FY26)... 30,000+ Daily Shipments... 2,500+ Enterprise Clients... 12,500+ Workforce.",
+      "source_url": "https://safeandsecure.in/pharma-logistics-india/"
+    }
+  ]
+}

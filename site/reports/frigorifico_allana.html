@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Frigorifico Allana — Prospect Report</title>
+<style>
+:root {
+  --paper: #f6f2e7;
+  --paper-alt: #efe6d2;
+  --ink: #2b2118;
+  --ink-secondary: #6b5d4f;
+  --muted: #9c8f7e;
+  --border: #ddd3bf;
+  --accent: #d9622b;
+  --accent-hover: #c2531f;
+  --frost: #1f6e6b;
+  --nav-bg: rgba(246,242,231,0.85);
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --paper: #1c1712; --paper-alt: #262019; --ink: #f2e9d8; --ink-secondary: #c4b7a2;
+    --muted: #8a7c68; --border: #3a3226; --accent: #ff7a3d; --accent-hover: #ff8f5c;
+    --frost: #3fa39e; --nav-bg: rgba(28,23,18,0.85);
+  }
+}
+:root[data-theme="dark"] {
+  --paper: #1c1712; --paper-alt: #262019; --ink: #f2e9d8; --ink-secondary: #c4b7a2;
+  --muted: #8a7c68; --border: #3a3226; --accent: #ff7a3d; --accent-hover: #ff8f5c;
+  --frost: #3fa39e; --nav-bg: rgba(28,23,18,0.85);
+}
+:root[data-theme="light"] {
+  --paper: #f6f2e7; --paper-alt: #efe6d2; --ink: #2b2118; --ink-secondary: #6b5d4f;
+  --muted: #9c8f7e; --border: #ddd3bf; --accent: #d9622b; --accent-hover: #c2531f;
+  --frost: #1f6e6b; --nav-bg: rgba(246,242,231,0.85);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  background: var(--paper);
+  color: var(--ink);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: var(--accent); text-decoration: none; }
+img, svg { max-width: 100%; }
+
+.mono {
+  font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+}
+
+.nav {
+  position: sticky; top: 0; z-index: 100; height: 56px;
+  display: flex; align-items: center; justify-content: center;
+  backdrop-filter: saturate(160%) blur(16px);
+  -webkit-backdrop-filter: saturate(160%) blur(16px);
+  background: var(--nav-bg);
+  border-bottom: 1px solid var(--border);
+}
+.nav-inner {
+  width: 100%; max-width: 1040px; padding: 0 24px;
+  display: flex; align-items: center; justify-content: space-between;
+}
+.nav .brand {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 12.5px; font-weight: 600; color: var(--ink); text-decoration: none;
+  letter-spacing: 0.03em; text-transform: uppercase;
+}
+.nav .actions { display: flex; gap: 10px; }
+
+.btn-pill {
+  display: inline-flex; align-items: center; justify-content: center;
+  border-radius: 8px; padding: 8px 16px; font-size: 12.5px; font-weight: 600;
+  border: 1px solid var(--border); background: var(--paper-alt); color: var(--ink);
+  cursor: pointer; font-family: inherit; transition: background 0.15s ease, border-color 0.15s ease;
+  white-space: nowrap;
+}
+.btn-pill:hover { background: var(--border); }
+.btn-pill:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.btn-pill.filled { background: var(--accent); border-color: var(--accent); color: #fff8f0; }
+.btn-pill.filled:hover { background: var(--accent-hover); }
+
+/* ---- report hero: styled like a manifest / shipping label header ---- */
+.hero {
+  max-width: 900px; margin: 0 auto; padding: 48px 24px 28px;
+}
+.eyebrow {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 11.5px; font-weight: 600; color: var(--muted); letter-spacing: 0.08em; text-transform: uppercase;
+}
+.hero h1 {
+  font-size: clamp(30px, 5vw, 44px); font-weight: 700; letter-spacing: -0.02em;
+  line-height: 1.1; text-wrap: balance; margin-top: 4px;
+}
+.manifest-row {
+  margin-top: 20px; display: flex; flex-wrap: wrap; gap: 10px;
+}
+.manifest-chip {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 12px; color: var(--ink-secondary); background: var(--paper-alt);
+  border: 1px solid var(--border); border-radius: 6px; padding: 5px 10px;
+}
+.manifest-chip strong { color: var(--ink); font-weight: 600; }
+
+/* ---- tab bar ---- */
+.tab-shell { max-width: 900px; margin: 0 auto; padding: 0 24px 80px; }
+.tab-bar {
+  display: flex; gap: 4px; border-bottom: 1px solid var(--border); margin-bottom: 32px;
+  overflow-x: auto;
+}
+.tab-btn {
+  font-family: inherit; font-size: 14.5px; font-weight: 600; color: var(--muted);
+  background: none; border: none; border-bottom: 2.5px solid transparent;
+  padding: 12px 6px; margin-right: 22px; cursor: pointer; white-space: nowrap;
+  display: flex; align-items: center; gap: 8px; transition: color 0.15s ease;
+}
+.tab-btn:hover { color: var(--ink); }
+.tab-btn.active { color: var(--ink); border-bottom-color: var(--accent); }
+.tab-count {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 11px; background: var(--paper-alt); border: 1px solid var(--border);
+  border-radius: 999px; padding: 1px 7px; color: var(--ink-secondary);
+}
+.tab-btn.active .tab-count { border-color: var(--accent); color: var(--accent); }
+
+.section-label {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 11.5px; text-transform: uppercase; letter-spacing: 0.07em;
+  color: var(--muted); font-weight: 600; margin-bottom: 20px;
+}
+.empty { color: var(--muted); font-style: italic; font-size: 15px; }
+
+/* ---- facts ---- */
+.fact-list { display: flex; flex-direction: column; gap: 22px; }
+.fact-item { border-left: 3px solid var(--border); padding-left: 18px; }
+.fact-claim {
+  display: block; font-size: 17px; font-weight: 600; line-height: 1.4; letter-spacing: -0.005em;
+  margin-bottom: 8px; color: var(--ink); text-decoration: underline;
+  text-decoration-color: var(--border); text-decoration-thickness: 1.5px; text-underline-offset: 3px;
+  transition: color 0.15s ease, text-decoration-color 0.15s ease, border-color 0.15s ease;
+}
+.fact-item:has(.fact-claim:hover) { border-left-color: var(--accent); }
+.fact-claim:hover { color: var(--accent); text-decoration-color: var(--accent); }
+.fact-claim::after { content: " \2197"; font-size: 0.65em; color: var(--muted); text-decoration: none; }
+.fact-quote {
+  font-size: 14.5px; color: var(--ink-secondary); font-style: italic; line-height: 1.5;
+}
+
+/* ---- gaps ---- */
+.gap-card { background: var(--paper-alt); border: 1px solid var(--border); border-radius: 10px; margin-bottom: 12px; overflow: hidden; }
+.gap-summary {
+  cursor: pointer; padding: 16px 20px; display: flex; align-items: center; gap: 14px; list-style: none;
+}
+.gap-summary::-webkit-details-marker { display: none; }
+.gap-summary::marker { content: ""; }
+.gap-severity-row { display: flex; align-items: center; gap: 8px; flex-shrink: 0; }
+.severity-gauge { width: 40px; height: 6px; border-radius: 3px; background: var(--border); overflow: hidden; flex-shrink: 0; }
+.gauge-fill { height: 100%; border-radius: 3px; }
+.severity-label {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 10.5px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; white-space: nowrap;
+}
+.gap-summary h3 { font-size: 15.5px; font-weight: 600; letter-spacing: -0.005em; line-height: 1.35; flex: 1; }
+.gap-summary::after {
+  content: "\2304"; color: var(--muted); font-size: 16px; flex-shrink: 0; transition: transform 0.2s ease;
+}
+.gap-card[open] .gap-summary::after { transform: rotate(180deg); }
+.gap-body { padding: 0 20px 20px; border-top: 1px solid var(--border); padding-top: 16px; margin: 0 20px; }
+.gap-detail { font-size: 15px; color: var(--ink-secondary); line-height: 1.55; margin-bottom: 16px; }
+.gap-meta { font-size: 13px; color: var(--muted); display: flex; flex-direction: column; gap: 10px; }
+.gap-meta strong { color: var(--ink-secondary); font-weight: 600; }
+.gap-service-tags { display: flex; gap: 6px; flex-wrap: wrap; }
+.service-tag {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 10px; font-weight: 700; color: #fff8f0; border-radius: 5px; padding: 2px 6px; letter-spacing: 0.02em;
+}
+.gap-based-on { padding-left: 12px; border-left: 2px solid var(--border); font-style: italic; }
+
+/* ---- pitch ---- */
+.pitch-card {
+  background: var(--frost); color: #f2f8f6; border-radius: 14px; padding: 36px 34px;
+}
+.pitch-card .section-label { color: rgba(242,248,246,0.65); }
+.pitch-angle { font-size: clamp(18px, 2.6vw, 22px); font-weight: 500; line-height: 1.5; letter-spacing: -0.005em; margin-bottom: 26px; }
+.pitch-opener-box { background: rgba(0,0,0,0.18); border-radius: 10px; padding: 22px 24px; }
+.pitch-opener-label {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 11px; color: rgba(242,248,246,0.6); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 10px;
+}
+.pitch-opener-text { font-size: 17px; font-style: italic; line-height: 1.5; margin-bottom: 18px; }
+.pitch-card .btn-pill { background: rgba(242,248,246,0.12); border-color: rgba(242,248,246,0.3); color: #f2f8f6; }
+.pitch-card .btn-pill:hover { background: rgba(242,248,246,0.22); }
+
+@media print {
+  .nav, .tab-bar { display: none; }
+  .tab-panel { display: block !important; margin-bottom: 48px; }
+  .gap-body { display: block !important; }
+  .gap-summary::after { display: none; }
+  .pitch-card { background: #eef5f3 !important; color: #12201d !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .pitch-card .section-label, .pitch-opener-label { color: #4a5a56 !important; }
+  .pitch-opener-box { background: #fff !important; border: 1px solid #ccd8d5; }
+  body { background: #fff; }
+}
+</style>
+</head>
+<body>
+<nav class="nav">
+  <div class="nav-inner">
+    <a class="brand" href="../index.html">&larr; Prospect Scan</a>
+    <div class="actions">
+      <button class="btn-pill" onclick="window.print()">Print / PDF</button>
+      <button class="btn-pill filled" onclick="downloadReport('frigorifico_allana-report.html')">Download</button>
+    </div>
+  </div>
+</nav>
+
+
+<header class="hero">
+  <p class="eyebrow">Prospect report</p>
+  <h1>Frigorifico Allana</h1>
+  <div class="manifest-row"><span class="manifest-chip"><strong>Industry:</strong> Frozen/chilled meat processing &amp; export (buffalo, lamb, mutton, goat); part of India&#x27;s largest private food conglomerate</span><span class="manifest-chip"><strong>HQ:</strong> Mumbai, Maharashtra, India (Allana Centre, MG Road); frozen meat processing facility in Khalapur, Maharashtra</span><span class="manifest-chip"><strong>Founded:</strong> Allana Group founded 1865 by Abdulla Allana; Frigorifico Allana is the group&#x27;s frozen meat processing and export division</span><span class="manifest-chip"><strong>Size:</strong> 750,000 MTS annual production capacity, 66,000 MTS cold storage across 10 facilities, exports to 70+ countries; parent entity Allanasons Pvt Ltd reports &gt;500 Cr INR annual turnover</span></div>
+</header>
+
+<div class="tab-shell">
+  <div class="tab-bar">
+    <button class="tab-btn active" data-tab="gaps" onclick="switchTab('gaps')">Gaps <span class="tab-count">2</span></button>
+    <button class="tab-btn" data-tab="facts" onclick="switchTab('facts')">Facts <span class="tab-count">4</span></button>
+    <button class="tab-btn" data-tab="pitch" onclick="switchTab('pitch')">Pitch</button>
+  </div>
+
+  <div class="tab-panel" id="tab-gaps">
+    <p class="section-label">2 gaps found &middot; 1 high &middot; 1 medium &middot; 0 low</p>
+    <details class="gap-card" open>
+  <summary class="gap-summary">
+    <div class="gap-severity-row">
+      <div class="severity-gauge"><div class="gauge-fill" style="width:100%;background:#c23b22"></div></div>
+      <span class="severity-label" style="color:#c23b22">High</span>
+    </div>
+    <h3>Multi-standard export compliance across 10 facilities is a heavy manual burden</h3>
+  </summary>
+  <div class="gap-body">
+    <p class="gap-detail">Operations run under ISO 9001, FSSC 22000, ISO 14001, ISO 45001, HACCP, Codex Alimentarius, OIE guidelines, and Halal compliance simultaneously, across ten facilities. Each additional standard and each importing country&#x27;s inspection requirements multiplies the audit-trail burden -- a unified, automated compliance and deviation-reporting layer would replace per-facility manual recordkeeping with one consistent, exportable record.</p>
+    <div class="gap-meta">
+      <div class="gap-service-tags"><span class="service-tag" style="background:#1f6e6b">CC</span><span>Cold Chain Management (ThinxFresh)</span></div>
+      <div class="gap-based-on">&ldquo;Operations are ISO 9001, FSSC 22000, ISO 14001, ISO 45001 and HACCP process-compliant, following Codex Alimentarius standards and OIE guidelines, with meat exports prepared to Halal requirements.&rdquo;</div>
+    </div>
+  </div>
+</details><details class="gap-card">
+  <summary class="gap-summary">
+    <div class="gap-severity-row">
+      <div class="severity-gauge"><div class="gauge-fill" style="width:65%;background:#b8860b"></div></div>
+      <span class="severity-label" style="color:#b8860b">Medium</span>
+    </div>
+    <h3>Large multi-facility cold storage network without a stated unified visibility layer</h3>
+  </summary>
+  <div class="gap-body">
+    <p class="gap-detail">66,000 MTS of cold storage spread across ten facilities, feeding 750,000 MTS of annual throughput to 70+ export markets, is a lot of inventory and temperature-zone complexity to coordinate site by site. Each export market likely carries its own cold-chain documentation expectations, which compounds the case for one real-time operational view across every facility rather than ten separate ones.</p>
+    <div class="gap-meta">
+      <div class="gap-service-tags"><span class="service-tag" style="background:#8a5a2b">WH</span><span>Warehouse Management</span></div>
+      <div class="gap-based-on">&ldquo;Frigorifico Allana&#x27;s frozen meat operations have an annual production capacity of 750,000 MTS and cold storage capacity of 66,000 MTS spread across ten facilities, exporting to over 70 countries.&rdquo;</div>
+    </div>
+  </div>
+</details>
+  </div>
+
+  <div class="tab-panel" id="tab-facts" style="display:none">
+    <p class="section-label">Sourced facts</p>
+    <ul class="fact-list" style="list-style:none"><li class="fact-item">
+  <a class="fact-claim" href="https://allana.com/our-heritage/" target="_blank" rel="noopener">The Allana Group was founded in 1865 by Abdulla Allana and is now the largest private food company in India, processing and selling over one million metric tons of products annually to 85+ countries.</a>
+  <blockquote class="fact-quote">&ldquo;Born into a stimulating commercial environment of the Indian subcontinent, he was quick to demonstrate his flair for business, setting up the family business in 1865... the largest private food company in India processing &amp; selling in excess of one million metric tons of various products annually to over 85 countries.&rdquo;</blockquote>
+</li><li class="fact-item">
+  <a class="fact-claim" href="https://www.allanagroup.in/" target="_blank" rel="noopener">Allanasons Private Limited, the group&#x27;s export entity, is headquartered at Allana Centre on MG Road, Mumbai, and reports annual turnover of over 500 crore INR.</a>
+  <blockquote class="fact-quote">&ldquo;Allana Centre, 113/115, MG Road, ARJ Allana Marg, Stock Exchange, Mumbai - 400001, Maharashtra, India... Annual Turnover: &gt; 500 Cr.&rdquo;</blockquote>
+</li><li class="fact-item">
+  <a class="fact-claim" href="https://allana.com/proteins/frozen-meat/" target="_blank" rel="noopener">Frigorifico Allana&#x27;s frozen meat operations have an annual production capacity of 750,000 MTS and cold storage capacity of 66,000 MTS spread across ten facilities, exporting to over 70 countries.</a>
+  <blockquote class="fact-quote">&ldquo;Production Capacity (annual): 750,000 MTS. Cold Storage capacity: 66,000 MTS... Ten [facilities]... exports to over 70 countries around the World.&rdquo;</blockquote>
+</li><li class="fact-item">
+  <a class="fact-claim" href="https://allana.com/proteins/frozen-meat/" target="_blank" rel="noopener">Operations are ISO 9001, FSSC 22000, ISO 14001, ISO 45001 and HACCP process-compliant, following Codex Alimentarius standards and OIE guidelines, with meat exports prepared to Halal requirements.</a>
+  <blockquote class="fact-quote">&ldquo;ISO 9001, FSSC 22000, ISO 14001, ISO 45001 &amp; HACCP process-compliant organization. Operations follow Codex Alimentarius standards and OIE guidelines... 100% of the meat exported from India is prepared strictly in compliance with Islamic requirements of genuine Halal.&rdquo;</blockquote>
+</li></ul>
+  </div>
+
+  <div class="tab-panel" id="tab-pitch" style="display:none">
+    <p class="section-label">Pitch</p>
+    <div class="pitch-card">
+      <p class="pitch-angle">Frigorifico Allana runs meat exports at a scale most competitors can&#x27;t match -- 750,000 MTS a year, 66,000 MTS of cold storage across 10 facilities, shipped to 70+ countries under ISO 9001, FSSC 22000, ISO 14001, ISO 45001, HACCP, Codex Alimentarius, OIE, and Halal compliance simultaneously. That&#x27;s not one audit to pass -- it&#x27;s potentially dozens running in parallel across every facility and every export market. GND&#x27;s ThinxFresh turns that into one real-time, auto-generated compliance record per facility instead of a scramble every time a new country&#x27;s import inspector shows up.</p>
+      <div class="pitch-opener-box">
+        <div class="pitch-opener-label">Opener</div>
+        <p class="pitch-opener-text" id="pitch-opener">With 66,000 MTS of cold storage across 10 facilities feeding 70+ export markets, how are you currently proving compliance with ISO, HACCP, and OIE standards to each importing country&#x27;s inspectors -- one system, or one scramble per audit?</p>
+        <button class="btn-pill" onclick="copyOpener(this)">Copy opener</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+function copyOpener(btn) {
+  var text = document.getElementById('pitch-opener').innerText;
+  navigator.clipboard.writeText(text).then(function () {
+    var original = btn.textContent;
+    btn.textContent = 'Copied';
+    setTimeout(function () { btn.textContent = original; }, 1500);
+  });
+}
+function downloadReport(filename) {
+  var html = '<!DOCTYPE html>\n' + document.documentElement.outerHTML;
+  var blob = new Blob([html], { type: 'text/html' });
+  var url = URL.createObjectURL(blob);
+  var a = document.createElement('a');
+  a.href = url;
+  a.download = filename;
+  a.click();
+  URL.revokeObjectURL(url);
+}
+function switchTab(name) {
+  document.querySelectorAll('.tab-panel').forEach(function (p) { p.style.display = 'none'; });
+  document.querySelectorAll('.tab-btn').forEach(function (b) { b.classList.remove('active'); });
+  document.getElementById('tab-' + name).style.display = 'block';
+  document.querySelector('.tab-btn[data-tab="' + name + '"]').classList.add('active');
+}
+
+function saveCompany(slug, btn) {
+  btn.disabled = true;
+  btn.textContent = 'Saving\u2026';
+  fetch('/api/save?slug=' + encodeURIComponent(slug), { method: 'POST' })
+    .then(function (r) { return r.json(); })
+    .then(function () { window.location.href = '/reports/' + slug + '.html'; })
+    .catch(function () { btn.disabled = false; btn.textContent = 'Save to corpus'; });
+}
+function discardCompany(slug, btn) {
+  if (!confirm('Discard this research? Nothing will be saved.')) return;
+  btn.disabled = true;
+  fetch('/api/discard?slug=' + encodeURIComponent(slug), { method: 'POST' })
+    .then(function () { window.location.href = '/'; });
+}
+</script>
+</body>
+</html>

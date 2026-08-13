@@ -1,0 +1,32 @@
+{
+  "company_name": "RSA Cold Chain",
+  "gaps_checked": 2,
+  "summary": {
+    "VERIFIED": 2,
+    "WEAK": 0,
+    "UNVERIFIED": 0
+  },
+  "results": [
+    {
+      "title": "Post-acquisition expansion with no stated plan to keep monitoring consistent",
+      "status": "VERIFIED",
+      "overlap_score": 0.91,
+      "unmatched_words": [
+        "chain...",
+        "india."
+      ],
+      "closest_fact_claim": "In 2023, Americold acquired a 49% minority stake in RSA Cold Chain for $3.9 million, with immediate plans to expand locally, connect RSA to its global network, and pursue development opportunities across the Middle East and India, leveraging a concurrent partnership with DP World.",
+      "closest_fact_score": 0.91
+    },
+    {
+      "title": "Quality certifications are periodic audits, not real-time compliance evidence",
+      "status": "VERIFIED",
+      "overlap_score": 0.95,
+      "unmatched_words": [
+        "monitoring."
+      ],
+      "closest_fact_claim": "RSA's own marketing claims an advanced WMS for real-time inventory visibility, continuous temperature monitoring, and a single-integration API for real-time inventory data.",
+      "closest_fact_score": 0.52
+    }
+  ]
+}

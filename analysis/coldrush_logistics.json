@@ -1,0 +1,22 @@
+{
+  "gaps": [
+    {
+      "title": "Vague, unnamed monitoring tech for a pharma-heavy fleet with dedicated vaccine trucks",
+      "detail": "Coldrush built dedicated vaccine-handling reefer trucks and draws 30-40% of its business from pharma, but its only public claim about monitoring is a generic marketing line about 'real-time data access' with no named platform, vendor, or specifics on deviation alerting or compliance reporting. For vaccine-grade cargo, that gap between marketing language and demonstrable, audit-ready monitoring is exactly what a pharma client or regulator will probe.",
+      "severity": "high",
+      "gnd_service": "Cold Chain Management (ThinxFresh)",
+      "based_on": "The company operates 202 vehicles... including 20 newly developed reefer trucks specifically for safe handling of pharmaceutical products, especially vaccines; roughly 30-40% of business from pharma; Coldrush's own marketing describes 'real-time data access' without naming a specific monitoring platform."
+    },
+    {
+      "title": "Aggressive 5-year growth plan risks outpacing monitoring infrastructure",
+      "detail": "Coldrush plans to nearly triple pallet capacity (32,000 to 100,000) and add up to 200 trucks while also opening cold storage and branch offices in every north-eastern state capital within 3-5 years -- a remote, logistically harder region to service and audit. Scaling that fast without a named, centralized monitoring platform raises real risk of inconsistent temperature control and compliance visibility as the network stretches into new, harder-to-reach geography.",
+      "severity": "medium",
+      "gnd_service": "Warehouse Management + Asset Tracking & Monitoring",
+      "based_on": "Coldrush plans to add another 150-200 trucks to reach 100,000 pallets of capacity within five years, and to open cold storages and branch offices in the capital city of each north-eastern 'seven sisters' state within 3-5 years."
+    }
+  ],
+  "pitch": {
+    "angle": "Coldrush is about to nearly triple its pallet capacity and push into some of India's hardest-to-service geography (the north-eastern 'seven sisters' states) over the next 3-5 years, while already running dedicated vaccine reefer trucks for a pharma book that's 30-40% of revenue -- but its only public claim about monitoring is a generic 'real-time data access' line with nothing specific behind it. GND's ThinxFresh gives Coldrush a named, demonstrable, audit-ready monitoring layer -- live BLE/LoRa sensors, instant deviation alerts, auto-generated compliance reports -- exactly the kind of concrete proof a pharma client or regulator will ask for as Coldrush scales into new states.",
+    "opener": "You're about to nearly triple pallet capacity and push into the northeast over the next few years -- for the vaccine reefer fleet specifically, what do you show pharma clients today when they ask for proof of real-time temperature monitoring?"
+  }
+}

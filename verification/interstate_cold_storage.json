@@ -1,0 +1,29 @@
+{
+  "company_name": "Interstate Cold Storage",
+  "gaps_checked": 2,
+  "summary": {
+    "VERIFIED": 2,
+    "WEAK": 0,
+    "UNVERIFIED": 0
+  },
+  "results": [
+    {
+      "title": "EDI tracks inventory, not temperature -- across a -15F to 35F network",
+      "status": "VERIFIED",
+      "overlap_score": 1.0,
+      "unmatched_words": [],
+      "closest_fact_claim": "The Fort Wayne West facility offers storage from -13\u00b0F to 0\u00b0F, can process up to 250,000 pounds per day with quick-freezing capability, and is equipped with EDI (Electronic Data Interchange) and customer internet access for real-time inventory tracking, integrated with ammonia refrigeration systems.",
+      "closest_fact_score": 0.58
+    },
+    {
+      "title": "Five facilities built up over 50 years likely carry inconsistent standards",
+      "status": "VERIFIED",
+      "overlap_score": 0.95,
+      "unmatched_words": [
+        "solutions..."
+      ],
+      "closest_fact_claim": "Interstate Cold Storage was founded in 1973 by Vincent Tippmann in Fort Wayne, Indiana, and grew over 50 years from a one-warehouse operation into the Midwest's premier cold storage provider, ranked a Top 20 North American refrigerated warehousing company by the International Association of Refrigerated Warehouses (IARW).",
+      "closest_fact_score": 0.67
+    }
+  ]
+}

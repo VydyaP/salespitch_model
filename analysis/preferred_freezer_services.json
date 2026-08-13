@@ -1,0 +1,29 @@
+{
+  "gaps": [
+    {
+      "title": "Unified Cold\u2011Chain Visibility",
+      "detail": "While Preferred Freezer operates over 200 temperature\u2011controlled facilities worldwide, there is no evidence of a centralized IoT platform to monitor temperature, humidity, and compliance in real time across this footprint.",
+      "severity": "high",
+      "gnd_service": "Cold Chain Management",
+      "based_on": "The combined entity has over 1.3\u202fbillion cubic feet of temperature\u2011controlled capacity across more than 200 facilities worldwide."
+    },
+    {
+      "title": "Real\u2011time Warehouse Inventory",
+      "detail": "Only 17 of the combined facilities are described as automated, implying the majority still rely on manual inventory processes that limit operational visibility and efficiency.",
+      "severity": "medium",
+      "gnd_service": "Warehouse Management",
+      "based_on": "Post\u2011merger, the combined company operates 17 automated facilities with more than 800,000 automated pallet positions."
+    },
+    {
+      "title": "Global Asset & Fleet Tracking",
+      "detail": "With a global network spanning the U.S., China, Vietnam and other regions, tracking of high\u2011value equipment and transport assets likely depends on legacy methods, risking loss or compliance gaps.",
+      "severity": "medium",
+      "gnd_service": "Asset Tracking & Monitoring",
+      "based_on": "Preferred Freezer Services designs, constructs, and operates state\u2011of\u2011the\u2011art temperature\u2011controlled warehouses in the United States and internationally (including China and Vietnam)."
+    }
+  ],
+  "pitch": {
+    "angle": "After the Lineage acquisition, Preferred Freezer now runs a massive, multi\u2011regional cold\u2011chain operation, but the lack of a unified IoT backbone can hinder real\u2011time compliance and efficiency. GND\u2019s ThinxFresh platform and IoT\u2011driven warehouse tools can instantly surface temperature deviations, automate audit reporting, and give you end\u2011to\u2011end visibility across every pallet and asset.",
+    "opener": "Congrats on scaling to 200+ facilities with Lineage\u2014let's future\u2011proof your cold\u2011chain data with a single real\u2011time dashboard."
+  }
+}

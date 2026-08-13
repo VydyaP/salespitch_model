@@ -1,0 +1,29 @@
+{
+  "gaps": [
+    {
+      "title": "Rapid multi-site rollout with no stated unified monitoring platform",
+      "detail": "Snowman is expanding or opening at least five facilities in 2026 alone (Hyderabad, Pune, Kolkata, Krishnapatnam, Patna) under an asset-light Built-to-Suit model. Fast, geographically dispersed rollout like this raises the risk of siloed, per-site temperature monitoring and inconsistent compliance reporting unless every new warehouse is tied into one platform from day one.",
+      "severity": "high",
+      "gnd_service": "Warehouse Management + Platform (ThinxFresh)",
+      "based_on": "Beyond Hyderabad, Snowman is expanding in Pune (adding a 5,900-pallet facility by June 2026 on top of an existing 16,000-pallet site) and has projects underway in Kolkata, Krishnapatnam, and Patna; also the July 2026 Hyderabad Built-to-Suit expansion to 16,800 pallets."
+    },
+    {
+      "title": "Pharma cold-chain compliance load without confirmed automated audit reporting",
+      "detail": "Snowman explicitly serves pharmaceutical clients across facilities running -25°C to +20°C. India's Revised Schedule M and WHO-GDP/ALCOA+ rules require continuous deviation monitoring and audit-ready records at that scale; without a named automated compliance layer, per-site manual logging is a real regulatory exposure as pharma volume grows.",
+      "severity": "high",
+      "gnd_service": "Cold Chain Management (ThinxFresh)",
+      "based_on": "Snowman serves pharmaceuticals, quick-service restaurants (QSR), seafood, and e-commerce clients; the Hyderabad facility offers temperature-controlled storage from -25°C to +20°C."
+    },
+    {
+      "title": "600+ vehicle reefer fleet without a stated real-time asset-tracking layer",
+      "detail": "A 600+ truck fleet moving perishable and pharma cargo pan-India is a large, distributed, high-value asset base. In-transit cold-chain breaches are typically harder to catch than in-warehouse ones, and no GPS/telematics or tamper-detection platform is named in available research.",
+      "severity": "medium",
+      "gnd_service": "Asset Tracking & Monitoring",
+      "based_on": "Snowman operates a fleet of 600+ trucks, including primary and secondary refrigerated (reefer) vehicles."
+    }
+  ],
+  "pitch": {
+    "angle": "Snowman is scaling fast — five-plus new or expanded pan-India sites in 2026 alone — while its core business is pharma and perishables, where a single missed temperature deviation is a compliance incident, not just a customer complaint. GND's ThinxFresh platform (live BLE/LoRa sensors, instant deviation alerts, auto-generated compliance reports) gives a fast-growing multi-site network the one thing public materials don't show it already has: a single dashboard covering every warehouse and truck as it comes online.",
+    "opener": "Congrats on the Hyderabad and Pune expansions — as you bring five-plus new pan-India sites live this year, how are you keeping temperature compliance and deviation alerts consistent across all of them?"
+  }
+}

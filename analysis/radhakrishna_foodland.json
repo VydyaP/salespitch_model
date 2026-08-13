@@ -1,0 +1,29 @@
+{
+  "gaps": [
+    {
+      "title": "Lack of Dedicated End-to-End Cold Chain IoT Monitoring Platform",
+      "detail": "While Radhakrishna Foodland utilizes advanced inventory management technologies, they lack a specified IoT-driven real-time temperature, humidity, and location tracking solution across their 30+ distribution centers and transit assets.",
+      "severity": "high",
+      "gnd_service": "Cold Chain Management",
+      "based_on": "The company describes using 'advanced inventory management technologies' for real-time visibility and control, claiming 99.8%+ inventory accuracy, though it does not name a specific IoT or monitoring platform."
+    },
+    {
+      "title": "Fleet & Asset Monitoring Across Expanded Multi-Temperature Transport Assets",
+      "detail": "Managing 600+ multi-temperature transport assets across India and the Middle East requires unified real-time location, temp deviation alerts, and asset protection hardware to feed into their control tower.",
+      "severity": "medium",
+      "gnd_service": "Asset Tracking & Monitoring",
+      "based_on": "Radhakrishna Foodland runs 600+ multi-temperature transport assets and reports a 99% on-time delivery performance rate."
+    },
+    {
+      "title": "Automated Multi-Zone Compliance Logging for FSSAI and BRCGS Audits",
+      "detail": "Maintaining ambient, tropical, chilled, and frozen storage across 2M+ sq ft requires automated sensor logging and instant excursion alerts to simplify FSSAI and BRCGS audit record-keeping.",
+      "severity": "medium",
+      "gnd_service": "Cold Chain Management",
+      "based_on": "Warehousing covers frozen, chilled, tropical, and ambient storage, and the operation is BRCGS certified and FSSAI compliant for food safety."
+    }
+  ],
+  "pitch": {
+    "angle": "As Radhakrishna Foodland scales its Middle East operations and advances its 2024 Foodland Operating System control tower, GND's ThinxFresh IoT platform can provide the underlying real-time temperature, humidity, and asset trackers needed for 600+ multi-temp assets and 30+ DCs. This integration ensures seamless FSSAI and BRCGS audit-ready digital traceability without replacing existing inventory software.",
+    "opener": "With Radhakrishna Foodland expanding across the Middle East and launching its control tower, are you looking for real-time IoT temperature and asset tracking to stream directly into your Foodland Operating System across your 600+ multi-temp assets?"
+  }
+}

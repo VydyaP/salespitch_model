@@ -1,0 +1,44 @@
+{
+  "company_name": "Coldrush Logistics",
+  "founded": "2012",
+  "hq": "Lower Parel, Mumbai, Maharashtra, India",
+  "industry": "Cold chain logistics — pharma (incl. vaccines), FMCG, agro/horticulture, meat/seafood, dairy, QSR",
+  "size": "202 reefer/dry vehicles, 12 warehouses, 32,000 pallet capacity, 300+ customers, 400+ employees",
+  "facts": [
+    {
+      "claim": "Coldrush Logistics was established in 2012 and is headquartered in Lower Parel, Mumbai.",
+      "source_snippet": "Established in 2012, Coldrush has grown to become a trusted leader in the cold chain industry nationwide.",
+      "source_url": "https://coldrushlogistics.com/about.php"
+    },
+    {
+      "claim": "The company operates 202 vehicles (Ashok Leyland and Tata Motors chassis), including 20 newly developed reefer trucks specifically for safe handling of pharmaceutical products, especially vaccines.",
+      "source_snippet": "202 vehicles from the stables of Ashok Leyland and Tata Motors... recently developed 20 new reefer trucks for safe handling of pharmaceutical products, especially the vaccines.",
+      "source_url": "https://www.motorindiaonline.in/coldrush-logistics-primed-for-rapid-growth/"
+    },
+    {
+      "claim": "Coldrush maintains 12 warehouses nationwide with a total pallet-holding capacity of 32,000.",
+      "source_snippet": "12 warehouses in the country... a total pallet-holding capacity of 32,000.",
+      "source_url": "https://www.motorindiaonline.in/coldrush-logistics-primed-for-rapid-growth/"
+    },
+    {
+      "claim": "The company serves over 300 customers across pharmaceuticals, FMCG, QSR, meat/seafood, and dairy, with roughly 30-40% of its business derived from the pharmaceutical industry.",
+      "source_snippet": "over 300 customers from pharmaceuticals, FMCG, QSRs, meat and seafood, dairy, etc... Approximately 30-40% business is derived from the pharmaceutical industry.",
+      "source_url": "https://www.motorindiaonline.in/coldrush-logistics-primed-for-rapid-growth/"
+    },
+    {
+      "claim": "Coldrush plans to add another 150-200 trucks to reach 100,000 pallets of capacity within five years, and to open cold storages and branch offices in the capital city of each north-eastern 'seven sisters' state within 3-5 years.",
+      "source_snippet": "add another 150-200 trucks to handle 1,00,000 pallets [within five years]... target the regions known as seven sisters and have cold storages and branch offices in each of the capital city of the north-eastern states in the next 3-5 years.",
+      "source_url": "https://www.motorindiaonline.in/coldrush-logistics-primed-for-rapid-growth/"
+    },
+    {
+      "claim": "The company employs 400+ drivers, key account managers, and other professionals with an average of over 20 years of experience in logistics and warehousing.",
+      "source_snippet": "400+ drivers, key account managers and other professionals... average experience of over 20 years in logistics and warehousing.",
+      "source_url": "https://www.motorindiaonline.in/coldrush-logistics-primed-for-rapid-growth/"
+    },
+    {
+      "claim": "Coldrush's own marketing describes 'latest cold chain tech for seamless, transparent operations with real-time data access' but does not name a specific monitoring platform, vendor, or IoT system.",
+      "source_snippet": "Latest cold chain tech for seamless, transparent operations with real-time data access, ensuring full supply chain control.",
+      "source_url": "https://coldrushlogistics.com/about.php"
+    }
+  ]
+}

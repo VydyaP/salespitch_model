@@ -1,0 +1,22 @@
+{
+  "gaps": [
+    {
+      "title": "Documented cold-chain compliance failure, not a hypothetical risk",
+      "detail": "This isn't inferred -- Maharashtra's FDA physically inspected Zepto's Dharavi warehouse and found dairy above the mandated 0-4C and frozen goods failing the -18C requirement, on top of expired stock stored alongside fresh product. The facility's license was suspended under the Food Safety and Standards Act. That's a proven gap between what's required and what was actually being monitored on the ground.",
+      "severity": "high",
+      "gnd_service": "Cold Chain Management (ThinxFresh)",
+      "based_on": "On May 31, 2025, the Maharashtra FDA inspected Zepto's Dharavi warehouse... and found... dairy products not maintained at the mandated 0-4C. Frozen items failed to meet the -18C requirement... Expired products stored alongside fresh stock... resulting in license suspension."
+    },
+    {
+      "title": "Doubling dark-store count while under heightened regulatory scrutiny",
+      "detail": "Zepto plans to grow from 1,139 to roughly 3,000+ dark stores by FY30, funded by its IPO -- right as the state FDA has ordered inspections across every quick-commerce operator following Zepto's own violation. Scaling that fast without first closing the underlying monitoring gap multiplies the exposure across hundreds of new sites instead of containing it to one.",
+      "severity": "high",
+      "gnd_service": "Warehouse Management + Cold Chain Management (ThinxFresh)",
+      "based_on": "As of March 31, 2026, Zepto operated 1,139 dark stores... allocating Rs 1,629 crore to set up 1,904 new dark stores through FY30 -- nearly doubling its current footprint."
+    }
+  ],
+  "pitch": {
+    "angle": "This isn't a hypothetical gap -- Maharashtra's FDA already caught Zepto's Dharavi warehouse with dairy above 4C and frozen goods above -18C, on top of expired stock mixed with fresh, and suspended its license for it. The state then ordered inspections across every quick-commerce player in Maharashtra. Zepto is now trying to fund nearly 1,900 new dark stores through its IPO by FY30 -- doubling its footprint under exactly the kind of regulatory attention that makes a repeat violation a much bigger story the second time. GND's ThinxFresh gives Zepto the thing its own regulator just proved it doesn't reliably have today: instant deviation alerts and auto-generated compliance records, provable per dark store, before an inspector has to find the problem for them.",
+    "opener": "After the Dharavi FDA suspension, how are you making sure the next 1,900 dark stores don't repeat the same cold-chain finding -- same manual process, or something that catches it before an inspector does?"
+  }
+}

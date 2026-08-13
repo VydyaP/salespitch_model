@@ -1,0 +1,22 @@
+{
+  "gaps": [
+    {
+      "title": "Temperature monitoring described generically, no specifics on alerting or compliance automation",
+      "detail": "CWT's own description of its cold chain tech stops at 'temperature monitoring and tracking system' alongside separate WMS and iSCM platforms -- no mention of real-time deviation alerts, alert response time, or automated compliance report generation tied to the facility's six certifications. For a site explicitly built and certified to this many standards, that's a real gap between what's certified and what's demonstrably automated.",
+      "severity": "medium",
+      "gnd_service": "Cold Chain Management (ThinxFresh)",
+      "based_on": "The facility uses a front-end iSCM platform linked to customer ERP systems, a WMS for cargo movements, and a temperature monitoring and tracking system, though no specifics on deviation-alert speed or automated compliance reporting are given."
+    },
+    {
+      "title": "Multiple parallel compliance regimes in one facility, no stated unified audit trail",
+      "detail": "The Singapore hub runs separate Halal and non-Halal storage, hosts an on-site AVA (food safety authority) inspection room, and holds six ISO/HACCP certifications simultaneously. Each is typically documented and audited separately -- a single automated deviation and compliance record spanning all of them would replace several parallel manual trails with one.",
+      "severity": "medium",
+      "gnd_service": "Cold Chain Management (ThinxFresh)",
+      "based_on": "The facility holds six separate certifications -- ISO9001, ISO14001, ISO22000, ISO22339, ISO45000, and HACCP -- and maintains separate storage for Halal and non-Halal products alongside an on-site AVA Inspection Room."
+    }
+  ],
+  "pitch": {
+    "angle": "CWT's Singapore hub is already built to a high bar -- 750,000 sq ft, six ISO/HACCP certifications, a dedicated government AVA inspection room, and separate Halal and non-Halal storage all under one roof. That's also exactly the kind of facility where a generic 'temperature monitoring and tracking system' needs to prove itself six different ways to six different auditors. GND's ThinxFresh turns that generic claim into one real-time, auto-generated compliance record that satisfies every certification at once, instead of assembling separate evidence for each.",
+    "opener": "Running Halal and non-Halal storage plus an AVA inspection room under six ISO/HACCP certifications in one facility -- how many separate audit trails does your team currently maintain for that?"
+  }
+}

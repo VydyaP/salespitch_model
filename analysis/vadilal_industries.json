@@ -1,0 +1,22 @@
+{
+  "gaps": [
+    {
+      "title": "Vast last-mile network for a product with zero tolerance for a cold break",
+      "detail": "Vadilal moves product through roughly 23 C&FA, 500+ distributors, and 40,000+ retail outlets -- and ice cream is a product where a cold-chain break doesn't stay hidden, it visibly melts. Nothing in available research names a monitoring system covering that last-mile network at this scale.",
+      "severity": "high",
+      "gnd_service": "Cold Chain Management (ThinxFresh) + Asset Tracking & Monitoring",
+      "based_on": "Vadilal operates a Cold Chain Network comprising three manufacturing plants... about 23 C&FA, more than 500 distributors, and over 40,000 retailers."
+    },
+    {
+      "title": "Three manufacturing plants across two states feeding one distribution network",
+      "detail": "Product is produced across Pundhra and Dharampur in Gujarat and Bareilly in Uttar Pradesh before entering the same distribution web. Consistency of cold-chain monitoring standards across three separately located plants, before product even reaches distribution, is worth confirming rather than assuming.",
+      "severity": "medium",
+      "gnd_service": "Warehouse Management",
+      "based_on": "Vadilal operates a Cold Chain Network comprising three manufacturing plants (Pundhra and Dharampur in Gujarat, and Bareilly in Uttar Pradesh)."
+    }
+  ],
+  "pitch": {
+    "angle": "Vadilal moves nearly a quarter of India's entire ice cream market through 23 C&FA, 500+ distributors, and 40,000+ retail outlets -- a product where a single cold-chain break doesn't just risk compliance, it visibly melts on the shelf. Nothing in public materials names a monitoring system covering that last-mile network at this scale. GND's ThinxFresh gives Vadilal instant deviation alerts across the distribution web that actually determines whether a quarter of India's ice cream reaches customers still frozen.",
+    "opener": "Moving a quarter of India's ice cream through 40,000+ retail outlets, how do you currently know if a cold-chain break happened before a customer does?"
+  }
+}

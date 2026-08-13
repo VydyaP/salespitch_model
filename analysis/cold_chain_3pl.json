@@ -1,0 +1,29 @@
+{
+  "gaps": [
+    {
+      "title": "Lack of real\u2011time temperature monitoring & alerts",
+      "detail": "Cold Chain 3PL offers temperature\u2011sensitive storage and transport but does not mention live IoT tracking, deviation alerts, or automated compliance reporting.",
+      "severity": "high",
+      "gnd_service": "Cold Chain Management",
+      "based_on": "Cold Chain 3PL provides storing and transporting temperature\u2011sensitive products, ensuring proper storage, handling, and product transportation in a temperature\u2011controlled environment."
+    },
+    {
+      "title": "Limited real\u2011time asset and fleet visibility",
+      "detail": "While the company moves temperature\u2011controlled shipments, there is no indication of GPS or sensor\u2011based tracking for vehicles or high\u2011value assets, exposing them to potential loss or delays.",
+      "severity": "high",
+      "gnd_service": "Asset Tracking & Monitoring",
+      "based_on": "Cold Chain 3PL provides storing and transporting temperature\u2011sensitive products, ensuring proper storage, handling, and product transportation in a temperature\u2011controlled environment."
+    },
+    {
+      "title": "Manual compliance reporting for regulatory audits",
+      "detail": "Cold Chain 3PL lists USDA, SQF, FDA, and Non\u2011GMO certifications but lacks a digital platform that auto\u2011generates audit\u2011ready reports aligned with India\u2019s Schedule\u202fM, FSSAI traceability, or WHO\u2011GDP requirements.",
+      "severity": "medium",
+      "gnd_service": "Cold Chain Management",
+      "based_on": "Cold Chain 3PL holds certifications including Non\u2011GMO, USDA, SQF, and FDA."
+    }
+  ],
+  "pitch": {
+    "angle": "Cold Chain 3PL already secures top\u2011tier certifications and integrates with major eCommerce platforms; adding GND\u2019s ThinxFresh IoT suite would give them live temperature dashboards, instant deviation alerts, and auto\u2011generated audit reports\u2014turning compliance into a competitive advantage, especially for Indian market regulations.",
+    "opener": "I saw Cold Chain 3PL\u2019s USDA and SQF certifications\u2014imagine pairing that credibility with live, sensor\u2011driven temperature alerts and auto\u2011audit reports."
+  }
+}

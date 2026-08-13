@@ -1,0 +1,39 @@
+{
+  "company_name": "Gubba Cold Storage",
+  "founded": "1987",
+  "hq": "Hyderabad/Secunderabad, Telangana, India",
+  "industry": "Cold storage — seed preservation, pharmaceutical/vaccine warehousing, food storage",
+  "size": "17 cold storage facilities across Hyderabad and Aurangabad totaling 1.25 crore cubic feet capacity; ~83 employees as of Aug 2025; privately held, family-run since 1987",
+  "facts": [
+    {
+      "claim": "Gubba Cold Storage was Andhra Pradesh's first cold storage, started in 1987 by Gubba Nagender Rao, and has grown to 1.25 crore cubic feet of capacity across 17 cold storages in Hyderabad and Aurangabad.",
+      "source_snippet": "Gubba Cold Storage was started as Andhra Pradesh's first cold storage in 1987 by Mr. Gubba Nagender Rao and has grown to a 1.25 crore cubic feet capacity, operating 17 cold storages in Hyderabad and Aurangabad, with 30 years of expertise in cold storage preservation technology.",
+      "source_url": "https://gubbagroup.com/about-gubba/"
+    },
+    {
+      "claim": "The company specializes in seed cold storage, pharmaceutical warehousing, and food preservation, is trusted by 500+ national-class brands, and operates a germplasm bank and biotech lab.",
+      "source_snippet": "The company specializes in seed cold storage, pharmaceutical warehousing, and food preservation. Gubba is trusted by over 500 national-class brands and emphasizes innovative and secure storage solutions, including a germplasm bank and cutting-edge biotech lab.",
+      "source_url": "https://gubbagroup.com/about-gubba/"
+    },
+    {
+      "claim": "Gubba's facilities are among the finest vaccine facilities in India, with a capacity of 3 crore vaccine doses, and developed dedicated COVID-19 vaccine storage with roughly 6,300 pallets split into chambers of 1,200 pallets each across 15-25°C, 2-8°C, and -20°C zones under one roof.",
+      "source_snippet": "Gubba's facilities are among the finest vaccine facilities in India with a capacity of 3 crores vaccine doses. The company developed specialized facilities for COVID-19 vaccine storage, with a capacity of around 6300 pallets with dedicated chambers consisting of 1200 pallets for each chamber, with 15-25, 2-8, -20 degrees centigrade under one roof.",
+      "source_url": "https://www.itln.in/our-new-bonthapally-facility-can-be-central-warehousing-hub-for-covid19-vaccine-gubba-kiran-logistics"
+    },
+    {
+      "claim": "Gubba's facilities provide climate-controlled preservation across a temperature range of +20°C to -22°C, with relative humidity maintained between 40% and 90%.",
+      "source_snippet": "The facilities provide climate controlled preservation with a range of temperatures from +20 to -22 degrees centigrade and relative humidity in the atmosphere maintained from 40% to 90%.",
+      "source_url": "https://gubbagroup.com/about-gubba/"
+    },
+    {
+      "claim": "As of August 31, 2025, Gubba Cold Storage had 83 employees, a 3% year-over-year increase in headcount.",
+      "source_snippet": "As of Aug 31, 2025, Gubba Cold Storage has 83 employees, reflecting a 3% year-over-year growth in headcount.",
+      "source_url": "https://tracxn.com/d/companies/gubba-cold-storage/__zPQ_DX5g_b4obs_6H95f81nxI0t0Hux73uDU0tuQWz8"
+    },
+    {
+      "claim": "Gubba Cold Storage uses FLIR thermal imaging cameras to verify and guarantee cold storage conditions, per a published FLIR case study on the company.",
+      "source_snippet": "Gubba Cold Storage uses thermal imaging to guarantee best cold storage conditions.",
+      "source_url": "https://www.flir.com/discover/instruments/building-diagnostics/gubba-cold-storage--uses-thermal-imaging-to-guarantee-best-cold-storage-conditions/"
+    }
+  ]
+}

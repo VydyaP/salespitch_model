@@ -1,0 +1,35 @@
+{
+  "company_name": "Preferred Freezer Services",
+  "gaps_checked": 3,
+  "summary": {
+    "VERIFIED": 3,
+    "WEAK": 0,
+    "UNVERIFIED": 0
+  },
+  "results": [
+    {
+      "title": "Unified Cold\u2011Chain Visibility",
+      "status": "VERIFIED",
+      "overlap_score": 1.0,
+      "unmatched_words": [],
+      "closest_fact_claim": "After the acquisition, the combined entity has over 1.3\u202fbillion cubic feet of temperature\u2011controlled capacity across more than 200 facilities worldwide.",
+      "closest_fact_score": 1.0
+    },
+    {
+      "title": "Real\u2011time Warehouse Inventory",
+      "status": "VERIFIED",
+      "overlap_score": 1.0,
+      "unmatched_words": [],
+      "closest_fact_claim": "Post\u2011merger, the combined company operates 17 automated facilities with more than 800,000 automated pallet positions.",
+      "closest_fact_score": 1.0
+    },
+    {
+      "title": "Global Asset & Fleet Tracking",
+      "status": "VERIFIED",
+      "overlap_score": 1.0,
+      "unmatched_words": [],
+      "closest_fact_claim": "Preferred Freezer Services designs, constructs, and operates state\u2011of\u2011the\u2011art temperature\u2011controlled warehouses in the United States and internationally (including China and Vietnam).",
+      "closest_fact_score": 1.0
+    }
+  ]
+}

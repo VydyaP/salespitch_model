@@ -1,0 +1,22 @@
+{
+  "company_name": "Venky's (India) Limited",
+  "gaps_checked": 1,
+  "summary": {
+    "VERIFIED": 1,
+    "WEAK": 0,
+    "UNVERIFIED": 0
+  },
+  "results": [
+    {
+      "title": "Processed chicken moves across three states into retail, no named monitoring system",
+      "status": "VERIFIED",
+      "overlap_score": 0.92,
+      "unmatched_words": [
+        "sells...",
+        "xprs"
+      ],
+      "closest_fact_claim": "Venkateshwara Hatcheries' poultry operations are based across Maharashtra, Madhya Pradesh, and the southern states of India, and the company sells processed chicken through its own retail brand, Venky's Xprs.",
+      "closest_fact_score": 0.77
+    }
+  ]
+}

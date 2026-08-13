@@ -1,0 +1,11 @@
+anthropic
+python-dotenv
+
+# only needed for --gemini (analyze.py: tested/verified; retrieve.py: untested, needs billing)
+google-genai
+
+# only needed for --groq (both retrieve.py and analyze.py: tested/verified, free tier)
+groq
+
+# only needed to run server.py (the live-search website)
+flask

@@ -1,0 +1,30 @@
+{
+  "company_name": "Zomato Hyperpure",
+  "gaps_checked": 2,
+  "summary": {
+    "VERIFIED": 2,
+    "WEAK": 0,
+    "UNVERIFIED": 0
+  },
+  "results": [
+    {
+      "title": "Two brand-new warehouses in under a year, no stated monitoring standard set from day one",
+      "status": "VERIFIED",
+      "overlap_score": 0.88,
+      "unmatched_words": [
+        "bhiwandi...",
+        "palava."
+      ],
+      "closest_fact_claim": "In under a year, Zomato Hyperpure leased more than 5 lakh sq ft of warehousing across two sites in the Mumbai Metropolitan Region: 2.5 lakh sq ft in Bhiwandi (5-year lease signed August 2025, ~Rs 66.21 lakh/month rent from March 2026) and 2.53 lakh sq ft in Palava (5-year lease from February 15, 2025, ~Rs 85.3 lakh/month), both with 5% annual rent escalation.",
+      "closest_fact_score": 0.88
+    },
+    {
+      "title": "Meat and seafood distribution through brand-new sites with no named cold-chain monitoring system",
+      "status": "VERIFIED",
+      "overlap_score": 1.0,
+      "unmatched_words": [],
+      "closest_fact_claim": "The Bhiwandi warehouse will support Hyperpure's sourcing and distribution of fresh and packaged products -- fruits, vegetables, meat, seafood, groceries, and essentials -- for hotels, restaurants, caterers, and food businesses.",
+      "closest_fact_score": 1.0
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "company_name": "Vadilal Industries",
+  "gaps_checked": 2,
+  "summary": {
+    "VERIFIED": 2,
+    "WEAK": 0,
+    "UNVERIFIED": 0
+  },
+  "results": [
+    {
+      "title": "Vast last-mile network for a product with zero tolerance for a cold break",
+      "status": "VERIFIED",
+      "overlap_score": 0.93,
+      "unmatched_words": [
+        "plants..."
+      ],
+      "closest_fact_claim": "Vadilal operates a Cold Chain Network comprising three manufacturing plants (Pundhra and Dharampur in Gujarat, and Bareilly in Uttar Pradesh) totaling a production capacity of 1.25 lakh litres per day, about 23 C&FA, more than 500 distributors, and over 40,000 retailers.",
+      "closest_fact_score": 0.93
+    },
+    {
+      "title": "Three manufacturing plants across two states feeding one distribution network",
+      "status": "VERIFIED",
+      "overlap_score": 1.0,
+      "unmatched_words": [],
+      "closest_fact_claim": "Vadilal operates a Cold Chain Network comprising three manufacturing plants (Pundhra and Dharampur in Gujarat, and Bareilly in Uttar Pradesh) totaling a production capacity of 1.25 lakh litres per day, about 23 C&FA, more than 500 distributors, and over 40,000 retailers.",
+      "closest_fact_score": 1.0
+    }
+  ]
+}

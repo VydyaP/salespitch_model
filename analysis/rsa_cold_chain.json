@@ -1,0 +1,22 @@
+{
+  "gaps": [
+    {
+      "title": "Post-acquisition expansion with no stated plan to keep monitoring consistent",
+      "detail": "In 2023 Americold took a 49% stake specifically to expand RSA locally and connect it to Americold's global network -- meaning new facilities and markets beyond the current single Dubai site are coming. RSA's marketing already claims continuous monitoring and a real-time WMS today, but nothing describes how that gets replicated consistently as the network grows.",
+      "severity": "medium",
+      "gnd_service": "Warehouse Management + Platform (ThinxFresh)",
+      "based_on": "In 2023, Americold acquired a 49% minority stake in RSA Cold Chain... with immediate plans to expand locally, connect RSA to its global network, and pursue development opportunities across the Middle East and India."
+    },
+    {
+      "title": "Quality certifications are periodic audits, not real-time compliance evidence",
+      "detail": "ISO 9001, ISO 22000, ISO 14001, and OHSAS 18001 are process/quality-management standards verified through periodic audits -- they don't generate real-time, audit-ready deviation records on their own. RSA's separate claim of 'continuous monitoring' doesn't describe automated compliance reporting tied to those certification requirements.",
+      "severity": "low",
+      "gnd_service": "Cold Chain Management (ThinxFresh)",
+      "based_on": "The facility holds ISO 9001, ISO 22000, ISO 14001, and OHSAS 18001 certifications; RSA's own marketing claims an advanced WMS for real-time inventory visibility and continuous temperature monitoring."
+    }
+  ],
+  "pitch": {
+    "angle": "RSA Cold Chain already invests seriously in tech -- a real-time WMS, continuous monitoring, an API for live inventory -- and just brought on Americold as a 49% partner specifically to expand into new markets and connect to a global network. That's exactly the moment a fast-growing operator needs monitoring and compliance to scale with the network instead of being rebuilt site by site. GND's ThinxFresh wouldn't be introducing monitoring to RSA -- it'd be the layer that keeps every new site as consistent and audit-ready as the flagship Dubai facility, from day one.",
+    "opener": "With Americold now backing your expansion into new markets, how are you planning to keep monitoring and compliance consistent as new sites come online -- same system everywhere, or rebuilt per facility?"
+  }
+}

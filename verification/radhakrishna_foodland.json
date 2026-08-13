@@ -1,0 +1,35 @@
+{
+  "company_name": "Radhakrishna Foodland",
+  "gaps_checked": 3,
+  "summary": {
+    "VERIFIED": 3,
+    "WEAK": 0,
+    "UNVERIFIED": 0
+  },
+  "results": [
+    {
+      "title": "Lack of Dedicated End-to-End Cold Chain IoT Monitoring Platform",
+      "status": "VERIFIED",
+      "overlap_score": 1.0,
+      "unmatched_words": [],
+      "closest_fact_claim": "The company describes using 'advanced inventory management technologies' for real-time visibility and control, claiming 99.8%+ inventory accuracy, though it does not name a specific IoT or monitoring platform.",
+      "closest_fact_score": 1.0
+    },
+    {
+      "title": "Fleet & Asset Monitoring Across Expanded Multi-Temperature Transport Assets",
+      "status": "VERIFIED",
+      "overlap_score": 1.0,
+      "unmatched_words": [],
+      "closest_fact_claim": "Radhakrishna Foodland runs 600+ multi-temperature transport assets and reports a 99% on-time delivery performance rate.",
+      "closest_fact_score": 1.0
+    },
+    {
+      "title": "Automated Multi-Zone Compliance Logging for FSSAI and BRCGS Audits",
+      "status": "VERIFIED",
+      "overlap_score": 1.0,
+      "unmatched_words": [],
+      "closest_fact_claim": "Warehousing covers frozen, chilled, tropical, and ambient storage, and the operation is BRCGS certified and FSSAI compliant for food safety.",
+      "closest_fact_score": 1.0
+    }
+  ]
+}

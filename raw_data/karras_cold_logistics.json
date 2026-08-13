@@ -1,0 +1,34 @@
+{
+  "company_name": "Karras Cold Logistics",
+  "founded": "1976 (founder Eddie Karras); acquired by NewCold (Netherlands, automated cold storage specialist) in November 2023",
+  "hq": "Smithfield, Sydney, New South Wales, Australia",
+  "industry": "Refrigerated transport & cold storage — dairy, seafood, poultry, confectionery",
+  "size": "25,000+ pallet capacity across Sydney, Melbourne, Brisbane & Adelaide; 100% Australian family-owned until its November 2023 acquisition by NewCold",
+  "facts": [
+    {
+      "claim": "Karras Cold Logistics was founded in 1976 by Eddie Karras, is 100% Australian and family-owned, and grew for over 40 years purely through word of mouth and referrals rather than aggressive expansion.",
+      "source_snippet": "Founded in 1976 by Eddie Karras, the Company is part of a privately owned Group... We are 100% Australian, family owned and have been servicing Australian businesses for over 40 years... communicated solely by word of mouth and referrals. We do not seek to grow at all costs and will always seek first to ensure that our existing customers are satisfied before we pursue new customer opportunities.",
+      "source_url": "https://karras.com.au/about-us/"
+    },
+    {
+      "claim": "The company processes thousands of weekly consignments spanning dairy, seafood, poultry, and confectionery for manufacturers, wholesalers, importers, and retailers.",
+      "source_snippet": "With thousands of consignments processed every week, spanning categories such as dairy, seafood, poultry and confectionary, Karras Cold Logistics touches the lives of almost every person in Australia.",
+      "source_url": "https://karras.com.au/about-us/"
+    },
+    {
+      "claim": "Karras has a combined storage capacity of over 25,000 pallets across Sydney, Melbourne, and Brisbane warehouses (plus an Adelaide location), offering chilled storage (0 to 4 degrees) and frozen storage (-18 to -24 degrees).",
+      "source_snippet": "We have a combined storage capacity of over 25,000 pallets across our Sydney, Melbourne and Brisbane warehouse locations... Chilled Storage (0 to 4 degrees). Frozen Storage (-18 to -24 degrees).",
+      "source_url": "https://karras.com.au/temperature-controlled-warehousing/"
+    },
+    {
+      "claim": "Karras describes its technology only as scanning products accurately into the warehouse with system integrations offered, with no specifics on real-time monitoring or deviation alerting.",
+      "source_snippet": "We also utilise industry-leading technology to ensure your products are scanned accurately into the warehouse.",
+      "source_url": "https://karras.com.au/temperature-controlled-warehousing/"
+    },
+    {
+      "claim": "In November 2023, NewCold -- a Netherlands-based global leader in advanced food logistics founded in 2012 that specializes in automated temperature-controlled storage -- acquired Karras Group via a competitive bid process, explicitly to expand its Australian footprint and operating model.",
+      "source_snippet": "NewCold: A global leader in advanced food logistics, based in the Netherlands. Founded in 2012, it specialises in automated temperature-controlled storage. Karras Group: An Australian family-owned refrigerated transport, cold storage and logistic service provider, founded in 1976... NewCold's acquisition will allow it to grow its footprint and offering to customers in Australia.",
+      "source_url": "https://hallandwilcox.com.au/news/hall-wilcox-advises-newcold-on-acquisition-of-karras-group/"
+    }
+  ]
+}

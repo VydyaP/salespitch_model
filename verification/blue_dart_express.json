@@ -1,0 +1,21 @@
+{
+  "company_name": "Blue Dart Express",
+  "gaps_checked": 1,
+  "summary": {
+    "VERIFIED": 1,
+    "WEAK": 0,
+    "UNVERIFIED": 0
+  },
+  "results": [
+    {
+      "title": "Temperature-controlled shipments get retrospective logs, not live deviation alerts",
+      "status": "VERIFIED",
+      "overlap_score": 0.97,
+      "unmatched_words": [
+        "logistics..."
+      ],
+      "closest_fact_claim": "Blue Dart offers Temperature Controlled Logistics as a specialized service across three ranges -- Frozen (-20\u00b0C), Chilled (2-8\u00b0C), Ambient (15-25\u00b0C) -- for pharmaceuticals, clinical research organizations, and hospitals, covering items like blood, plasma, tissues, life-saving drugs, and diagnostics kits across 53 origin-destination pairs.",
+      "closest_fact_score": 0.62
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "gaps": [
+    {
+      "title": "No real\u2011time temperature monitoring",
+      "detail": "Frostbite\u2019s emergency cold\u2011storage units are deployed quickly, but there\u2019s no indication they capture live temperature data or send deviation alerts, which can risk food safety and compliance.",
+      "severity": "high",
+      "gnd_service": "Cold Chain Management",
+      "based_on": "The company provides emergency cold storage solutions for hotels, restaurants, catering companies, event venues, supermarkets, food retailers, and commercial kitchens."
+    },
+    {
+      "title": "Lack of centralized asset visibility",
+      "detail": "While they operate a fleet of 13\u202fm\u00b3 high\u2011capacity trailers, the research shows no tracking or dashboard capability, meaning dispatch and utilization are likely managed manually.",
+      "severity": "medium",
+      "gnd_service": "Asset Tracking & Monitoring",
+      "based_on": "Their equipment fleet includes 13\u202fm\u00b3 high\u2011capacity trailers and a range of chillers and freezers."
+    },
+    {
+      "title": "Limited compliance & audit reporting",
+      "detail": "Serving NHS trusts and major foodservice brands implies strict regulatory requirements, yet there\u2019s no mention of automated compliance reporting that GND\u2019s platform can provide.",
+      "severity": "medium",
+      "gnd_service": "Cold Chain Management",
+      "based_on": "It supplies NHS trusts and hospital facilities, as well as breweries and pub groups including Robinsons, Greene\u202fKing, Holts, and Punch\u202fPubs."
+    },
+    {
+      "title": "Resource constraints for IoT integration",
+      "detail": "As a small, family\u2011run business with only ~70 LinkedIn followers, Frostbite may lack the in\u2011house engineering capacity to design and deploy custom sensor hardware across its fleet.",
+      "severity": "low",
+      "gnd_service": "Embedded / Product Engineering",
+      "based_on": "The company is family\u2011run and based in Warrington, UK."
+    }
+  ],
+  "pitch": {
+    "angle": "Frostbite\u2019s rapid\u2011response cold\u2011storage service is a perfect match for GND\u2019s ThinxFresh platform, which adds real\u2011time temperature analytics, automated compliance reporting and a single dashboard to keep every trailer and unit under constant watch\u2014helping them protect food safety for high\u2011profile clients like the NHS and major food brands.",
+    "opener": "Hi\u202f[Name], I noticed Frostbite delivers emergency refrigeration within 4\u202fhours; imagine coupling that speed with live temperature alerts and compliance dashboards to safeguard every shipment."
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "company_name": "Interstate Cold Storage",
+  "founded": "1973 (founder Vincent Tippmann)",
+  "hq": "Fort Wayne, Indiana, USA",
+  "industry": "Cold storage warehousing -- family-owned, Midwest regional (multi-temp, food industry)",
+  "size": "5 facilities across Indiana & Ohio, ~22 million cubic feet of refrigerated space; ranked Top 20 North American refrigerated warehousing company (IARW)",
+  "facts": [
+    {
+      "claim": "Interstate Cold Storage was founded in 1973 by Vincent Tippmann in Fort Wayne, Indiana, and grew over 50 years from a one-warehouse operation into the Midwest's premier cold storage provider, ranked a Top 20 North American refrigerated warehousing company by the International Association of Refrigerated Warehouses (IARW).",
+      "source_snippet": "Founder Vincent Tippmann established Interstate Cold Storage in Fort Wayne, Indiana. The company was founded in 1973, and over the past half-century, ICS has grown from a one-warehouse operation to the Midwest's premier provider of cold storage solutions, with recognition as a top 20 North American refrigerated warehousing company by the International Association of Refrigerated Warehouses.",
+      "source_url": "https://interstatecoldstorage.com/ics-50th-year-2023/"
+    },
+    {
+      "claim": "The family-owned company operates five locations across Indiana and Ohio (including two in Fort Wayne and one in Columbus) totaling nearly 22 million cubic feet of refrigerated space, with multi-room, multi-temp facilities supporting temperature ranges from -15°F to 35°F.",
+      "source_snippet": "Headquartered in Fort Wayne, Indiana, ICS is a family-owned company with five locations and nearly 22 million cubic feet of refrigerated space. ICS maintains five locations in Ohio and Indiana, including two in Fort Wayne and Columbus. The facility network currently supports temperature ranges from -15F to 35F with multi-room, multi-temp offerings.",
+      "source_url": "https://interstatecoldstorage.com/locations/"
+    },
+    {
+      "claim": "The Fort Wayne West facility offers storage from -13°F to 0°F, can process up to 250,000 pounds per day with quick-freezing capability, and is equipped with EDI (Electronic Data Interchange) and customer internet access for real-time inventory tracking, integrated with ammonia refrigeration systems.",
+      "source_snippet": "the Fort Wayne West facility... offers storage temperatures ranging from -13F to 0F, and the facility can process up to 250,000 pounds per day with quick freezing capabilities... equipped with Electronic Data Interchange (EDI) and customer internet access for seamless communication and real-time inventory tracking... integrated with ammonia refrigeration systems.",
+      "source_url": "https://interstatecoldstorage.com/fort-wayne-west-interstate-cold-storage-2/"
+    }
+  ]
+}

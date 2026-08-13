@@ -1,0 +1,29 @@
+{
+  "company_name": "CWT Limited",
+  "founded": "1970 (originally a Port of Singapore Authority arm); China's HNA Group became controlling shareholder in 2017 (~S$1.4B acquisition), renaming it CWT International Limited",
+  "hq": "Singapore",
+  "industry": "Cold chain / integrated logistics — food manufacturers, wholesalers, retailers",
+  "size": "750,000 sq ft multi-temperature cold hub in Singapore; majority-owned by China's HNA Group since 2017",
+  "facts": [
+    {
+      "claim": "CWT was founded in 1970 as a private arm of the Port of Singapore Authority; in 2017 HNA Group completed a roughly S$1.4 billion (US$1 billion) acquisition and became controlling shareholder, renaming the company CWT International Limited.",
+      "source_snippet": "CWT was founded in 1970 and was incorporated as a private arm of the Port of Singapore Authority... HNA Group planned to acquire CWT for S$1.4 billion ($1 billion)... HNA Holding Group controlled more than 90 percent of shares in CWT by October 2017... In December 2017, the company changed its name to CWT International Limited.",
+      "source_url": "https://www.acnnewswire.com/press-release/english/40407/hna-holding-completes-acquisition-of-singapore-company-cwt-limited-and-changes-name-to-cwt-international-limited"
+    },
+    {
+      "claim": "CWT operates a 750,000-sq. ft. multi-temperature-controlled cold hub in Singapore with -18°C freezer, air-conditioned, and ambient storage, serving food manufacturers, wholesalers, and retailers.",
+      "source_snippet": "750,000-sq. ft. multi-temperature-controlled cold hub facility... -18C freezer, air-conditioned and ambient storage facilities... food manufacturers, wholesalers and retailers.",
+      "source_url": "https://www.cwtlimited.com/cold-chain-logistics/"
+    },
+    {
+      "claim": "The facility uses a front-end iSCM platform linked to customer ERP systems, a WMS for cargo movements, and a temperature monitoring and tracking system, though no specifics on deviation-alert speed or automated compliance reporting are given.",
+      "source_snippet": "Front-end iSCM platform directly links to customer ERP. WMS manages all cargo movements and handling services. Temperature monitoring and tracking system.",
+      "source_url": "https://www.cwtlimited.com/cold-chain-logistics/"
+    },
+    {
+      "claim": "The facility holds six separate certifications -- ISO9001, ISO14001, ISO22000, ISO22339, ISO45000, and HACCP -- and maintains separate storage for Halal and non-Halal products alongside an on-site AVA (food safety authority) Inspection Room.",
+      "source_snippet": "ISO9001, ISO14001, ISO22000, ISO22339, ISO45000, HACCP certified processes... The facility maintains separate storage for Halal and non-Halal products, features an AVA Inspection Room, and provides 24/7 security.",
+      "source_url": "https://www.cwtlimited.com/cold-chain-logistics/"
+    }
+  ]
+}

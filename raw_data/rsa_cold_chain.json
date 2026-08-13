@@ -1,0 +1,39 @@
+{
+  "company_name": "RSA Cold Chain",
+  "founded": "Parent RSA Global founded 2009; RSA Cold Chain division began operations in 2017",
+  "hq": "Dubai, United Arab Emirates",
+  "industry": "Cold chain 3PL — retail/grocery, quick commerce, QSR, HORECA, food producers",
+  "size": "46,000 sqm / 62,000 pallet positions in Dubai; Americold (US, ~1.4B cu ft globally) took a 49% stake in 2023",
+  "facts": [
+    {
+      "claim": "RSA Cold Chain is based in Dubai and began operations in 2017 as a subsidiary of RSA Global, holding HACCP and ISO 22000 certifications, serving packaged food, fresh produce, dairy, and frozen foods.",
+      "source_snippet": "RSA Cold Chain Background: Based in Dubai; began operations in 2017. Subsidiary of RSA Global (digital supply chain and e-commerce logistics specialist). Holds HACCP and ISO 22000 certifications. Serves packaged food, fresh produce, dairy, and frozen foods sectors.",
+      "source_url": "https://ir.americold.com/press-releases/news-details/2023/Americold-Announces-Strategic-Investment-in-Dubai-Cold-Storage-Company-RSA-Cold-Chain/default.aspx"
+    },
+    {
+      "claim": "The Dubai facility spans 46,000 sqm with 62,000 pallet positions, offering a flexible -25°C to +25°C range per chamber, with frozen storage at -25°C to -18°C and chilled storage at 0°C to 5°C.",
+      "source_snippet": "46,000 Sqm Storage Area. 62,000 Pallet Positions with Dubai. -25oC to +25oC Flexible Temperature Range Per Chamber. Frozen Storage: Maintained at -25 to -18C. Chilled Storage: Maintained between 0C and 5C.",
+      "source_url": "https://www.rsa.global/cold-storage"
+    },
+    {
+      "claim": "The facility holds ISO 9001, ISO 22000, ISO 14001, and OHSAS 18001 certifications.",
+      "source_snippet": "ISO 9001 (Quality Management), ISO 22000 (Food Safety Management System), ISO 14001 (Environmental Management System), OHSAS 18001 (Operation & Health & Safety Management).",
+      "source_url": "https://www.rsa.global/cold-storage"
+    },
+    {
+      "claim": "RSA's own marketing claims an advanced WMS for real-time inventory visibility, continuous temperature monitoring, and a single-integration API for real-time inventory data.",
+      "source_snippet": "Real-Time Inventory Tracking: Advanced WMS for real-time inventory visibility. Temperature Monitoring: Continuous monitoring to ensure product integrity. Single-integration API that is all you need to get real-time inventory data.",
+      "source_url": "https://www.rsa.global/cold-storage"
+    },
+    {
+      "claim": "RSA Cold Chain serves Retail & Grocery, Wholesale & Distributors, Quick Commerce, QSR, HORECA, and food producers -- pharmaceuticals is not listed among its served industries.",
+      "source_snippet": "Industries Served: Retail & Grocery, Wholesale & Distributors, Quick Commerce, Quick Service Restaurants, HORECA, and Producers.",
+      "source_url": "https://www.rsa.global/cold-storage"
+    },
+    {
+      "claim": "In 2023, Americold acquired a 49% minority stake in RSA Cold Chain for $3.9 million, with immediate plans to expand locally, connect RSA to its global network, and pursue development opportunities across the Middle East and India, leveraging a concurrent partnership with DP World.",
+      "source_snippet": "Americold acquired a 49% minority ownership stake. Investment amount: $3.9 million at closing. Americold will take a minority ownership position in RSA Cold Chain with immediate plans to expand locally, connect RSA to its global network, and pursue strategic development opportunities in the Middle East and surrounding markets.",
+      "source_url": "https://ir.americold.com/press-releases/news-details/2023/Americold-Announces-Strategic-Investment-in-Dubai-Cold-Storage-Company-RSA-Cold-Chain/default.aspx"
+    }
+  ]
+}

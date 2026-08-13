@@ -1,0 +1,33 @@
+{
+  "company_name": "TCI Cold Chain Solutions",
+  "gaps_checked": 2,
+  "summary": {
+    "VERIFIED": 2,
+    "WEAK": 0,
+    "UNVERIFIED": 0
+  },
+  "results": [
+    {
+      "title": "Strong per-facility monitoring, no stated unified cross-network view",
+      "status": "VERIFIED",
+      "overlap_score": 0.9,
+      "unmatched_words": [
+        "cameras.",
+        "dec",
+        "nov"
+      ],
+      "closest_fact_claim": "In December 2025, TCI opened a new 1.5-lakh-sq.-ft. cold chain facility at Taj Nagar, Gurugram, featuring SCADA-based monitoring, VESDA early smoke detection, 600+ CCTV cameras, and 500 kW rooftop solar, with multi-temperature (frozen/chilled/ambient) zones. Nationwide managed warehousing now exceeds 16 million sq. ft.",
+      "closest_fact_score": 0.57
+    },
+    {
+      "title": "Four-standard pharma compliance burden without stated automated audit reporting",
+      "status": "VERIFIED",
+      "overlap_score": 0.95,
+      "unmatched_words": [
+        "control."
+      ],
+      "closest_fact_claim": "TCI follows compliance with FDA, FSSAI, NBC, and CMVR standards with internal audits, and serves fruits & veggies, dairy, meat, aqua, frozen food, confectionery, floriculture, pharmaceuticals, and health sciences verticals.",
+      "closest_fact_score": 0.62
+    }
+  ]
+}

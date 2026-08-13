@@ -1,0 +1,29 @@
+{
+  "company_name": "Frigorifico Allana",
+  "founded": "Allana Group founded 1865 by Abdulla Allana; Frigorifico Allana is the group's frozen meat processing and export division",
+  "hq": "Mumbai, Maharashtra, India (Allana Centre, MG Road); frozen meat processing facility in Khalapur, Maharashtra",
+  "industry": "Frozen/chilled meat processing & export (buffalo, lamb, mutton, goat); part of India's largest private food conglomerate",
+  "size": "750,000 MTS annual production capacity, 66,000 MTS cold storage across 10 facilities, exports to 70+ countries; parent entity Allanasons Pvt Ltd reports >500 Cr INR annual turnover",
+  "facts": [
+    {
+      "claim": "The Allana Group was founded in 1865 by Abdulla Allana and is now the largest private food company in India, processing and selling over one million metric tons of products annually to 85+ countries.",
+      "source_snippet": "Born into a stimulating commercial environment of the Indian subcontinent, he was quick to demonstrate his flair for business, setting up the family business in 1865... the largest private food company in India processing & selling in excess of one million metric tons of various products annually to over 85 countries.",
+      "source_url": "https://allana.com/our-heritage/"
+    },
+    {
+      "claim": "Allanasons Private Limited, the group's export entity, is headquartered at Allana Centre on MG Road, Mumbai, and reports annual turnover of over 500 crore INR.",
+      "source_snippet": "Allana Centre, 113/115, MG Road, ARJ Allana Marg, Stock Exchange, Mumbai - 400001, Maharashtra, India... Annual Turnover: > 500 Cr.",
+      "source_url": "https://www.allanagroup.in/"
+    },
+    {
+      "claim": "Frigorifico Allana's frozen meat operations have an annual production capacity of 750,000 MTS and cold storage capacity of 66,000 MTS spread across ten facilities, exporting to over 70 countries.",
+      "source_snippet": "Production Capacity (annual): 750,000 MTS. Cold Storage capacity: 66,000 MTS... Ten [facilities]... exports to over 70 countries around the World.",
+      "source_url": "https://allana.com/proteins/frozen-meat/"
+    },
+    {
+      "claim": "Operations are ISO 9001, FSSC 22000, ISO 14001, ISO 45001 and HACCP process-compliant, following Codex Alimentarius standards and OIE guidelines, with meat exports prepared to Halal requirements.",
+      "source_snippet": "ISO 9001, FSSC 22000, ISO 14001, ISO 45001 & HACCP process-compliant organization. Operations follow Codex Alimentarius standards and OIE guidelines... 100% of the meat exported from India is prepared strictly in compliance with Islamic requirements of genuine Halal.",
+      "source_url": "https://allana.com/proteins/frozen-meat/"
+    }
+  ]
+}

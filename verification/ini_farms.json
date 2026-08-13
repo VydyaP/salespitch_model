@@ -1,0 +1,30 @@
+{
+  "company_name": "INI Farms",
+  "gaps_checked": 2,
+  "summary": {
+    "VERIFIED": 2,
+    "WEAK": 0,
+    "UNVERIFIED": 0
+  },
+  "results": [
+    {
+      "title": "Post-acquisition mandate to expand into new crops and new geographies at once",
+      "status": "VERIFIED",
+      "overlap_score": 0.93,
+      "unmatched_words": [
+        "agrostar...",
+        "of..."
+      ],
+      "closest_fact_claim": "On March 31, 2022, AgroStar (India's largest digital farmer network, which had raised $70M in Series D funding in December 2021) announced a 100% cash-and-stock acquisition of INI Farms, explicitly to target the entire fruits and vegetables basket -- starting with onions and vegetables -- and to focus expansion on EU and North America markets.",
+      "closest_fact_score": 0.89
+    },
+    {
+      "title": "Farm-gate temperature control across 2,000+ farmers in five states",
+      "status": "VERIFIED",
+      "overlap_score": 1.0,
+      "unmatched_words": [],
+      "closest_fact_claim": "INI Farms was founded in 2009 by Pankaj Khandelwal and Purnima Khandelwal, and works with over 2,000 farmers across Madhya Pradesh, Maharashtra, Gujarat, Andhra Pradesh, and Karnataka for pomegranates and bananas, covering nearly 5,000 acres, plus its own farms totaling 550 acres across seven locations in Maharashtra and Madhya Pradesh.",
+      "closest_fact_score": 1.0
+    }
+  ]
+}

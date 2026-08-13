@@ -1,0 +1,34 @@
+{
+  "company_name": "TCI Cold Chain Solutions",
+  "founded": "Parent group Transport Corporation of India (TCI) founded 1958 by Prabhu Dayal Agarwal; cold chain division formalized as a joint venture with Mitsui & Co. in November 2021",
+  "hq": "Gurugram, Haryana, India (TCI Group HQ)",
+  "industry": "Cold chain logistics (pharma, fresh food, dairy, meat, aqua, quick commerce)",
+  "size": "17M sq. ft. of storage space, 22,000+ pallet positions, 3,500+ employees; JV between TCI (80%) and Mitsui & Co. (20%)",
+  "facts": [
+    {
+      "claim": "TCI Cold Chain Solutions is a joint venture between Transport Corporation of India (TCI, 80%) and Japan's Mitsui & Co. Ltd. (20%); Mitsui invested in November 2021, citing expected rapid growth in India's cold chain sector driven by pharma demand.",
+      "source_snippet": "Mitsui & Co invested in TCI Cold Chain Solutions, the cold chain logistics unit of Transport Corporation of India... We expect the cold chain logistics industry in India to expand rapidly, now and in a post-Covid world in response to growing demand from the pharmaceutical sector.",
+      "source_url": "https://www.itln.in/mitsui-invests-in-tcis-cold-chain-logistics-business"
+    },
+    {
+      "claim": "At the time of Mitsui's November 2021 investment, TCI CCS operated 130+ refrigerated vehicles and multi-temperature warehouses totaling 12 million sq. ft. of storage capacity, serving pharmaceuticals, fresh food, chemicals, and quick-service restaurants.",
+      "source_snippet": "TCI CCS operates 130+ refrigerated vehicles and multi-temperature warehouses across India with 12 million square feet of storage capacity. The company serves pharmaceuticals, fresh food, chemicals, and quick-service restaurants.",
+      "source_url": "https://www.itln.in/mitsui-invests-in-tcis-cold-chain-logistics-business"
+    },
+    {
+      "claim": "TCI Cold Chain Solutions now manages 17 million sq. ft. of storage space with 22,000+ pallet positions across a -18°C to +25°C temperature range and 35%-65% relative humidity control, with a workforce of 3,500+.",
+      "source_snippet": "Ambient space: 17 million sq. ft. Pallet positions: 22,000+. Temperature Control: -18C to +25C. Humidity Range: 35% to 65% RH. TCI Cold Chain Solutions has a strong and reliable workforce of 3500+ meticulous workers.",
+      "source_url": "https://tciccs.com/about-us/"
+    },
+    {
+      "claim": "TCI follows compliance with FDA, FSSAI, NBC, and CMVR standards with internal audits, and serves fruits & veggies, dairy, meat, aqua, frozen food, confectionery, floriculture, pharmaceuticals, and health sciences verticals.",
+      "source_snippet": "TCI follows strict compliance with FDA, FSSAI, NBC, and CMVR with unbiased internal audits to continually pursue excellence in quality... Fruits & Veggies, Dairy, Meat, Aqua, Frozen food, Confectionery, Floriculture, Pharmaceuticals, Health sciences and other varied industries.",
+      "source_url": "https://tciccs.com/about-us/"
+    },
+    {
+      "claim": "In December 2025, TCI opened a new 1.5-lakh-sq.-ft. cold chain facility at Taj Nagar, Gurugram, featuring SCADA-based monitoring, VESDA early smoke detection, 600+ CCTV cameras, and 500 kW rooftop solar, with multi-temperature (frozen/chilled/ambient) zones. Nationwide managed warehousing now exceeds 16 million sq. ft.",
+      "source_snippet": "The facility features a 500 kW rooftop solar power installation, energy-efficient refrigeration systems, SCADA-based monitoring, VESDA panels for early smoke detection, and over 600 CCTV cameras for real-time surveillance... With over 16 million sq. ft. of warehousing space managed nationwide, TCI continues to reinforce its integrated logistics network.",
+      "source_url": "https://indiashippingnews.com/tci-adds-1-5-lakh-sq-ft-cold-chain-capacity-at-taj-nagar-gurugram/"
+    }
+  ]
+}

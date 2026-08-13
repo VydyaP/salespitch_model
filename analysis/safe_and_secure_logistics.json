@@ -1,0 +1,15 @@
+{
+  "gaps": [
+    {
+      "title": "15-minute interval logging, not real-time deviation alerting",
+      "detail": "Safe & Secure already runs genuinely strong pharma-grade infrastructure -- validated temperature mapping with a 0.3% excursion rate across 30,000+ daily shipments. But digital logging happens every 15 minutes, not instantly: a deviation is caught at the next check-in, not the moment it starts. Even at a 0.3% excursion rate, that's roughly 90 shipments a day where real-time alerting could mean catching and correcting a problem minutes sooner, before it ever registers as a logged excursion.",
+      "severity": "medium",
+      "gnd_service": "Cold Chain Management (ThinxFresh)",
+      "based_on": "validated temperature mapping, 15-minute interval digital logging... SSL's excursion rate is less than 0.3%; 30,000+ Daily Shipments."
+    }
+  ],
+  "pitch": {
+    "angle": "Safe & Secure already runs pharma-grade cold chain at a scale most competitors can't touch -- 475 reefers, 70+ warehouses, WHO-GDP compliance, and a genuinely strong 0.3% excursion rate across 30,000+ daily shipments. That excursion rate is checked every 15 minutes, though, not instantly -- at that volume, moving from interval logging to real-time deviation alerts is the difference between catching a problem the moment it starts and catching it up to 15 minutes late, across roughly 90 shipments a day that currently register as excursions. GND's ThinxFresh doesn't replace SSL's infrastructure -- it closes that 15-minute gap.",
+    "opener": "With a 0.3% excursion rate across 30,000+ daily shipments, how much of that is caught by 15-minute interval logging versus instant, real-time alerts?"
+  }
+}

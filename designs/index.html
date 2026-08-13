@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Prospect Scan — Design Launcher</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    background: #f5f5f7; color: #1d1d1f; line-height: 1.5; padding: 48px 24px 100px;
+  }
+  .page { max-width: 880px; margin: 0 auto; }
+  h1 { font-size: 28px; font-weight: 700; letter-spacing: -0.01em; }
+  .sub { color: #6e6e73; margin-top: 8px; font-size: 15px; max-width: 60ch; }
+  section { margin-top: 40px; }
+  .sec-title { font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: #6e6e73; margin-bottom: 12px; }
+  .card {
+    background: #fff; border: 1px solid #d2d2d7; border-radius: 12px; padding: 18px 22px; margin-bottom: 10px;
+    display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap;
+  }
+  .card h3 { font-size: 16px; font-weight: 600; }
+  .card p { font-size: 13.5px; color: #6e6e73; margin-top: 3px; }
+  .links { display: flex; gap: 8px; flex-wrap: wrap; }
+  .links a {
+    font-size: 13px; font-weight: 600; text-decoration: none; color: #1d1d1f;
+    background: #f5f5f7; border: 1px solid #d2d2d7; border-radius: 999px; padding: 6px 14px;
+    white-space: nowrap;
+  }
+  .links a:hover { background: #e8e8ed; }
+  .live { border-color: #34c759; }
+  .note { font-size: 12.5px; color: #86868b; margin-top: 4px; }
+  code { font-family: ui-monospace, Menlo, monospace; background: #f5f5f7; padding: 1px 5px; border-radius: 4px; font-size: 0.9em; }
+</style>
+</head>
+<body>
+<div class="page">
+  <h1>Prospect Scan — design comparison launcher</h1>
+  <p class="sub">Every frontend attempt so far, one page. Click through to compare. This page is just links — it doesn't run anything itself.</p>
+
+  <section>
+    <p class="sec-title">Live &amp; working (real data)</p>
+    <div class="card">
+      <div>
+        <h3>Real site</h3>
+        <p>The actual app — server.py, all 24 real companies, live search, save/discard.</p>
+        <p class="note">Needs <code>python server.py</code> running first.</p>
+      </div>
+      <div class="links"><a class="live" href="http://localhost:5000" target="_blank">Open :5000</a></div>
+    </div>
+  </section>
+
+  <section>
+    <p class="sec-title">Full-app builds (React, mock data)</p>
+    <div class="card">
+      <div>
+        <h3>Lovable — "Console"</h3>
+        <p>Dense analyst-workbench style. Dark/light toggle added. Mock data, not wired to the backend yet.</p>
+        <p class="note">Needs <code>cd frontend</code> then <code>bun run dev</code> running first.</p>
+      </div>
+      <div class="links"><a href="http://localhost:8080" target="_blank">Open :8080</a></div>
+    </div>
+  </section>
+
+  <section>
+    <p class="sec-title">Stitch — "Editorial Dossier" (Direction B)</p>
+    <p class="note" style="margin-bottom:10px">Playfair Display + Inter, "Paper &amp; Ink" palette, magazine-briefing feel. Static files, open directly, no server needed.</p>
+    <div class="card">
+      <div><h3>Dashboard</h3><p>Browse/search screen</p></div>
+      <div class="links"><a href="stitch_editorial_dossier/prospect_dashboard/code.html" target="_blank">Open</a></div>
+    </div>
+    <div class="card">
+      <div><h3>Researching</h3><p>Live search progress state</p></div>
+      <div class="links"><a href="stitch_editorial_dossier/researching_prospect/code.html" target="_blank">Open</a></div>
+    </div>
+    <div class="card">
+      <div><h3>Review findings</h3><p>Save / Discard review state</p></div>
+      <div class="links"><a href="stitch_editorial_dossier/review_research_findings/code.html" target="_blank">Open</a></div>
+    </div>
+    <div class="card">
+      <div><h3>Company report — TVS Supply Chain</h3><p>The individual report screen</p></div>
+      <div class="links"><a href="stitch_editorial_dossier/intelligence_report_tvs_supply_chain/code.html" target="_blank">Open</a></div>
+    </div>
+  </section>
+
+  <section>
+    <p class="sec-title">Stitch — "Field Report" (Direction A)</p>
+    <p class="note" style="margin-bottom:10px">Bricolage Grotesque + JetBrains Mono, stamped-crate/shipping-label aesthetic, safety orange. Static files, open directly, no server needed.</p>
+    <div class="card">
+      <div><h3>Dashboard</h3><p>Browse/search screen</p></div>
+      <div class="links"><a href="stitch_field_report/prospect_scan_dashboard/code.html" target="_blank">Open</a></div>
+    </div>
+    <div class="card">
+      <div><h3>Researching</h3><p>Live search progress state</p></div>
+      <div class="links"><a href="stitch_field_report/researching_company/code.html" target="_blank">Open</a></div>
+    </div>
+    <div class="card">
+      <div><h3>Review findings</h3><p>Save / Discard review state</p></div>
+      <div class="links"><a href="stitch_field_report/review_research_findings/code.html" target="_blank">Open</a></div>
+    </div>
+    <div class="card">
+      <div><h3>Company report — VRL Logistics Ltd</h3><p>The individual report screen</p></div>
+      <div class="links"><a href="stitch_field_report/company_report_vrl_logistics_ltd/code.html" target="_blank">Open</a></div>
+    </div>
+  </section>
+</div>
+</body>
+</html>

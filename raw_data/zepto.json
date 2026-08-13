@@ -1,0 +1,29 @@
+{
+  "company_name": "Zepto",
+  "founded": "July 2021 (founders Aadit Palicha, Kaivalya Vohra); operated by KiranKart Technologies Pvt. Ltd.",
+  "hq": "Bengaluru, Karnataka, India (started as a Mumbai-based startup)",
+  "industry": "Quick commerce -- 10-minute grocery delivery via dark stores (direct-to-consumer)",
+  "size": "1,139 dark stores as of March 31, 2026; IPO-funded plan to add 1,904 more dark stores through FY30",
+  "facts": [
+    {
+      "claim": "On May 31, 2025, the Maharashtra FDA inspected Zepto's (KiranKart Technologies Pvt. Ltd.) Dharavi warehouse in Mumbai and found fungal growth, improper storage, and inadequate cold storage -- dairy products not held at the mandated 0-4°C and frozen items failing the -18°C requirement -- plus expired products stored alongside fresh stock, resulting in license suspension under the Food Safety and Standards Act, 2006.",
+      "source_snippet": "On May 31, 2025, KiranKart Technologies Pvt. Ltd., the parent company of Zepto, found itself at the receiving end of a license suspension as the Maharashtra Food and Drug Administration (FDA) conducted an inspection at its Dharavi warehouse in Mumbai... fungal growth, improper storage, and inadequate cold storage... Dairy products not maintained at the mandated 0-4C. Frozen items failed to meet the -18C requirement... Expired products stored alongside fresh stock.",
+      "source_url": "https://www.logisticsinsider.in/zepto-fda-raid-exposes-critical-vulnerabilities-in-quick-commerce-cold-chain/"
+    },
+    {
+      "claim": "Following the Zepto suspension, Maharashtra's Minister of State for FDA, Yogesh Kadam, called for inspections of all quick-commerce facilities in the state, including competitors Blinkit and Instamart.",
+      "source_snippet": "The Minister of State for FDA, Yogesh Kadam, didn't let it slip and end the matter at Zepto. Instead, he has called for inspections of all quick-commerce facilities in the state, including competitors like Blinkit and Instamart.",
+      "source_url": "https://www.logisticsinsider.in/zepto-fda-raid-exposes-critical-vulnerabilities-in-quick-commerce-cold-chain/"
+    },
+    {
+      "claim": "Zepto was founded in July 2021 by Aadit Palicha (CEO) and Kaivalya Vohra (CTO) and is headquartered in Bengaluru.",
+      "source_snippet": "Zepto was founded by Aadit Palicha (CEO) and Kaivalya Vohra (CTO) in July 2021... Zepto is an Indian quick-commerce company headquartered in Bengaluru, Karnataka, India.",
+      "source_url": "https://en.wikipedia.org/wiki/Zepto_(company)"
+    },
+    {
+      "claim": "As of March 31, 2026, Zepto operated 1,139 dark stores. The company filed for an IPO (fresh issue of Rs 8,010 crore) allocating Rs 1,629 crore to set up 1,904 new dark stores through FY30 -- nearly doubling its current footprint -- plus Rs 1,734.9 crore for related lease payments.",
+      "source_snippet": "As of March 31, 2026, Zepto operated 1,139 dark stores... a fresh issue of Rs 8,010 crore... The company designated Rs 1,629 crore toward setting up 1,904 dark stores through FY30. Another Rs 1,734.9 crore has been set aside for lease payments linked to these facilities.",
+      "source_url": "https://www.ciol.com/news/zeptos-udrhp-reveals-8010-cr-ipo-plan-targets-1900-new-dark-stores-12018033"
+    }
+  ]
+}

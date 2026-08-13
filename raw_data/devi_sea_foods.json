@@ -1,0 +1,29 @@
+{
+  "company_name": "Devi Sea Foods",
+  "founded": "1992",
+  "hq": "Andhra Pradesh, India (facilities in Kakinada, Singarayakonda, Tanuku, Ongole, and Peddapuram)",
+  "industry": "Shrimp aquaculture, processing & export -- vertically integrated: hatchery, farms, feed mills, processing, distribution",
+  "size": "2 processing facilities, 8 feed production lines across 2 locations; 1,300 shipments / 43M lbs sales in FY2020; US subsidiary for North American distribution",
+  "facts": [
+    {
+      "claim": "Devi Sea Foods started in 1992 and is vertically integrated across five facility types: a shrimp hatchery (established 1994, Kakinada), captive farming (~200 acres near Ongole), processing plants in Singarayakonda (1997) and Tanuku (2000), and feed manufacturing units near Kakinada (2005) and Ongole (2018).",
+      "source_snippet": "From a humble beginning in 1992, Devi Sea Foods has demonstrated consistent growth... Shrimp hatchery established 1994 in Kakinada. Captive farming: about 200 acres near Ongole. Processing plants in Singarayakonda (1997) and Tanuku (2000). Feed manufacturing unit near Kakinada (2005). Second feed mill near Ongole (2018).",
+      "source_url": "https://www.deviseafoods.com/about"
+    },
+    {
+      "claim": "The company operates two modern shrimp processing facilities that comply with internationally recognized food safety accreditations including BRC, BAP, and IFS, and supports BAP and ASC certification programs, alongside multiple MPEDA (Government of India) export performance awards.",
+      "source_snippet": "Two modern shrimp processing facilities which are regularly upgraded to meet market requirements... meet global standards of food safety and comply with internationally recognized accreditations like BRC, BAP & IFS.",
+      "source_url": "https://www.deviseafoods.com/what-we-do"
+    },
+    {
+      "claim": "In FY2020, Devi Sea Foods handled 1,300 shipments totaling 43 million lbs in sales; its feed production scaled from 2 lines in 2016 to 8 lines across two manufacturing locations.",
+      "source_snippet": "1300 Shipments. 43 Sales (in Million Lbs)... Starting with 2 production lines in 2016, we now have 8 lines operational at two manufacturing locations.",
+      "source_url": "https://www.deviseafoods.com/what-we-do"
+    },
+    {
+      "claim": "Devi Sea Foods exports primarily to North America through its US subsidiary (Devi Sea Foods Inc.), supplying large food-service and retail customers, and is one of India's largest exporters of Black Tiger Shrimp to the US, Europe, and Japan.",
+      "source_snippet": "Devi Sea Foods Limited is one of the largest exporters of shrimp from India. It is the largest exporter of Indian Black Tiger Shrimp in the country, marketing its products in the US, European and Japanese markets... large reputed customers in Food service and Retail.",
+      "source_url": "https://www.deviseafoods.com/about"
+    }
+  ]
+}

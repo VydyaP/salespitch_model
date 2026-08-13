@@ -1,0 +1,27 @@
+{
+  "company_name": "Frigorifico Allana",
+  "gaps_checked": 2,
+  "summary": {
+    "VERIFIED": 2,
+    "WEAK": 0,
+    "UNVERIFIED": 0
+  },
+  "results": [
+    {
+      "title": "Multi-standard export compliance across 10 facilities is a heavy manual burden",
+      "status": "VERIFIED",
+      "overlap_score": 1.0,
+      "unmatched_words": [],
+      "closest_fact_claim": "Operations are ISO 9001, FSSC 22000, ISO 14001, ISO 45001 and HACCP process-compliant, following Codex Alimentarius standards and OIE guidelines, with meat exports prepared to Halal requirements.",
+      "closest_fact_score": 1.0
+    },
+    {
+      "title": "Large multi-facility cold storage network without a stated unified visibility layer",
+      "status": "VERIFIED",
+      "overlap_score": 1.0,
+      "unmatched_words": [],
+      "closest_fact_claim": "Frigorifico Allana's frozen meat operations have an annual production capacity of 750,000 MTS and cold storage capacity of 66,000 MTS spread across ten facilities, exporting to over 70 countries.",
+      "closest_fact_score": 1.0
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "gaps": [
+    {
+      "title": "Massive sample network, only generic 'quality checks' named -- no temperature monitoring",
+      "detail": "13,930+ pick-up points feed 310+ labs across 28+ countries, moving biological samples (blood, tissue, urine) that degrade with temperature exposure. The company's own site names accreditations (NABL, CAP, ISO9001) and '50+ Quality Checks,' but nothing describes real-time temperature monitoring or deviation alerting during transit -- a real gap for a network this large moving specimens this sensitive.",
+      "severity": "high",
+      "gnd_service": "Cold Chain Management (ThinxFresh) + Asset Tracking & Monitoring",
+      "based_on": "310+ satellite labs. 7725+ patient service centres. 13930+ pick-up points... NABL, CAP, and ISO9001:2008... 50+ Quality Checks... Quality Checks & Processes on Every Sample."
+    },
+    {
+      "title": "Barcode tracking confirms identity, not temperature integrity",
+      "detail": "Every sample gets a barcode for chain-of-custody tracking through the hub-and-spoke network -- solving 'where is this sample,' not 'was it kept at the right temperature the whole way.' A barcode scan at pickup and another at the lab confirms the sample arrived; it says nothing about what happened to it in transit.",
+      "severity": "medium",
+      "gnd_service": "Cold Chain Management (ThinxFresh)",
+      "based_on": "Dr Lal PathLabs operates a hub and spoke model... Bar coding samples with unique ID helps the company track every step until the report is finally uploaded onto the system."
+    }
+  ],
+  "pitch": {
+    "angle": "Dr Lal PathLabs runs one of India's largest biological sample networks -- 13,930+ pick-up points feeding 310+ labs across 28+ countries -- moving blood, tissue, and other specimens that degrade with temperature exposure. Its own site names barcode-based chain-of-custody tracking and generic 'quality checks,' but nothing about real-time temperature monitoring during transit. A barcode scan confirms a sample arrived -- it doesn't confirm it arrived at the right temperature. GND's ThinxFresh adds exactly that missing layer: instant deviation alerts and auto-generated compliance records across every pick-up point, not just proof the sample eventually showed up.",
+    "opener": "With 13,930+ pick-up points feeding your lab network, your barcode system confirms a sample arrived -- what confirms it stayed at the right temperature the whole way there?"
+  }
+}

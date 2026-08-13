@@ -1,0 +1,22 @@
+{
+  "gaps": [
+    {
+      "title": "First-mile chilling solved; no stated monitoring for the transport and processing legs",
+      "detail": "Hatsun has genuinely solved the hardest first-mile problem in dairy -- instant village-level chilling within 2 hours via Active Bulk Coolers at 1,100+ locations, backed by a cloud farmer database. But nothing describes what happens to that milk's temperature integrity afterward, across 1,348+ vehicles and 68+ chilling centers on the way to 20 manufacturing plants in 7 states. A 2-hour chill target at the village means little if the multi-state transport network downstream isn't tracked the same way.",
+      "severity": "high",
+      "gnd_service": "Cold Chain Management (ThinxFresh) + Asset Tracking & Monitoring",
+      "based_on": "Hatsun deploys Active Bulk Coolers (ABC) at more than 1,100 village-level locations for instant chilling of milk within 2 hours of collection; Hatsun operates chilling centres in more than 68 locations with over 1,348 contract vehicles."
+    },
+    {
+      "title": "Multi-state, multi-district network with no unified real-time view",
+      "detail": "The network spans 10,000+ villages, 10 districts in Tamil Nadu plus 3 in Karnataka, and 20 manufacturing plants across 7 states. Consistency of cold chain integrity across a footprint this distributed is a real operational challenge without one system giving visibility across every leg at once.",
+      "severity": "medium",
+      "gnd_service": "Warehouse Management + Cold Chain Management (ThinxFresh)",
+      "based_on": "Hatsun operates... milk sheds spread over 10 districts in Tamil Nadu and three districts in Karnataka... 20 manufacturing plants across multiple states including Tamil Nadu, Andhra Pradesh, Telangana, Karnataka, Maharashtra, Odisha, and others as of 2025."
+    }
+  ],
+  "pitch": {
+    "angle": "Hatsun already solved the hardest first-mile problem in dairy -- instant village-level chilling within 2 hours, a cloud-based farmer database, 10,000+ milk banks feeding into the network. What's not described anywhere is what happens to that milk's temperature integrity between the village Active Bulk Cooler and the 20 manufacturing plants spread across 7 states -- a journey through 1,348+ vehicles and 68+ chilling centers. GND's ThinxFresh picks up exactly where Hatsun's first-mile tech stops: real-time monitoring and instant deviation alerts for the transport and processing legs, not just the village collection point.",
+    "opener": "You've nailed instant chilling at the village level within 2 hours -- what happens to that temperature data between the village cooler and your processing plants across seven states?"
+  }
+}

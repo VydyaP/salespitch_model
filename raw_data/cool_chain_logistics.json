@@ -1,0 +1,29 @@
+{
+  "company_name": "Cool Chain Logistics",
+  "founded": "2011",
+  "hq": "Getafe, Madrid, Spain (also Barcelona)",
+  "industry": "Pharma cold chain logistics -- biological samples, vaccines, medicines (GDP-compliant)",
+  "size": "Logistics centers in Spain, UK, USA, and Germany; reaches Europe, North America, and South-east Asia",
+  "facts": [
+    {
+      "claim": "Cool Chain Logistics has operated since 2011, describing itself as a young but well-established company in the pharma cold-chain sector, headquartered in Getafe (Madrid) with additional presence in Barcelona.",
+      "source_snippet": "Cool Chain Logistics es una empresa joven y dinamica pero muy consolidada en el sector [with experience] desde 2011... Main office: C/ Leonardo Da Vinci 2 2B, 28906 Getafe (Madrid). Additional Spanish presence in Barcelona.",
+      "source_url": "https://coolchain.es/quienes-somos/"
+    },
+    {
+      "claim": "The company operates logistics centers in Spain (Madrid-Barcelona), the UK (York), the USA (Indianapolis), and Germany (Darmstadt), with solutions reaching Europe, North America, and South-east Asia.",
+      "source_snippet": "The organization maintains logistic centers across Spain (Madrid-Barcelona), UK (York), USA (Indianapolis), and Germany (Darmstadt)... Cool Chain's solutions also stretch across Europe, North America, and South-east Asia.",
+      "source_url": "https://coolchain.es/quienes-somos/"
+    },
+    {
+      "claim": "Cool Chain Logistics specializes in transporting biological samples, vaccines, and medicines across temperature ranges from ultra-low frozen (-80C/-20C) to refrigerated (2C/8C) to ambient (15C/25C), holding GDP, ISO, and ISTA temperature-qualification certifications.",
+      "source_snippet": "Transporte de muestras biologicas, vacunas y medicamentos [under] spanning from ultra-low frozen temperatures (-80C/-20C) to refrigerated conditions (2C/8C) and ambient temperature settings (15C/25C)... Holding a Good Distribution Practices (GDP) certificate for medicine distribution... complies with ISO regulations and ISTA temperature qualification certifications.",
+      "source_url": "https://pharma-industry-review.com/companies/cool-chain-logistics-pharmaceutical-cold-chain-services"
+    },
+    {
+      "claim": "The company uses a reusable high-performance equipment system claiming '100% monitoring of interior temperature' for all shipments, with autonomous temperature maintenance for a minimum of 120 hours -- part of a reuse model that reports 375 tonnes of CO2 reduction and 10,166 fewer boxes destroyed compared to single-use packaging.",
+      "source_snippet": "un sistema de reutilizacion de equipos de alto rendimiento [with] monitorizacion del 100% de la temperatura interior [and the ability to] mantener la temperatura de manera autonoma un minimo de 120 horas... REDUCCION DE 375 Tn CO2... REDUCCION DE 10166 CAJAS DESTRUIDAS.",
+      "source_url": "https://coolchain.es/quienes-somos/"
+    }
+  ]
+}

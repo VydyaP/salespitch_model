@@ -1,0 +1,24 @@
+{
+  "company_name": "INI Farms",
+  "founded": "2009 (founders Pankaj Khandelwal, Purnima Khandelwal); acquired 100% by AgroStar in March 2022",
+  "hq": "Mumbai, Maharashtra, India",
+  "industry": "Horticulture -- pomegranate & banana export (brand: Kimaye), expanding into vegetables",
+  "size": "50,000+ tons of fruit exported annually, retail presence in 35 countries; 2,000+ contracted farmers across 5 states; owned by AgroStar since 2022",
+  "facts": [
+    {
+      "claim": "INI Farms was founded in 2009 by Pankaj Khandelwal and Purnima Khandelwal, and works with over 2,000 farmers across Madhya Pradesh, Maharashtra, Gujarat, Andhra Pradesh, and Karnataka for pomegranates and bananas, covering nearly 5,000 acres, plus its own farms totaling 550 acres across seven locations in Maharashtra and Madhya Pradesh.",
+      "source_snippet": "Founded: 2009. Founders: Pankaj Khandelwal... and Purnima Khandelwal... It works with over 2,000 farmers in Madhya Pradesh, Maharashtra, Gujarat, Andhra Pradesh and Karnataka for pomegranates and bananas, covering nearly 5,000 acres... The company has farms spread over 550 acres in four locations in Maharashtra and three in Madhya Pradesh.",
+      "source_url": "https://www.iimcal.ac.in/ini-farms-pankaj-khandelwal-pgdcm-5th-batch-fruitful-venture-horticulture-business"
+    },
+    {
+      "claim": "INI Farms handles over 50,000 tons of fruits annually and operates pan-India in contract farming, aggregation, and supply chain management; its Kimaye brand products are available in major retail chains across 35 countries.",
+      "source_snippet": "INI Farms... handles over 50,000 tons of fruits annually and operates 'pan India' in contract farming, aggregation, and supply chain management. Their Kimaye brand products are available in some of the largest retail chains spread across 35 countries.",
+      "source_url": "https://inc42.com/buzz/b2b-agritech-startup-agrostar-acquires-ini-farms-to-enter-global-food-supply-chain/"
+    },
+    {
+      "claim": "On March 31, 2022, AgroStar (India's largest digital farmer network, which had raised $70M in Series D funding in December 2021) announced a 100% cash-and-stock acquisition of INI Farms, explicitly to target the entire fruits and vegetables basket -- starting with onions and vegetables -- and to focus expansion on EU and North America markets.",
+      "source_snippet": "AgroStar 'announced complete acquisition (100%) of Mumbai-based agritech startup INI Farms, through a combination of cash and stock deal.'... 'We will now target the entire F&V basket in terms of crops. In terms of markets, we would focus on the EU and North America primarily.'... INI Farms would begin exporting vegetables, with plans to 'start with the export of onions and vegetables and include more crops in future.'... AgroStar had recently raised $70 Mn in Series D funding.",
+      "source_url": "https://inc42.com/buzz/b2b-agritech-startup-agrostar-acquires-ini-farms-to-enter-global-food-supply-chain/"
+    }
+  ]
+}

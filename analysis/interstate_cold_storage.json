@@ -1,0 +1,22 @@
+{
+  "gaps": [
+    {
+      "title": "EDI tracks inventory, not temperature -- across a -15F to 35F network",
+      "detail": "The named technology is EDI and customer internet access for real-time inventory tracking -- knowing what's in stock and where, not whether it's staying at the right temperature. Across five facilities spanning -15F to 35F (Fort Wayne West alone runs -13F to 0F), that's a real gap between tracking product and protecting it.",
+      "severity": "high",
+      "gnd_service": "Cold Chain Management (ThinxFresh)",
+      "based_on": "equipped with Electronic Data Interchange (EDI) and customer internet access for seamless communication and real-time inventory tracking... The facility network currently supports temperature ranges from -15F to 35F with multi-room, multi-temp offerings."
+    },
+    {
+      "title": "Five facilities built up over 50 years likely carry inconsistent standards",
+      "detail": "Interstate Cold Storage grew from one warehouse to five across Indiana and Ohio over five decades. Facilities built and equipped at different points across that span typically don't share identical monitoring setups unless someone deliberately standardized them -- worth confirming rather than assuming consistency across all five sites.",
+      "severity": "medium",
+      "gnd_service": "Warehouse Management",
+      "based_on": "over the past half-century, ICS has grown from a one-warehouse operation to the Midwest's premier provider of cold storage solutions... five locations in Ohio and Indiana, including two in Fort Wayne and Columbus."
+    }
+  ],
+  "pitch": {
+    "angle": "Interstate Cold Storage has spent 50 years growing from one warehouse to five across Indiana and Ohio, earning a Top 20 North American ranking along the way -- real, hard-won infrastructure. But the technology it names is EDI and customer internet access for inventory tracking: knowing what's in stock, not whether it's staying at the right temperature. Across facilities running from -15F to 35F, that's a meaningful gap between tracking product and protecting it. GND's ThinxFresh adds the missing layer -- real-time deviation alerts across all five sites, not just visibility into what's on the shelf.",
+    "opener": "Your EDI system tracks what's in inventory across five facilities -- what tells you if any of it drifted out of its temperature range overnight?"
+  }
+}

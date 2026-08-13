@@ -1,0 +1,50 @@
+{
+  "company_name": "Burris Logistics",
+  "gaps_checked": 4,
+  "summary": {
+    "VERIFIED": 4,
+    "WEAK": 0,
+    "UNVERIFIED": 0
+  },
+  "results": [
+    {
+      "title": "Limited real\u2011time cold\u2011chain visibility",
+      "status": "VERIFIED",
+      "overlap_score": 0.92,
+      "unmatched_words": [
+        "coast"
+      ],
+      "closest_fact_claim": "Burris Logistics offers over 60\u202fmillion cubic feet of freezer warehousing space across 13 strategic locations on the East Coast.",
+      "closest_fact_score": 0.92
+    },
+    {
+      "title": "Fragmented warehouse operations",
+      "status": "VERIFIED",
+      "overlap_score": 0.9,
+      "unmatched_words": [
+        "solutions"
+      ],
+      "closest_fact_claim": "The company specializes in custom retail distribution, foodservice redistribution, public refrigerated warehousing, and transportation solutions.",
+      "closest_fact_score": 0.9
+    },
+    {
+      "title": "No real\u2011time asset/fleet tracking",
+      "status": "VERIFIED",
+      "overlap_score": 1.0,
+      "unmatched_words": [],
+      "closest_fact_claim": "Key specialties include logistics, freight brokerage, logistics technology, foodservice redistribution, supply chain, purchasing team, and a dedicated fleet.",
+      "closest_fact_score": 1.0
+    },
+    {
+      "title": "Disjointed technology across three subsidiaries",
+      "status": "VERIFIED",
+      "overlap_score": 0.78,
+      "unmatched_words": [
+        "companies...",
+        "moving"
+      ],
+      "closest_fact_claim": "Through its three companies\u2014Honor Foods, Trinity Logistics, and Eagle Business Credit\u2014Burris provides foodservice redistribution, freight management, and innovative technology, operating under the ONEBURRIS brand.",
+      "closest_fact_score": 0.78
+    }
+  ]
+}
