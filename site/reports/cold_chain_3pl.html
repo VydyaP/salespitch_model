@@ -226,40 +226,25 @@ img, svg { max-width: 100%; }
 <div class="tab-shell">
   <div class="tab-bar">
     <button class="tab-btn active" data-tab="gaps" onclick="switchTab('gaps')">Gaps <span class="tab-count">3</span></button>
-    <button class="tab-btn" data-tab="facts" onclick="switchTab('facts')">Facts <span class="tab-count">4</span></button>
+    <button class="tab-btn" data-tab="facts" onclick="switchTab('facts')">Facts <span class="tab-count">8</span></button>
     <button class="tab-btn" data-tab="pitch" onclick="switchTab('pitch')">Pitch</button>
   </div>
 
   <div class="tab-panel" id="tab-gaps">
-    <p class="section-label">3 gaps found &middot; 2 high &middot; 1 medium &middot; 0 low</p>
+    <p class="section-label">3 gaps found &middot; 1 high &middot; 2 medium &middot; 0 low</p>
     <details class="gap-card" open>
   <summary class="gap-summary">
     <div class="gap-severity-row">
       <div class="severity-gauge"><div class="gauge-fill" style="width:100%;background:#c23b22"></div></div>
       <span class="severity-label" style="color:#c23b22">High</span>
     </div>
-    <h3>Lack of real‑time temperature monitoring &amp; alerts</h3>
+    <h3>No real‑time temperature &amp; humidity monitoring</h3>
   </summary>
   <div class="gap-body">
-    <p class="gap-detail">Cold Chain 3PL offers temperature‑sensitive storage and transport but does not mention live IoT tracking, deviation alerts, or automated compliance reporting.</p>
+    <p class="gap-detail">Cold Chain 3PL offers temperature‑controlled storage and transport but does not mention IoT sensors for live temperature, humidity, or location tracking, leaving a blind spot for product integrity.</p>
     <div class="gap-meta">
       <div class="gap-service-tags"><span class="service-tag" style="background:#1f6e6b">CC</span><span>Cold Chain Management</span></div>
-      <div class="gap-based-on">&ldquo;Cold Chain 3PL provides storing and transporting temperature‑sensitive products, ensuring proper storage, handling, and product transportation in a temperature‑controlled environment.&rdquo;</div>
-    </div>
-  </div>
-</details><details class="gap-card" open>
-  <summary class="gap-summary">
-    <div class="gap-severity-row">
-      <div class="severity-gauge"><div class="gauge-fill" style="width:100%;background:#c23b22"></div></div>
-      <span class="severity-label" style="color:#c23b22">High</span>
-    </div>
-    <h3>Limited real‑time asset and fleet visibility</h3>
-  </summary>
-  <div class="gap-body">
-    <p class="gap-detail">While the company moves temperature‑controlled shipments, there is no indication of GPS or sensor‑based tracking for vehicles or high‑value assets, exposing them to potential loss or delays.</p>
-    <div class="gap-meta">
-      <div class="gap-service-tags"><span class="service-tag" style="background:#c23b22">AT</span><span>Asset Tracking &amp; Monitoring</span></div>
-      <div class="gap-based-on">&ldquo;Cold Chain 3PL provides storing and transporting temperature‑sensitive products, ensuring proper storage, handling, and product transportation in a temperature‑controlled environment.&rdquo;</div>
+      <div class="gap-based-on">&ldquo;Cold Chain 3PL provides temperature‑controlled storage, handling, and transportation for perishable food, pharmaceutical products, and frozen goods.&rdquo;</div>
     </div>
   </div>
 </details><details class="gap-card">
@@ -268,13 +253,28 @@ img, svg { max-width: 100%; }
       <div class="severity-gauge"><div class="gauge-fill" style="width:65%;background:#b8860b"></div></div>
       <span class="severity-label" style="color:#b8860b">Medium</span>
     </div>
-    <h3>Manual compliance reporting for regulatory audits</h3>
+    <h3>Lack of unified IoT dashboard for multi‑site compliance</h3>
   </summary>
   <div class="gap-body">
-    <p class="gap-detail">Cold Chain 3PL lists USDA, SQF, FDA, and Non‑GMO certifications but lacks a digital platform that auto‑generates audit‑ready reports aligned with India’s Schedule M, FSSAI traceability, or WHO‑GDP requirements.</p>
+    <p class="gap-detail">While an advanced order management system provides inventory visibility, there is no unified platform that consolidates sensor data across global warehouses and trucks for instant alerts and audit‑ready reports.</p>
+    <div class="gap-meta">
+      <div class="gap-service-tags"><span class="service-tag" style="background:#3f7d5c">PL</span><span>Platform</span></div>
+      <div class="gap-based-on">&ldquo;Cold Chain 3PL integrated an advanced order management system with real‑time inventory tracking, automated order processing...&rdquo;</div>
+    </div>
+  </div>
+</details><details class="gap-card">
+  <summary class="gap-summary">
+    <div class="gap-severity-row">
+      <div class="severity-gauge"><div class="gauge-fill" style="width:65%;background:#b8860b"></div></div>
+      <span class="severity-label" style="color:#b8860b">Medium</span>
+    </div>
+    <h3>Limited automated regulatory compliance support</h3>
+  </summary>
+  <div class="gap-body">
+    <p class="gap-detail">Cold Chain 3PL scales across many temperature‑controlled facilities but lacks automated tools for emerging pharma and food traceability regulations (e.g., Schedule M, FSSAI), which can be costly to manage manually.</p>
     <div class="gap-meta">
       <div class="gap-service-tags"><span class="service-tag" style="background:#1f6e6b">CC</span><span>Cold Chain Management</span></div>
-      <div class="gap-based-on">&ldquo;Cold Chain 3PL holds certifications including Non‑GMO, USDA, SQF, and FDA.&rdquo;</div>
+      <div class="gap-based-on">&ldquo;Cold Chain 3PL emphasizes scalability, offering a flexible network of global, temperature‑controlled warehouses to handle seasonal demand spikes.&rdquo;</div>
     </div>
   </div>
 </details>
@@ -283,27 +283,42 @@ img, svg { max-width: 100%; }
   <div class="tab-panel" id="tab-facts" style="display:none">
     <p class="section-label">Sourced facts</p>
     <ul class="fact-list" style="list-style:none"><li class="fact-item">
-  <a class="fact-claim" href="https://coldchain3pl.com/cold-chain-3pl-and-small-businesses" target="_blank" rel="noopener">Cold Chain 3PL provides storing and transporting temperature‑sensitive products, ensuring proper storage, handling, and product transportation in a temperature‑controlled environment.</a>
-  <blockquote class="fact-quote">&ldquo;Cold Chain 3PL (Third-Party Logistics) refers to storing and transporting temperature-sensitive products that require constant temperature control... includes ensuring proper storage, handling, and product transportation in a temperature-controlled environment to maintain quality and safety.&rdquo;</blockquote>
+  <a class="fact-claim" href="https://coldchain3pl.com/cold-chain-3pl-and-small-businesses" target="_blank" rel="noopener">Cold Chain 3PL provides temperature‑controlled storage, handling, and transportation for perishable food, pharmaceutical products, and frozen goods.</a>
+  <blockquote class="fact-quote">&ldquo;Cold Chain 3PL (Third-Party Logistics) refers to storing and transporting temperature-sensitive products that require constant temperature control, such as perishable food, pharmaceutical products, and frozen goods.&rdquo;</blockquote>
 </li><li class="fact-item">
-  <a class="fact-claim" href="https://www.linkedin.com/company/cold-chain-3pl" target="_blank" rel="noopener">The company is classified in the Transportation, Logistics, Supply Chain and Storage industry.</a>
-  <blockquote class="fact-quote">&ldquo;Industry Transportation, Logistics, Supply Chain and Storage&rdquo;</blockquote>
+  <a class="fact-claim" href="https://www.linkedin.com/company/cold-chain-3pl" target="_blank" rel="noopener">The company serves brands and marketing teams with temperature‑controlled fulfillment, offering services such as cold storage, pick‑and‑pack, kitting, insulated packaging, dry ice, and nationwide shipping.</a>
+  <blockquote class="fact-quote">&ldquo;ColdChain3PL is built for brands and marketing teams that need reliable temperature-controlled fulfillment. We help food, beverage, wellness, ecommerce, and marketing companies store, kit, pack, and ship frozen, refrigerated, and ambient products with confidence. From cold storage, pick and pack, promotional kitting, distressed pallet projects, insulated packaging, dry ice, and gel packs to fast order processing and nationwide shipping, our team handles the complex fulfillment work...&rdquo;</blockquote>
 </li><li class="fact-item">
-  <a class="fact-claim" href="https://www.fulfill.com/3pl/profile/cold-chain-3pl" target="_blank" rel="noopener">Cold Chain 3PL holds certifications including Non‑GMO, USDA, SQF, and FDA.</a>
-  <blockquote class="fact-quote">&ldquo;We boast certifications like Non‑GMO, USDA, SQF, and FDA, providing a level of regulatory assurance critical for sensitive goods.&rdquo;</blockquote>
+  <a class="fact-claim" href="https://www.linkedin.com/company/cold-chain-3pl" target="_blank" rel="noopener">Cold Chain 3PL claims to have 20 years of cold‑chain experience.</a>
+  <blockquote class="fact-quote">&ldquo;With 20 years of cold-chain experience, ColdChain3PL gives growing brands and agencies a fulfillment partner they can trust to do it all.&rdquo;</blockquote>
 </li><li class="fact-item">
-  <a class="fact-claim" href="https://www.fulfill.com/3pl/profile/cold-chain-3pl" target="_blank" rel="noopener">The company integrates directly with major eCommerce platforms such as Amazon, Shopify, WooCommerce, and Walmart, and partners with ShipStation for shipping management.</a>
-  <blockquote class="fact-quote">&ldquo;Cold Chain 3PL offers seamless integration with leading eCommerce platforms and essential business tools... integrate directly with popular platforms such as Amazon, Shopify, WooCommerce, and Walmart... partner with ShipStation for optimized shipping management.&rdquo;</blockquote>
+  <a class="fact-claim" href="https://coldchain3pl.com/benefits-traditional-3pl-provider" target="_blank" rel="noopener">The company emphasizes scalability, offering a flexible network of global, temperature‑controlled warehouses to handle seasonal demand spikes.</a>
+  <blockquote class="fact-quote">&ldquo;Cold Chain 3PL is an industry leader in scalability for growth or seasonal demands. Thanks to their extensive network of global warehouses, they can quickly and easily manage fluctuations in demand and scale up to meet the needs of businesses large and small. With flexible storage options, including refrigerated and ambient temperature warehousing, they provide a range of temperature‑controlled solutions tailored to meet any short‑term or long‑term requirements.&rdquo;</blockquote>
+</li><li class="fact-item">
+  <a class="fact-claim" href="https://coldchain3pl.com/about-us" target="_blank" rel="noopener">Judd Rosenberg has over 20 years of leadership experience in gourmet, fresh‑prepared and grab‑and‑go products, previously co‑founded Food Evolution and led expansion through acquisitions of food processing plants in Texas and California.</a>
+  <blockquote class="fact-quote">&ldquo;For over 20 years, Judd Rosenberg has been a noteworthy leader in the gourmet, fresh-prepared and grab‑n‑go products space... leading the vision of expansion with the acquisitions of a food processing plant in Texas and California based Fresh &amp; Ready Foods.&rdquo;</blockquote>
+</li><li class="fact-item">
+  <a class="fact-claim" href="https://coldchain3pl.com/about-us" target="_blank" rel="noopener">Jamie Moriarty is an experienced entrepreneur recognized by InterCon as a 2020 Top 50 Tech Leader for his impact on the tech industry and innovation.</a>
+  <blockquote class="fact-quote">&ldquo;Jamie Moriarty is an experienced entrepreneur... In addition to his primary job functions, Jamie has most recently been recognized by InterCon as a 2020 top 50 tech leader for his overall impact on the tech industry and spirit of innovation.&rdquo;</blockquote>
+</li><li class="fact-item">
+  <a class="fact-claim" href="https://coldchain3pl.com/about-us" target="_blank" rel="noopener">Cold Chain 3PL integrated an advanced order management system with real‑time inventory tracking, automated order processing, and strategic partnerships with local carriers, achieving a 30% increase in order processing efficiency and a 25% reduction in shipping times.</a>
+  <blockquote class="fact-quote">&ldquo;Integrated an advanced order management system with real‑time inventory tracking, implemented automated order processing, and leveraged strategic partnerships with local carriers for faster last‑mile delivery... Achieved a 30% increase in order processing efficiency, reduced shipping times by 25%, and contributed to a notable surge in customer satisfaction.&rdquo;</blockquote>
+</li><li class="fact-item">
+  <a class="fact-claim" href="https://coldchain3pl.com/about-us" target="_blank" rel="noopener">Cold Chain 3PL provided logistics optimization for a meal‑delivery platform, introducing warehouse routing algorithms and a mix of national and last‑mile carriers to streamline operations.</a>
+  <blockquote class="fact-quote">&ldquo;Challenge: Streamline the logistics for a meal delivery platform offering pre‑cooked meals... Solutions: Introduced warehouse routing optimization algorithms, utilized a combination of national and last mile carriers.&rdquo;</blockquote>
 </li></ul>
   </div>
 
   <div class="tab-panel" id="tab-pitch" style="display:none">
     <p class="section-label">Pitch</p>
     <div class="pitch-card">
-      <p class="pitch-angle">Cold Chain 3PL already secures top‑tier certifications and integrates with major eCommerce platforms; adding GND’s ThinxFresh IoT suite would give them live temperature dashboards, instant deviation alerts, and auto‑generated audit reports—turning compliance into a competitive advantage, especially for Indian market regulations.</p>
+      <p class="pitch-angle">- You’ve built a strong 20‑year fulfillment network; adding IoT temperature sensors guarantees product integrity in real time and cuts spoilage.
+- Our ThinxFresh platform unifies sensor data from every warehouse and truck into one dashboard, delivering instant deviation alerts and auto‑generated compliance reports.
+- With emerging Schedule M and FSSAI traceability mandates, automated audit logs keep you audit‑ready without extra effort.
+- Asset trackers on your fleet extend visibility beyond carrier partnerships, further reducing shipping delays.</p>
       <div class="pitch-opener-box">
         <div class="pitch-opener-label">Opener</div>
-        <p class="pitch-opener-text" id="pitch-opener">I saw Cold Chain 3PL’s USDA and SQF certifications—imagine pairing that credibility with live, sensor‑driven temperature alerts and auto‑audit reports.</p>
+        <p class="pitch-opener-text" id="pitch-opener">I see Cold Chain 3PL’s 20‑year expertise in temperature‑controlled fulfillment—let’s explore how real‑time IoT monitoring can protect every pallet you ship.</p>
         <button class="btn-pill" onclick="copyOpener(this)">Copy opener</button>
       </div>
     </div>

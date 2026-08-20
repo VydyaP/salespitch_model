@@ -1,29 +1,29 @@
 {
   "gaps": [
     {
-      "title": "Unified Cold\u2011Chain Visibility",
-      "detail": "While Preferred Freezer operates over 200 temperature\u2011controlled facilities worldwide, there is no evidence of a centralized IoT platform to monitor temperature, humidity, and compliance in real time across this footprint.",
+      "title": "Real\u2011time cold\u2011chain monitoring",
+      "detail": "Preferred Freezer operates millions of cubic feet of refrigerated space but the research mentions no temperature sensor network, risking compliance gaps for pharma and food customers.",
       "severity": "high",
       "gnd_service": "Cold Chain Management",
-      "based_on": "The combined entity has over 1.3\u202fbillion cubic feet of temperature\u2011controlled capacity across more than 200 facilities worldwide."
+      "based_on": "Preferred Freezer Services was founded in 1989 with a 1.3\u2011million\u2011cubic\u2011foot refrigerated facility in Perth Amboy, New Jersey."
     },
     {
-      "title": "Real\u2011time Warehouse Inventory",
-      "detail": "Only 17 of the combined facilities are described as automated, implying the majority still rely on manual inventory processes that limit operational visibility and efficiency.",
+      "title": "Unified inventory visibility across 39 sites",
+      "detail": "With 39 warehouses in 9 U.S. regions and international sites, the company likely relies on disparate WMS (Accellos) and manual counts, limiting real\u2011time inventory accuracy.",
       "severity": "medium",
       "gnd_service": "Warehouse Management",
-      "based_on": "Post\u2011merger, the combined company operates 17 automated facilities with more than 800,000 automated pallet positions."
+      "based_on": "The firm operates modern, temperature\u2011controlled warehouses across the United States, with 39 sites in 9 regions and international locations in China and Vietnam, totaling more than 338\u202fmillion cubic feet of space."
     },
     {
-      "title": "Global Asset & Fleet Tracking",
-      "detail": "With a global network spanning the U.S., China, Vietnam and other regions, tracking of high\u2011value equipment and transport assets likely depends on legacy methods, risking loss or compliance gaps.",
-      "severity": "medium",
+      "title": "Asset & equipment tracking",
+      "detail": "The 170,000\u2011sq\u2011ft Elizabeth facility runs 30 staff with high\u2011throughput pallets; adding IoT trackers to lift trucks and AS/RS cranes would reduce loss and improve utilization.",
+      "severity": "low",
       "gnd_service": "Asset Tracking & Monitoring",
-      "based_on": "Preferred Freezer Services designs, constructs, and operates state\u2011of\u2011the\u2011art temperature\u2011controlled warehouses in the United States and internationally (including China and Vietnam)."
+      "based_on": "A 170,000\u2011sq\u2011ft facility in Elizabeth, NJ includes 140,000\u202fsq\u202fft of automated storage and retrieval system (AS/RS) and processes about 1,020 pallets per day with a staff of 30."
     }
   ],
   "pitch": {
-    "angle": "After the Lineage acquisition, Preferred Freezer now runs a massive, multi\u2011regional cold\u2011chain operation, but the lack of a unified IoT backbone can hinder real\u2011time compliance and efficiency. GND\u2019s ThinxFresh platform and IoT\u2011driven warehouse tools can instantly surface temperature deviations, automate audit reporting, and give you end\u2011to\u2011end visibility across every pallet and asset.",
-    "opener": "Congrats on scaling to 200+ facilities with Lineage\u2014let's future\u2011proof your cold\u2011chain data with a single real\u2011time dashboard."
+    "angle": "- Highlight their massive 338\u202fM\u202fcu\u202fft footprint \u2013 we can give you real\u2011time temperature and inventory data across every site.\n- Their early adoption of white\u2011roof energy tech shows they value innovation; our IoT platform adds another efficiency layer.\n- Integrate with existing Accellos WMS and LTW AS/RS to turn manual counts into automated, sensor\u2011driven accuracy.\n- Provide instant deviation alerts and compliance reports to meet pharma, food and vaccine regulations worldwide.",
+    "opener": "I saw Preferred Freezer\u2019s 338\u202fmillion\u202fcu\u202fft of cold storage across 39 sites and thought our ThinxFresh platform could deliver real\u2011time temperature compliance and unified inventory visibility for every location."
   }
 }

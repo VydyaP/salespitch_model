@@ -1,42 +1,26 @@
 {
   "company_name": "Frostbite Cold Storage Solutions",
-  "gaps_checked": 4,
+  "gaps_checked": 2,
   "summary": {
-    "VERIFIED": 4,
+    "VERIFIED": 2,
     "WEAK": 0,
     "UNVERIFIED": 0
   },
   "results": [
     {
-      "title": "No real\u2011time temperature monitoring",
+      "title": "No real\u2011time temperature compliance monitoring",
       "status": "VERIFIED",
       "overlap_score": 1.0,
       "unmatched_words": [],
-      "closest_fact_claim": "The company provides emergency cold storage solutions for hotels, restaurants, catering companies, event venues, supermarkets, food retailers, and commercial kitchens.",
-      "closest_fact_score": 1.0
+      "closest_fact_claim": "Provides emergency and event fridge and freezer trailer hire with rapid on\u2011site response (within 4 hours).",
+      "closest_fact_score": 0.63
     },
     {
-      "title": "Lack of centralized asset visibility",
+      "title": "Limited asset visibility and utilization analytics",
       "status": "VERIFIED",
       "overlap_score": 1.0,
       "unmatched_words": [],
-      "closest_fact_claim": "Their equipment fleet includes 13\u202fm\u00b3 high\u2011capacity trailers and a range of chillers and freezers.",
-      "closest_fact_score": 1.0
-    },
-    {
-      "title": "Limited compliance & audit reporting",
-      "status": "VERIFIED",
-      "overlap_score": 1.0,
-      "unmatched_words": [],
-      "closest_fact_claim": "It supplies NHS trusts and hospital facilities, as well as breweries and pub groups including Robinsons, Greene\u202fKing, Holts, and Punch\u202fPubs.",
-      "closest_fact_score": 1.0
-    },
-    {
-      "title": "Resource constraints for IoT integration",
-      "status": "VERIFIED",
-      "overlap_score": 1.0,
-      "unmatched_words": [],
-      "closest_fact_claim": "The company is family\u2011run and based in Warrington, UK.",
+      "closest_fact_claim": "Provides emergency and event fridge and freezer trailer hire with rapid on\u2011site response (within 4 hours).",
       "closest_fact_score": 1.0
     }
   ]

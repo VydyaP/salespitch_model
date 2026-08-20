@@ -1,0 +1,36 @@
+{
+  "gaps": [
+    {
+      "title": "Cold chain compliance across expanding hospital network",
+      "detail": "Medanta is rapidly adding new hospitals (550\u2011bed Noida, 400\u2011bed Varanasi) and aims for 7,000 beds, increasing the volume of vaccines, biologics, and temperature\u2011sensitive supplies that must meet India's Revised Schedule\u202fM and WHO\u2011GDP standards.",
+      "severity": "high",
+      "gnd_service": "Cold Chain Management",
+      "based_on": "In 2026 Medanta aims for around 3,000 operational beds and plans to reach 7,000 beds over the next 3\u20134 years\u2026 550\u2011bed super\u2011speciality hospital operational in Noida. 400\u2011bed multi\u2011speciality hospital announced in Varanasi."
+    },
+    {
+      "title": "Distributed high\u2011value medical asset visibility",
+      "detail": "With multiple new sites and a workforce of 1,001\u20115,000, Medanta will have numerous critical devices (MRI, ventilators, surgical equipment) that need real\u2011time location and tamper alerts to prevent loss or downtime.",
+      "severity": "medium",
+      "gnd_service": "Asset Tracking & Monitoring",
+      "based_on": "The organization employs between 1,001 and 5,000 people."
+    },
+    {
+      "title": "Manual inventory processes in multi\u2011site pharmacies",
+      "detail": "Rapid hospital expansion likely relies on legacy inventory methods for drugs and consumables, creating inefficiencies and audit risks under stricter regulatory traceability requirements.",
+      "severity": "medium",
+      "gnd_service": "Warehouse Management",
+      "based_on": "Medanta operates in the healthcare industry as a multi\u2011specialty hospital network."
+    },
+    {
+      "title": "Need for unified IoT data platform",
+      "detail": "As Medanta integrates sensors for temperature, equipment usage, and location across new facilities, a single dashboard would streamline compliance reporting and operational insights.",
+      "severity": "low",
+      "gnd_service": "Platform",
+      "based_on": "In 2026 Medanta continues its aggressive expansion journey with an estimated operational capacity of around 3,000 beds."
+    }
+  ],
+  "pitch": {
+    "angle": "- Your new 550\u2011bed Noida and 400\u2011bed Varanasi hospitals will double your vaccine storage footprint\u2014our ThinxFresh platform guarantees real\u2011time temperature compliance across all sites.\n- With a target of 7,000 beds, managing high\u2011value equipment across dozens of locations becomes critical; our asset trackers cut loss risk and provide instant alerts.\n- Regulatory pressure from Revised Schedule\u202fM and WHO\u2011GDP audits demands automated cold\u2011chain logs\u2014our solution auto\u2011generates audit\u2011ready reports.\n- Consolidate all sensor data from new campuses into a single dashboard for quick decision\u2011making and reduced manual work.",
+    "opener": "Congrats on the ambitious 7,000\u2011bed rollout\u2014let's ensure your expanding clinical network stays compliant and operationally efficient with real\u2011time cold\u2011chain and asset visibility."
+  }
+}

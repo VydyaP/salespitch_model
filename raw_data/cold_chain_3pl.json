@@ -9,24 +9,44 @@
   "phone": "Unknown",
   "facts": [
     {
-      "claim": "Cold Chain 3PL provides storing and transporting temperature\u2011sensitive products, ensuring proper storage, handling, and product transportation in a temperature\u2011controlled environment.",
-      "source_snippet": "Cold Chain 3PL (Third-Party Logistics) refers to storing and transporting temperature-sensitive products that require constant temperature control... includes ensuring proper storage, handling, and product transportation in a temperature-controlled environment to maintain quality and safety.",
+      "claim": "Cold Chain 3PL provides temperature\u2011controlled storage, handling, and transportation for perishable food, pharmaceutical products, and frozen goods.",
+      "source_snippet": "Cold Chain 3PL (Third-Party Logistics) refers to storing and transporting temperature-sensitive products that require constant temperature control, such as perishable food, pharmaceutical products, and frozen goods.",
       "source_url": "https://coldchain3pl.com/cold-chain-3pl-and-small-businesses"
     },
     {
-      "claim": "The company is classified in the Transportation, Logistics, Supply Chain and Storage industry.",
-      "source_snippet": "Industry Transportation, Logistics, Supply Chain and Storage",
+      "claim": "The company serves brands and marketing teams with temperature\u2011controlled fulfillment, offering services such as cold storage, pick\u2011and\u2011pack, kitting, insulated packaging, dry ice, and nationwide shipping.",
+      "source_snippet": "ColdChain3PL is built for brands and marketing teams that need reliable temperature-controlled fulfillment. We help food, beverage, wellness, ecommerce, and marketing companies store, kit, pack, and ship frozen, refrigerated, and ambient products with confidence. From cold storage, pick and pack, promotional kitting, distressed pallet projects, insulated packaging, dry ice, and gel packs to fast order processing and nationwide shipping, our team handles the complex fulfillment work...",
       "source_url": "https://www.linkedin.com/company/cold-chain-3pl"
     },
     {
-      "claim": "Cold Chain 3PL holds certifications including Non\u2011GMO, USDA, SQF, and FDA.",
-      "source_snippet": "We boast certifications like Non\u2011GMO, USDA, SQF, and FDA, providing a level of regulatory assurance critical for sensitive goods.",
-      "source_url": "https://www.fulfill.com/3pl/profile/cold-chain-3pl"
+      "claim": "Cold Chain 3PL claims to have 20 years of cold\u2011chain experience.",
+      "source_snippet": "With 20 years of cold-chain experience, ColdChain3PL gives growing brands and agencies a fulfillment partner they can trust to do it all.",
+      "source_url": "https://www.linkedin.com/company/cold-chain-3pl"
     },
     {
-      "claim": "The company integrates directly with major eCommerce platforms such as Amazon, Shopify, WooCommerce, and Walmart, and partners with ShipStation for shipping management.",
-      "source_snippet": "Cold Chain 3PL offers seamless integration with leading eCommerce platforms and essential business tools... integrate directly with popular platforms such as Amazon, Shopify, WooCommerce, and Walmart... partner with ShipStation for optimized shipping management.",
-      "source_url": "https://www.fulfill.com/3pl/profile/cold-chain-3pl"
+      "claim": "The company emphasizes scalability, offering a flexible network of global, temperature\u2011controlled warehouses to handle seasonal demand spikes.",
+      "source_snippet": "Cold Chain 3PL is an industry leader in scalability for growth or seasonal demands. Thanks to their extensive network of global warehouses, they can quickly and easily manage fluctuations in demand and scale up to meet the needs of businesses large and small. With flexible storage options, including refrigerated and ambient temperature warehousing, they provide a range of temperature\u2011controlled solutions tailored to meet any short\u2011term or long\u2011term requirements.",
+      "source_url": "https://coldchain3pl.com/benefits-traditional-3pl-provider"
+    },
+    {
+      "claim": "Judd Rosenberg has over 20 years of leadership experience in gourmet, fresh\u2011prepared and grab\u2011and\u2011go products, previously co\u2011founded Food Evolution and led expansion through acquisitions of food processing plants in Texas and California.",
+      "source_snippet": "For over 20 years, Judd Rosenberg has been a noteworthy leader in the gourmet, fresh-prepared and grab\u2011n\u2011go products space... leading the vision of expansion with the acquisitions of a food processing plant in Texas and California based Fresh & Ready Foods.",
+      "source_url": "https://coldchain3pl.com/about-us"
+    },
+    {
+      "claim": "Jamie Moriarty is an experienced entrepreneur recognized by InterCon as a 2020 Top 50 Tech Leader for his impact on the tech industry and innovation.",
+      "source_snippet": "Jamie Moriarty is an experienced entrepreneur... In addition to his primary job functions, Jamie has most recently been recognized by InterCon as a 2020 top 50 tech leader for his overall impact on the tech industry and spirit of innovation.",
+      "source_url": "https://coldchain3pl.com/about-us"
+    },
+    {
+      "claim": "Cold Chain 3PL integrated an advanced order management system with real\u2011time inventory tracking, automated order processing, and strategic partnerships with local carriers, achieving a 30% increase in order processing efficiency and a 25% reduction in shipping times.",
+      "source_snippet": "Integrated an advanced order management system with real\u2011time inventory tracking, implemented automated order processing, and leveraged strategic partnerships with local carriers for faster last\u2011mile delivery... Achieved a 30% increase in order processing efficiency, reduced shipping times by 25%, and contributed to a notable surge in customer satisfaction.",
+      "source_url": "https://coldchain3pl.com/about-us"
+    },
+    {
+      "claim": "Cold Chain 3PL provided logistics optimization for a meal\u2011delivery platform, introducing warehouse routing algorithms and a mix of national and last\u2011mile carriers to streamline operations.",
+      "source_snippet": "Challenge: Streamline the logistics for a meal delivery platform offering pre\u2011cooked meals... Solutions: Introduced warehouse routing optimization algorithms, utilized a combination of national and last mile carriers.",
+      "source_url": "https://coldchain3pl.com/about-us"
     }
   ]
 }

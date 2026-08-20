@@ -1,0 +1,62 @@
+{
+  "company_name": "Medanta",
+  "founded": "2009",
+  "hq": "Gurgaon, Haryana, India",
+  "industry": "Healthcare",
+  "size": "1,001-5,000 employees",
+  "website": "https://www.medanta.org",
+  "linkedin_url": "https://in.linkedin.com/company/medanta",
+  "phone": "Unknown",
+  "facts": [
+    {
+      "claim": "Medanta was founded in 2009.",
+      "source_snippet": "Founded 2009; 17 years ago (2009)",
+      "source_url": "https://en.wikipedia.org/wiki/Medanta"
+    },
+    {
+      "claim": "The company's headquarters are in Gurgaon, Haryana, India.",
+      "source_snippet": "Headquarters Gurgaon, Haryana, India",
+      "source_url": "https://en.wikipedia.org/wiki/Medanta"
+    },
+    {
+      "claim": "Medanta operates in the healthcare industry as a multi\u2011specialty hospital network.",
+      "source_snippet": "Industry Healthcare",
+      "source_url": "https://en.wikipedia.org/wiki/Medanta"
+    },
+    {
+      "claim": "The organization employs between 1,001 and 5,000 people.",
+      "source_snippet": "Company Size 1,001-5,000 employees",
+      "source_url": "https://in.linkedin.com/company/medanta"
+    },
+    {
+      "claim": "Official website is www.medanta.org.",
+      "source_snippet": "Website www.medanta.org",
+      "source_url": "https://en.wikipedia.org/wiki/Medanta"
+    },
+    {
+      "claim": "Official LinkedIn page is https://in.linkedin.com/company/medanta.",
+      "source_snippet": "LinkedIn page URL listed as https://in.linkedin.com/company/medanta",
+      "source_url": "https://in.linkedin.com/company/medanta"
+    },
+    {
+      "claim": "Medanta announced a 400\u2011bed multi\u2011specialty hospital in Varanasi with an investment of \u20b9550\u202fcrore.",
+      "source_snippet": "Medanta plans to establish a 400\u2011bed multi\u2011specialty hospital in Varanasi with an investment of \u20b9550\u202fcrore\u2026",
+      "source_url": "https://www.linkedin.com/posts/healthcare-leaders-collective-foundation_healthcareindia-healthcareinfrastructure-activity-7442868118294728704-ybZo"
+    },
+    {
+      "claim": "Medanta opened a 550\u2011bed hospital in Noida.",
+      "source_snippet": "Medanta opens 550\u2011bed hospital in Noida",
+      "source_url": "https://health.economictimes.indiatimes.com/tag/medanta"
+    },
+    {
+      "claim": "In 2026 Medanta aims for around 3,000 operational beds and plans to reach 7,000 beds over the next 3\u20114 years through new hospitals and brownfield expansions, including a 550\u2011bed Noida hospital, a 400\u2011bed Varanasi hospital, 500 additional beds across existing sites, and five greenfield projects adding roughly 2,700 beds.",
+      "source_snippet": "In 2026, Medanta continues its aggressive expansion journey with an estimated operational capacity of around 3,000 beds, while targeting 7,000 beds over the next 3\u20114 years\u2026 \u2705 550\u2011bed super\u2011speciality hospital operational in Noida. \u2705 400\u2011bed multi\u2011speciality hospital announced in Varanasi\u2026 \u2705 Plans to add 500 more beds across existing hospitals within the next year. \u2705 Five greenfield projects expected to add nearly 2,700 beds\u2026",
+      "source_url": "https://www.linkedin.com/posts/raghvendra-singh-67696525b_medanta-healthcareindia-hospitalexpansion-activity-7469958055732973568-f3YZ"
+    },
+    {
+      "claim": "Medanta reported a net profit of \u20b91,195\u202fcrore in Q4 FY26, with total income for FY26 rising 19.6% year\u2011on\u2011year to \u20b94,508\u202fcrore.",
+      "source_snippet": "Medanta posts \u20b91,195 crore in Q4 FY26, net profit soars 40%\u2026 For the full financial year, FY26, Medanta\u2019s total income increased by 19.6 per cent YoY to Rs 4,508 crore\u2026",
+      "source_url": "https://www.moneycontrol.com/news/tags/medanta.html"
+    }
+  ]
+}

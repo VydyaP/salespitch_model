@@ -1,0 +1,29 @@
+{
+  "gaps": [
+    {
+      "title": "Cold\u2011chain monitoring for sample transport",
+      "detail": "Medanta Labs is rapidly building a FOFO collection\u2011centre network across Chandigarh, Mohali and Panchkula, which will require temperature\u2011controlled shipment of blood, urine and molecular samples to ensure test accuracy and regulatory compliance.",
+      "severity": "high",
+      "gnd_service": "Cold Chain Management",
+      "based_on": "Medanta Labs launched a new diagnostic facility in Mohali and is building a FOFO (Collection Centre) network across Chandigarh, Mohali, and Panchkula to support sample collection."
+    },
+    {
+      "title": "Real\u2011time asset tracking for high\u2011value lab equipment",
+      "detail": "The lab\u2019s advanced molecular biology, genetic testing and real\u2011time PCR services rely on expensive instruments that are spread across seven laboratories, making them vulnerable to theft, tampering or mis\u2011placement.",
+      "severity": "medium",
+      "gnd_service": "Asset Tracking & Monitoring",
+      "based_on": "Medanta Labs operates a network of seven advanced laboratories offering services such as molecular biology, genetic testing, and real\u2011time PCR DNA testing."
+    },
+    {
+      "title": "IoT\u2011driven inventory visibility for reagents and consumables",
+      "detail": "Managing stocks of reagents, test kits and consumables across multiple sites can be error\u2011prone; a unified dashboard would reduce manual counts, prevent stock\u2011outs, and support compliance with NABL and Schedule\u202fM standards.",
+      "severity": "medium",
+      "gnd_service": "Warehouse Management",
+      "based_on": "Medanta Labs operates a network of seven advanced laboratories offering services such as molecular biology, genetic testing, and real\u2011time PCR DNA testing."
+    }
+  ],
+  "pitch": {
+    "angle": "- Highlight how live temperature tracking protects sample integrity across your new FOFO network and satisfies NABL/Schedule\u202fM audit requirements.\n- Show how tamper\u2011proof IoT tags guard high\u2011value PCR and genetic testing equipment across all seven labs.\n- Demonstrate a single dashboard that auto\u2011generates compliance reports for reagent inventory, eliminating manual counts.\n- Emphasize faster turnaround times and reduced sample re\u2011collection costs with real\u2011time alerts.",
+    "opener": "Hi [Name], congrats on Medanta Labs\u2019 rapid FOFO rollout in the Tricity \u2013 I\u2019ve helped diagnostic groups secure sample quality with live cold\u2011chain monitoring that meets NABL and Schedule\u202fM standards."
+  }
+}

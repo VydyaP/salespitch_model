@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Medanta — Prospect Report</title>
+<style>
+:root {
+  --paper: #f6f2e7;
+  --paper-alt: #efe6d2;
+  --ink: #2b2118;
+  --ink-secondary: #6b5d4f;
+  --muted: #9c8f7e;
+  --border: #ddd3bf;
+  --accent: #d9622b;
+  --accent-hover: #c2531f;
+  --frost: #1f6e6b;
+  --nav-bg: rgba(246,242,231,0.85);
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --paper: #1c1712; --paper-alt: #262019; --ink: #f2e9d8; --ink-secondary: #c4b7a2;
+    --muted: #8a7c68; --border: #3a3226; --accent: #ff7a3d; --accent-hover: #ff8f5c;
+    --frost: #3fa39e; --nav-bg: rgba(28,23,18,0.85);
+  }
+}
+:root[data-theme="dark"] {
+  --paper: #1c1712; --paper-alt: #262019; --ink: #f2e9d8; --ink-secondary: #c4b7a2;
+  --muted: #8a7c68; --border: #3a3226; --accent: #ff7a3d; --accent-hover: #ff8f5c;
+  --frost: #3fa39e; --nav-bg: rgba(28,23,18,0.85);
+}
+:root[data-theme="light"] {
+  --paper: #f6f2e7; --paper-alt: #efe6d2; --ink: #2b2118; --ink-secondary: #6b5d4f;
+  --muted: #9c8f7e; --border: #ddd3bf; --accent: #d9622b; --accent-hover: #c2531f;
+  --frost: #1f6e6b; --nav-bg: rgba(246,242,231,0.85);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  background: var(--paper);
+  color: var(--ink);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: var(--accent); text-decoration: none; }
+img, svg { max-width: 100%; }
+
+.mono {
+  font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+}
+
+.nav {
+  position: sticky; top: 0; z-index: 100; height: 56px;
+  display: flex; align-items: center; justify-content: center;
+  backdrop-filter: saturate(160%) blur(16px);
+  -webkit-backdrop-filter: saturate(160%) blur(16px);
+  background: var(--nav-bg);
+  border-bottom: 1px solid var(--border);
+}
+.nav-inner {
+  width: 100%; max-width: 1040px; padding: 0 24px;
+  display: flex; align-items: center; justify-content: space-between;
+}
+.nav .brand {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 12.5px; font-weight: 600; color: var(--ink); text-decoration: none;
+  letter-spacing: 0.03em; text-transform: uppercase;
+}
+.nav .actions { display: flex; gap: 10px; }
+
+.btn-pill {
+  display: inline-flex; align-items: center; justify-content: center;
+  border-radius: 8px; padding: 8px 16px; font-size: 12.5px; font-weight: 600;
+  border: 1px solid var(--border); background: var(--paper-alt); color: var(--ink);
+  cursor: pointer; font-family: inherit; transition: background 0.15s ease, border-color 0.15s ease;
+  white-space: nowrap;
+}
+.btn-pill:hover { background: var(--border); }
+.btn-pill:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.btn-pill.filled { background: var(--accent); border-color: var(--accent); color: #fff8f0; }
+.btn-pill.filled:hover { background: var(--accent-hover); }
+
+/* ---- report hero: styled like a manifest / shipping label header ---- */
+.hero {
+  max-width: 900px; margin: 0 auto; padding: 48px 24px 28px;
+}
+.eyebrow {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 11.5px; font-weight: 600; color: var(--muted); letter-spacing: 0.08em; text-transform: uppercase;
+}
+.hero h1 {
+  font-size: clamp(30px, 5vw, 44px); font-weight: 700; letter-spacing: -0.02em;
+  line-height: 1.1; text-wrap: balance; margin-top: 4px;
+}
+.manifest-row {
+  margin-top: 20px; display: flex; flex-wrap: wrap; gap: 10px;
+}
+.manifest-chip {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 12px; color: var(--ink-secondary); background: var(--paper-alt);
+  border: 1px solid var(--border); border-radius: 6px; padding: 5px 10px;
+}
+.manifest-chip strong { color: var(--ink); font-weight: 600; }
+
+/* ---- tab bar ---- */
+.tab-shell { max-width: 900px; margin: 0 auto; padding: 0 24px 80px; }
+.tab-bar {
+  display: flex; gap: 4px; border-bottom: 1px solid var(--border); margin-bottom: 32px;
+  overflow-x: auto;
+}
+.tab-btn {
+  font-family: inherit; font-size: 14.5px; font-weight: 600; color: var(--muted);
+  background: none; border: none; border-bottom: 2.5px solid transparent;
+  padding: 12px 6px; margin-right: 22px; cursor: pointer; white-space: nowrap;
+  display: flex; align-items: center; gap: 8px; transition: color 0.15s ease;
+}
+.tab-btn:hover { color: var(--ink); }
+.tab-btn.active { color: var(--ink); border-bottom-color: var(--accent); }
+.tab-count {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 11px; background: var(--paper-alt); border: 1px solid var(--border);
+  border-radius: 999px; padding: 1px 7px; color: var(--ink-secondary);
+}
+.tab-btn.active .tab-count { border-color: var(--accent); color: var(--accent); }
+
+.section-label {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 11.5px; text-transform: uppercase; letter-spacing: 0.07em;
+  color: var(--muted); font-weight: 600; margin-bottom: 20px;
+}
+.empty { color: var(--muted); font-style: italic; font-size: 15px; }
+
+/* ---- facts ---- */
+.fact-list { display: flex; flex-direction: column; gap: 22px; }
+.fact-item { border-left: 3px solid var(--border); padding-left: 18px; }
+.fact-claim {
+  display: block; font-size: 17px; font-weight: 600; line-height: 1.4; letter-spacing: -0.005em;
+  margin-bottom: 8px; color: var(--ink); text-decoration: underline;
+  text-decoration-color: var(--border); text-decoration-thickness: 1.5px; text-underline-offset: 3px;
+  transition: color 0.15s ease, text-decoration-color 0.15s ease, border-color 0.15s ease;
+}
+.fact-item:has(.fact-claim:hover) { border-left-color: var(--accent); }
+.fact-claim:hover { color: var(--accent); text-decoration-color: var(--accent); }
+.fact-claim::after { content: " \2197"; font-size: 0.65em; color: var(--muted); text-decoration: none; }
+.fact-quote {
+  font-size: 14.5px; color: var(--ink-secondary); font-style: italic; line-height: 1.5;
+}
+
+/* ---- gaps ---- */
+.gap-card { background: var(--paper-alt); border: 1px solid var(--border); border-radius: 10px; margin-bottom: 12px; overflow: hidden; }
+.gap-summary {
+  cursor: pointer; padding: 16px 20px; display: flex; align-items: center; gap: 14px; list-style: none;
+}
+.gap-summary::-webkit-details-marker { display: none; }
+.gap-summary::marker { content: ""; }
+.gap-severity-row { display: flex; align-items: center; gap: 8px; flex-shrink: 0; }
+.severity-gauge { width: 40px; height: 6px; border-radius: 3px; background: var(--border); overflow: hidden; flex-shrink: 0; }
+.gauge-fill { height: 100%; border-radius: 3px; }
+.severity-label {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 10.5px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; white-space: nowrap;
+}
+.gap-summary h3 { font-size: 15.5px; font-weight: 600; letter-spacing: -0.005em; line-height: 1.35; flex: 1; }
+.gap-summary::after {
+  content: "\2304"; color: var(--muted); font-size: 16px; flex-shrink: 0; transition: transform 0.2s ease;
+}
+.gap-card[open] .gap-summary::after { transform: rotate(180deg); }
+.gap-body { padding: 0 20px 20px; border-top: 1px solid var(--border); padding-top: 16px; margin: 0 20px; }
+.gap-detail { font-size: 15px; color: var(--ink-secondary); line-height: 1.55; margin-bottom: 16px; }
+.gap-meta { font-size: 13px; color: var(--muted); display: flex; flex-direction: column; gap: 10px; }
+.gap-meta strong { color: var(--ink-secondary); font-weight: 600; }
+.gap-service-tags { display: flex; gap: 6px; flex-wrap: wrap; }
+.service-tag {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 10px; font-weight: 700; color: #fff8f0; border-radius: 5px; padding: 2px 6px; letter-spacing: 0.02em;
+}
+.gap-based-on { padding-left: 12px; border-left: 2px solid var(--border); font-style: italic; }
+
+/* ---- pitch ---- */
+.pitch-card {
+  background: var(--frost); color: #f2f8f6; border-radius: 14px; padding: 36px 34px;
+}
+.pitch-card .section-label { color: rgba(242,248,246,0.65); }
+.pitch-angle { font-size: clamp(18px, 2.6vw, 22px); font-weight: 500; line-height: 1.5; letter-spacing: -0.005em; margin-bottom: 26px; }
+.pitch-opener-box { background: rgba(0,0,0,0.18); border-radius: 10px; padding: 22px 24px; }
+.pitch-opener-label {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 11px; color: rgba(242,248,246,0.6); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 10px;
+}
+.pitch-opener-text { font-size: 17px; font-style: italic; line-height: 1.5; margin-bottom: 18px; }
+.pitch-card .btn-pill { background: rgba(242,248,246,0.12); border-color: rgba(242,248,246,0.3); color: #f2f8f6; }
+.pitch-card .btn-pill:hover { background: rgba(242,248,246,0.22); }
+
+@media print {
+  .nav, .tab-bar { display: none; }
+  .tab-panel { display: block !important; margin-bottom: 48px; }
+  .gap-body { display: block !important; }
+  .gap-summary::after { display: none; }
+  .pitch-card { background: #eef5f3 !important; color: #12201d !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .pitch-card .section-label, .pitch-opener-label { color: #4a5a56 !important; }
+  .pitch-opener-box { background: #fff !important; border: 1px solid #ccd8d5; }
+  body { background: #fff; }
+}
+</style>
+</head>
+<body>
+<nav class="nav">
+  <div class="nav-inner">
+    <a class="brand" href="../index.html">&larr; Prospect Scan</a>
+    <div class="actions">
+      <button class="btn-pill" onclick="window.print()">Print / PDF</button>
+      <button class="btn-pill filled" onclick="downloadReport('medanta-report.html')">Download</button>
+    </div>
+  </div>
+</nav>
+
+
+<header class="hero">
+  <p class="eyebrow">Prospect report</p>
+  <h1>Medanta</h1>
+  <div class="manifest-row"><span class="manifest-chip"><strong>Industry:</strong> Healthcare</span><span class="manifest-chip"><strong>HQ:</strong> Gurgaon, Haryana, India</span><span class="manifest-chip"><strong>Founded:</strong> 2009</span><span class="manifest-chip"><strong>Size:</strong> 1,001-5,000 employees</span></div>
+</header>
+
+<div class="tab-shell">
+  <div class="tab-bar">
+    <button class="tab-btn active" data-tab="gaps" onclick="switchTab('gaps')">Gaps <span class="tab-count">4</span></button>
+    <button class="tab-btn" data-tab="facts" onclick="switchTab('facts')">Facts <span class="tab-count">10</span></button>
+    <button class="tab-btn" data-tab="pitch" onclick="switchTab('pitch')">Pitch</button>
+  </div>
+
+  <div class="tab-panel" id="tab-gaps">
+    <p class="section-label">4 gaps found &middot; 1 high &middot; 2 medium &middot; 1 low</p>
+    <details class="gap-card" open>
+  <summary class="gap-summary">
+    <div class="gap-severity-row">
+      <div class="severity-gauge"><div class="gauge-fill" style="width:100%;background:#c23b22"></div></div>
+      <span class="severity-label" style="color:#c23b22">High</span>
+    </div>
+    <h3>Cold chain compliance across expanding hospital network</h3>
+  </summary>
+  <div class="gap-body">
+    <p class="gap-detail">Medanta is rapidly adding new hospitals (550‑bed Noida, 400‑bed Varanasi) and aims for 7,000 beds, increasing the volume of vaccines, biologics, and temperature‑sensitive supplies that must meet India&#x27;s Revised Schedule M and WHO‑GDP standards.</p>
+    <div class="gap-meta">
+      <div class="gap-service-tags"><span class="service-tag" style="background:#1f6e6b">CC</span><span>Cold Chain Management</span></div>
+      <div class="gap-based-on">&ldquo;In 2026 Medanta aims for around 3,000 operational beds and plans to reach 7,000 beds over the next 3–4 years… 550‑bed super‑speciality hospital operational in Noida. 400‑bed multi‑speciality hospital announced in Varanasi.&rdquo;</div>
+    </div>
+  </div>
+</details><details class="gap-card">
+  <summary class="gap-summary">
+    <div class="gap-severity-row">
+      <div class="severity-gauge"><div class="gauge-fill" style="width:65%;background:#b8860b"></div></div>
+      <span class="severity-label" style="color:#b8860b">Medium</span>
+    </div>
+    <h3>Distributed high‑value medical asset visibility</h3>
+  </summary>
+  <div class="gap-body">
+    <p class="gap-detail">With multiple new sites and a workforce of 1,001‑5,000, Medanta will have numerous critical devices (MRI, ventilators, surgical equipment) that need real‑time location and tamper alerts to prevent loss or downtime.</p>
+    <div class="gap-meta">
+      <div class="gap-service-tags"><span class="service-tag" style="background:#c23b22">AT</span><span>Asset Tracking &amp; Monitoring</span></div>
+      <div class="gap-based-on">&ldquo;The organization employs between 1,001 and 5,000 people.&rdquo;</div>
+    </div>
+  </div>
+</details><details class="gap-card">
+  <summary class="gap-summary">
+    <div class="gap-severity-row">
+      <div class="severity-gauge"><div class="gauge-fill" style="width:65%;background:#b8860b"></div></div>
+      <span class="severity-label" style="color:#b8860b">Medium</span>
+    </div>
+    <h3>Manual inventory processes in multi‑site pharmacies</h3>
+  </summary>
+  <div class="gap-body">
+    <p class="gap-detail">Rapid hospital expansion likely relies on legacy inventory methods for drugs and consumables, creating inefficiencies and audit risks under stricter regulatory traceability requirements.</p>
+    <div class="gap-meta">
+      <div class="gap-service-tags"><span class="service-tag" style="background:#8a5a2b">WH</span><span>Warehouse Management</span></div>
+      <div class="gap-based-on">&ldquo;Medanta operates in the healthcare industry as a multi‑specialty hospital network.&rdquo;</div>
+    </div>
+  </div>
+</details><details class="gap-card">
+  <summary class="gap-summary">
+    <div class="gap-severity-row">
+      <div class="severity-gauge"><div class="gauge-fill" style="width:32%;background:#3f7d5c"></div></div>
+      <span class="severity-label" style="color:#3f7d5c">Low</span>
+    </div>
+    <h3>Need for unified IoT data platform</h3>
+  </summary>
+  <div class="gap-body">
+    <p class="gap-detail">As Medanta integrates sensors for temperature, equipment usage, and location across new facilities, a single dashboard would streamline compliance reporting and operational insights.</p>
+    <div class="gap-meta">
+      <div class="gap-service-tags"><span class="service-tag" style="background:#3f7d5c">PL</span><span>Platform</span></div>
+      <div class="gap-based-on">&ldquo;In 2026 Medanta continues its aggressive expansion journey with an estimated operational capacity of around 3,000 beds.&rdquo;</div>
+    </div>
+  </div>
+</details>
+  </div>
+
+  <div class="tab-panel" id="tab-facts" style="display:none">
+    <p class="section-label">Sourced facts</p>
+    <ul class="fact-list" style="list-style:none"><li class="fact-item">
+  <a class="fact-claim" href="https://en.wikipedia.org/wiki/Medanta" target="_blank" rel="noopener">Medanta was founded in 2009.</a>
+  <blockquote class="fact-quote">&ldquo;Founded 2009; 17 years ago (2009)&rdquo;</blockquote>
+</li><li class="fact-item">
+  <a class="fact-claim" href="https://en.wikipedia.org/wiki/Medanta" target="_blank" rel="noopener">The company&#x27;s headquarters are in Gurgaon, Haryana, India.</a>
+  <blockquote class="fact-quote">&ldquo;Headquarters Gurgaon, Haryana, India&rdquo;</blockquote>
+</li><li class="fact-item">
+  <a class="fact-claim" href="https://en.wikipedia.org/wiki/Medanta" target="_blank" rel="noopener">Medanta operates in the healthcare industry as a multi‑specialty hospital network.</a>
+  <blockquote class="fact-quote">&ldquo;Industry Healthcare&rdquo;</blockquote>
+</li><li class="fact-item">
+  <a class="fact-claim" href="https://in.linkedin.com/company/medanta" target="_blank" rel="noopener">The organization employs between 1,001 and 5,000 people.</a>
+  <blockquote class="fact-quote">&ldquo;Company Size 1,001-5,000 employees&rdquo;</blockquote>
+</li><li class="fact-item">
+  <a class="fact-claim" href="https://en.wikipedia.org/wiki/Medanta" target="_blank" rel="noopener">Official website is www.medanta.org.</a>
+  <blockquote class="fact-quote">&ldquo;Website www.medanta.org&rdquo;</blockquote>
+</li><li class="fact-item">
+  <a class="fact-claim" href="https://in.linkedin.com/company/medanta" target="_blank" rel="noopener">Official LinkedIn page is https://in.linkedin.com/company/medanta.</a>
+  <blockquote class="fact-quote">&ldquo;LinkedIn page URL listed as https://in.linkedin.com/company/medanta&rdquo;</blockquote>
+</li><li class="fact-item">
+  <a class="fact-claim" href="https://www.linkedin.com/posts/healthcare-leaders-collective-foundation_healthcareindia-healthcareinfrastructure-activity-7442868118294728704-ybZo" target="_blank" rel="noopener">Medanta announced a 400‑bed multi‑specialty hospital in Varanasi with an investment of ₹550 crore.</a>
+  <blockquote class="fact-quote">&ldquo;Medanta plans to establish a 400‑bed multi‑specialty hospital in Varanasi with an investment of ₹550 crore…&rdquo;</blockquote>
+</li><li class="fact-item">
+  <a class="fact-claim" href="https://health.economictimes.indiatimes.com/tag/medanta" target="_blank" rel="noopener">Medanta opened a 550‑bed hospital in Noida.</a>
+  <blockquote class="fact-quote">&ldquo;Medanta opens 550‑bed hospital in Noida&rdquo;</blockquote>
+</li><li class="fact-item">
+  <a class="fact-claim" href="https://www.linkedin.com/posts/raghvendra-singh-67696525b_medanta-healthcareindia-hospitalexpansion-activity-7469958055732973568-f3YZ" target="_blank" rel="noopener">In 2026 Medanta aims for around 3,000 operational beds and plans to reach 7,000 beds over the next 3‑4 years through new hospitals and brownfield expansions, including a 550‑bed Noida hospital, a 400‑bed Varanasi hospital, 500 additional beds across existing sites, and five greenfield projects adding roughly 2,700 beds.</a>
+  <blockquote class="fact-quote">&ldquo;In 2026, Medanta continues its aggressive expansion journey with an estimated operational capacity of around 3,000 beds, while targeting 7,000 beds over the next 3‑4 years… ✅ 550‑bed super‑speciality hospital operational in Noida. ✅ 400‑bed multi‑speciality hospital announced in Varanasi… ✅ Plans to add 500 more beds across existing hospitals within the next year. ✅ Five greenfield projects expected to add nearly 2,700 beds…&rdquo;</blockquote>
+</li><li class="fact-item">
+  <a class="fact-claim" href="https://www.moneycontrol.com/news/tags/medanta.html" target="_blank" rel="noopener">Medanta reported a net profit of ₹1,195 crore in Q4 FY26, with total income for FY26 rising 19.6% year‑on‑year to ₹4,508 crore.</a>
+  <blockquote class="fact-quote">&ldquo;Medanta posts ₹1,195 crore in Q4 FY26, net profit soars 40%… For the full financial year, FY26, Medanta’s total income increased by 19.6 per cent YoY to Rs 4,508 crore…&rdquo;</blockquote>
+</li></ul>
+  </div>
+
+  <div class="tab-panel" id="tab-pitch" style="display:none">
+    <p class="section-label">Pitch</p>
+    <div class="pitch-card">
+      <p class="pitch-angle">- Your new 550‑bed Noida and 400‑bed Varanasi hospitals will double your vaccine storage footprint—our ThinxFresh platform guarantees real‑time temperature compliance across all sites.
+- With a target of 7,000 beds, managing high‑value equipment across dozens of locations becomes critical; our asset trackers cut loss risk and provide instant alerts.
+- Regulatory pressure from Revised Schedule M and WHO‑GDP audits demands automated cold‑chain logs—our solution auto‑generates audit‑ready reports.
+- Consolidate all sensor data from new campuses into a single dashboard for quick decision‑making and reduced manual work.</p>
+      <div class="pitch-opener-box">
+        <div class="pitch-opener-label">Opener</div>
+        <p class="pitch-opener-text" id="pitch-opener">Congrats on the ambitious 7,000‑bed rollout—let&#x27;s ensure your expanding clinical network stays compliant and operationally efficient with real‑time cold‑chain and asset visibility.</p>
+        <button class="btn-pill" onclick="copyOpener(this)">Copy opener</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+function copyOpener(btn) {
+  var text = document.getElementById('pitch-opener').innerText;
+  navigator.clipboard.writeText(text).then(function () {
+    var original = btn.textContent;
+    btn.textContent = 'Copied';
+    setTimeout(function () { btn.textContent = original; }, 1500);
+  });
+}
+function downloadReport(filename) {
+  var html = '<!DOCTYPE html>\n' + document.documentElement.outerHTML;
+  var blob = new Blob([html], { type: 'text/html' });
+  var url = URL.createObjectURL(blob);
+  var a = document.createElement('a');
+  a.href = url;
+  a.download = filename;
+  a.click();
+  URL.revokeObjectURL(url);
+}
+function switchTab(name) {
+  document.querySelectorAll('.tab-panel').forEach(function (p) { p.style.display = 'none'; });
+  document.querySelectorAll('.tab-btn').forEach(function (b) { b.classList.remove('active'); });
+  document.getElementById('tab-' + name).style.display = 'block';
+  document.querySelector('.tab-btn[data-tab="' + name + '"]').classList.add('active');
+}
+
+function saveCompany(slug, btn) {
+  btn.disabled = true;
+  btn.textContent = 'Saving\u2026';
+  fetch('/api/save?slug=' + encodeURIComponent(slug), { method: 'POST' })
+    .then(function (r) { return r.json(); })
+    .then(function () { window.location.href = '/reports/' + slug + '.html'; })
+    .catch(function () { btn.disabled = false; btn.textContent = 'Save to corpus'; });
+}
+function discardCompany(slug, btn) {
+  if (!confirm('Discard this research? Nothing will be saved.')) return;
+  btn.disabled = true;
+  fetch('/api/discard?slug=' + encodeURIComponent(slug), { method: 'POST' })
+    .then(function () { window.location.href = '/'; });
+}
+</script>
+</body>
+</html>

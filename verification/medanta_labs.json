@@ -1,0 +1,41 @@
+{
+  "company_name": "medanta labs",
+  "gaps_checked": 3,
+  "summary": {
+    "VERIFIED": 3,
+    "WEAK": 0,
+    "UNVERIFIED": 0
+  },
+  "results": [
+    {
+      "title": "Cold\u2011chain monitoring for sample transport",
+      "status": "VERIFIED",
+      "overlap_score": 1.0,
+      "unmatched_words": [],
+      "closest_fact_claim": "Medanta Labs launched a new diagnostic facility in Mohali and is building a FOFO (Collection Centre) network across Chandigarh, Mohali, and Panchkula to support sample collection.",
+      "closest_fact_score": 1.0
+    },
+    {
+      "title": "Real\u2011time asset tracking for high\u2011value lab equipment",
+      "status": "VERIFIED",
+      "overlap_score": 0.89,
+      "unmatched_words": [
+        "real",
+        "time"
+      ],
+      "closest_fact_claim": "Medanta Labs operates a network of seven advanced laboratories offering services such as molecular biology, genetic testing, and real-time PCR DNA testing.",
+      "closest_fact_score": 0.89
+    },
+    {
+      "title": "IoT\u2011driven inventory visibility for reagents and consumables",
+      "status": "VERIFIED",
+      "overlap_score": 0.89,
+      "unmatched_words": [
+        "real",
+        "time"
+      ],
+      "closest_fact_claim": "Medanta Labs operates a network of seven advanced laboratories offering services such as molecular biology, genetic testing, and real-time PCR DNA testing.",
+      "closest_fact_score": 0.89
+    }
+  ]
+}

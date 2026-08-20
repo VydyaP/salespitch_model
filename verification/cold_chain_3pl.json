@@ -8,27 +8,29 @@
   },
   "results": [
     {
-      "title": "Lack of real\u2011time temperature monitoring & alerts",
+      "title": "No real\u2011time temperature & humidity monitoring",
       "status": "VERIFIED",
       "overlap_score": 1.0,
       "unmatched_words": [],
-      "closest_fact_claim": "Cold Chain 3PL provides storing and transporting temperature\u2011sensitive products, ensuring proper storage, handling, and product transportation in a temperature\u2011controlled environment.",
+      "closest_fact_claim": "Cold Chain 3PL provides temperature\u2011controlled storage, handling, and transportation for perishable food, pharmaceutical products, and frozen goods.",
       "closest_fact_score": 1.0
     },
     {
-      "title": "Limited real\u2011time asset and fleet visibility",
+      "title": "Lack of unified IoT dashboard for multi\u2011site compliance",
       "status": "VERIFIED",
-      "overlap_score": 1.0,
-      "unmatched_words": [],
-      "closest_fact_claim": "Cold Chain 3PL provides storing and transporting temperature\u2011sensitive products, ensuring proper storage, handling, and product transportation in a temperature\u2011controlled environment.",
-      "closest_fact_score": 1.0
+      "overlap_score": 0.93,
+      "unmatched_words": [
+        "processing..."
+      ],
+      "closest_fact_claim": "Cold Chain 3PL integrated an advanced order management system with real\u2011time inventory tracking, automated order processing, and strategic partnerships with local carriers, achieving a 30% increase in order processing efficiency and a 25% reduction in shipping times.",
+      "closest_fact_score": 0.93
     },
     {
-      "title": "Manual compliance reporting for regulatory audits",
+      "title": "Limited automated regulatory compliance support",
       "status": "VERIFIED",
       "overlap_score": 1.0,
       "unmatched_words": [],
-      "closest_fact_claim": "Cold Chain 3PL holds certifications including Non\u2011GMO, USDA, SQF, and FDA.",
+      "closest_fact_claim": "The company emphasizes scalability, offering a flexible network of global, temperature\u2011controlled warehouses to handle seasonal demand spikes.",
       "closest_fact_score": 1.0
     }
   ]

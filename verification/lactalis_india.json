@@ -1,0 +1,35 @@
+{
+  "company_name": "lactalis india",
+  "gaps_checked": 3,
+  "summary": {
+    "VERIFIED": 3,
+    "WEAK": 0,
+    "UNVERIFIED": 0
+  },
+  "results": [
+    {
+      "title": "Unified Cold\u2011Chain Visibility & Compliance",
+      "status": "VERIFIED",
+      "overlap_score": 1.0,
+      "unmatched_words": [],
+      "closest_fact_claim": "Lactalis India partnered with DHL SmarTrucking to provide customized cold\u2011chain transportation for its two Indian dairy companies, using IoT\u2011enabled smart technology for temperature accuracy and faster transit.",
+      "closest_fact_score": 1.0
+    },
+    {
+      "title": "IoT\u2011Driven Warehouse & Inventory Visibility",
+      "status": "VERIFIED",
+      "overlap_score": 1.0,
+      "unmatched_words": [],
+      "closest_fact_claim": "Lactalis India describes itself as an integrated milk and dairy products company in India with a state\u2011of\u2011the\u2011art plant, cutting\u2011edge technology and stringent quality standards.",
+      "closest_fact_score": 1.0
+    },
+    {
+      "title": "Comprehensive Asset Tracking for Fleet & Equipment",
+      "status": "VERIFIED",
+      "overlap_score": 1.0,
+      "unmatched_words": [],
+      "closest_fact_claim": "Lactalis India partnered with DHL SmarTrucking to provide customized cold\u2011chain transportation for its two Indian dairy companies, using IoT\u2011enabled smart technology for temperature accuracy and faster transit.",
+      "closest_fact_score": 1.0
+    }
+  ]
+}

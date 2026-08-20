@@ -1,0 +1,29 @@
+{
+  "gaps": [
+    {
+      "title": "Unified Cold\u2011Chain Visibility & Compliance",
+      "detail": "While Lactalis India uses IoT\u2011enabled smart tech with DHL SmarTrucking, it lacks a single, real\u2011time monitoring platform that covers all dairy products, fleets and compliance reporting for Indian regulations.",
+      "severity": "high",
+      "gnd_service": "Cold Chain Management",
+      "based_on": "Lactalis India partnered with DHL SmarTrucking to provide customized cold\u2011chain transportation for its two Indian dairy companies, using IoT\u2011enabled smart technology for temperature accuracy and faster transit."
+    },
+    {
+      "title": "IoT\u2011Driven Warehouse & Inventory Visibility",
+      "detail": "The company describes a state\u2011of\u2011the\u2011art plant and cutting\u2011edge technology, yet there is no indication of real\u2011time, sensor\u2011based inventory tracking across its cold storage and distribution warehouses.",
+      "severity": "medium",
+      "gnd_service": "Warehouse Management",
+      "based_on": "Lactalis India describes itself as an integrated milk and dairy products company in India with a state\u2011of\u2011the\u2011art plant, cutting\u2011edge technology and stringent quality standards."
+    },
+    {
+      "title": "Comprehensive Asset Tracking for Fleet & Equipment",
+      "detail": "Reliance on an external logistics partner suggests limited internal visibility of dairy processing equipment and delivery vehicles, risking loss, theft, or sub\u2011optimal utilization.",
+      "severity": "low",
+      "gnd_service": "Asset Tracking & Monitoring",
+      "based_on": "Lactalis India partnered with DHL SmarTrucking to provide customized cold\u2011chain transportation for its two Indian dairy companies, using IoT\u2011enabled smart technology for temperature accuracy and faster transit."
+    }
+  ],
+  "pitch": {
+    "angle": "- Highlight how extending the existing IoT partnership into a unified ThinxFresh dashboard can give Lactalis India end\u2011to\u2011end temperature, location and compliance visibility.\n- Offer a single platform to digitise cold\u2011storage and warehouse inventory, cutting manual counts and reducing waste.\n- Introduce lightweight asset\u2011tracking tags for processing equipment and delivery trucks to safeguard high\u2011value assets and improve fleet utilisation.\n- Position these efficiencies as a direct accelerator toward their US$1\u202fbillion growth target in India.",
+    "opener": "Congrats on the DHL SmarTrucking partnership\u2014let\u2019s discuss turning that IoT boost into a company\u2011wide cold\u2011chain intelligence platform."
+  }
+}

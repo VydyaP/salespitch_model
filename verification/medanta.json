@@ -1,0 +1,45 @@
+{
+  "company_name": "medanta",
+  "gaps_checked": 4,
+  "summary": {
+    "VERIFIED": 4,
+    "WEAK": 0,
+    "UNVERIFIED": 0
+  },
+  "results": [
+    {
+      "title": "Cold chain compliance across expanding hospital network",
+      "status": "VERIFIED",
+      "overlap_score": 0.95,
+      "unmatched_words": [
+        "varanasi."
+      ],
+      "closest_fact_claim": "In 2026 Medanta aims for around 3,000 operational beds and plans to reach 7,000 beds over the next 3\u20114 years through new hospitals and brownfield expansions, including a 550\u2011bed Noida hospital, a 400\u2011bed Varanasi hospital, 500 additional beds across existing sites, and five greenfield projects adding roughly 2,700 beds.",
+      "closest_fact_score": 0.95
+    },
+    {
+      "title": "Distributed high\u2011value medical asset visibility",
+      "status": "VERIFIED",
+      "overlap_score": 1.0,
+      "unmatched_words": [],
+      "closest_fact_claim": "The organization employs between 1,001 and 5,000 people.",
+      "closest_fact_score": 1.0
+    },
+    {
+      "title": "Manual inventory processes in multi\u2011site pharmacies",
+      "status": "VERIFIED",
+      "overlap_score": 1.0,
+      "unmatched_words": [],
+      "closest_fact_claim": "Medanta operates in the healthcare industry as a multi\u2011specialty hospital network.",
+      "closest_fact_score": 1.0
+    },
+    {
+      "title": "Need for unified IoT data platform",
+      "status": "VERIFIED",
+      "overlap_score": 1.0,
+      "unmatched_words": [],
+      "closest_fact_claim": "In 2026 Medanta aims for around 3,000 operational beds and plans to reach 7,000 beds over the next 3\u20114 years through new hospitals and brownfield expansions, including a 550\u2011bed Noida hospital, a 400\u2011bed Varanasi hospital, 500 additional beds across existing sites, and five greenfield projects adding roughly 2,700 beds.",
+      "closest_fact_score": 1.0
+    }
+  ]
+}
