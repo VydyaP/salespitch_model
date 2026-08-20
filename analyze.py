@@ -21,6 +21,20 @@ Gemini's sharper diagnostic-question style — worth a second look from
 whoever validates gap_accurate/pitch_usable. Needs: pip install groq, and
 a GROQ_API_KEY env var (free key from https://console.groq.com/keys, no
 credit card required).
+
+Pass --mistral to run against Mistral's API instead (mistral-small-latest)
+-- not yet evaluated against verify.py's fact-check, added for a live
+side-by-side comparison against Groq/Gemini. Needs: pip install mistralai,
+and a MISTRAL_API_KEY env var. Note: unlike the other SDKs here, Mistral's
+client does not fall back to reading the env var automatically -- it's
+passed explicitly in call_mistral().
+
+Pass --cohere to run against Cohere's API instead (command-a-03-2025) --
+not yet evaluated against verify.py's fact-check. Needs: pip install
+cohere, and a COHERE_API_KEY env var (trial keys are free but explicitly
+not licensed for production/commercial use per Cohere's terms -- fine for
+this kind of evaluation, not for shipping). Response format is forced to
+JSON mode from the start (json_object) based on what Mistral needed.
 """
 
 import json
@@ -47,6 +61,8 @@ OLLAMA_MODEL = "llama3.2"
 
 GEMINI_MODEL = "gemini-3.6-flash"
 GROQ_MODEL = "openai/gpt-oss-120b"
+MISTRAL_MODEL = "mistral-small-latest"
+COHERE_MODEL = "command-a-03-2025"
 
 SERVICE_REFERENCE_PLACEHOLDER = "(insert the service reference block above)"
 
@@ -146,12 +162,65 @@ def call_gemini(prompt: str) -> str:
 def call_groq(prompt: str) -> str:
     from groq import Groq
 
+    import rate_limiter
+
     client = Groq()
+    # Shared with retrieve.py's compound-mini calls -- discovered live that
+    # compound-mini's rate-limit errors report against gpt-oss-120b itself,
+    # meaning Stage 1 and Stage 2 draw from the same small 8K TPM pool, not
+    # two separate budgets. See rate_limiter.SHARED_GPT_OSS_TPM.
+    rate_limiter.wait_for_tpm_budget(
+        rate_limiter.SHARED_GPT_OSS_KEY, prompt, rate_limiter.SHARED_GPT_OSS_TPM
+    )
     response = client.chat.completions.create(
         messages=[{"role": "user", "content": prompt}],
         model=GROQ_MODEL,
     )
+    if response.usage:
+        rate_limiter.record_actual_usage(rate_limiter.SHARED_GPT_OSS_KEY, response.usage.total_tokens)
     text = (response.choices[0].message.content or "").strip()
+    if not text:
+        print("No text in response.")
+        print("--- raw response ---")
+        print(response)
+        sys.exit(1)
+    return text
+
+
+def call_mistral(prompt: str) -> str:
+    import os
+
+    from mistralai.client import Mistral
+
+    # Unlike the other SDKs used here (Groq(), anthropic.Anthropic(),
+    # genai.Client()), Mistral's client does NOT fall back to reading
+    # MISTRAL_API_KEY from the environment when api_key is omitted/None --
+    # it just sends no auth. Has to be passed explicitly.
+    client = Mistral(api_key=os.environ["MISTRAL_API_KEY"])
+    response = client.chat.complete(
+        model=MISTRAL_MODEL,
+        messages=[{"role": "user", "content": prompt}],
+        response_format={"type": "json_object"},
+    )
+    text = (response.choices[0].message.content or "").strip()
+    if not text:
+        print("No text in response.")
+        print("--- raw response ---")
+        print(response)
+        sys.exit(1)
+    return text
+
+
+def call_cohere(prompt: str) -> str:
+    import cohere
+
+    client = cohere.ClientV2()  # reads COHERE_API_KEY (or CO_API_KEY) from env automatically
+    response = client.chat(
+        model=COHERE_MODEL,
+        messages=[{"role": "user", "content": prompt}],
+        response_format={"type": "json_object"},
+    )
+    text = "".join(item.text for item in response.message.content if item.type == "text").strip()
     if not text:
         print("No text in response.")
         print("--- raw response ---")
@@ -165,10 +234,13 @@ def main() -> None:
     local_mode = "--local" in args
     gemini_mode = "--gemini" in args
     groq_mode = "--groq" in args
-    args = [a for a in args if a not in ("--local", "--gemini", "--groq")]
+    mistral_mode = "--mistral" in args
+    cohere_mode = "--cohere" in args
+    force = "--force" in args
+    args = [a for a in args if a not in ("--local", "--gemini", "--groq", "--mistral", "--cohere", "--force")]
 
     if len(args) != 1:
-        print('Usage: python analyze.py "<company name>" [--local | --gemini | --groq]')
+        print('Usage: python analyze.py "<company name>" [--local | --gemini | --groq | --mistral | --cohere] [--force]')
         sys.exit(1)
 
     company = args[0]
@@ -181,7 +253,7 @@ def main() -> None:
         print(f'Run this first: python retrieve.py "{company}"')
         sys.exit(1)
 
-    if out_path.exists():
+    if out_path.exists() and not force:
         print("already cached")
         return
 
@@ -194,6 +266,10 @@ def main() -> None:
         raw_text = call_gemini(prompt)
     elif groq_mode:
         raw_text = call_groq(prompt)
+    elif mistral_mode:
+        raw_text = call_mistral(prompt)
+    elif cohere_mode:
+        raw_text = call_cohere(prompt)
     else:
         raw_text = call_claude(prompt)
     cleaned = strip_markdown_fences(raw_text)

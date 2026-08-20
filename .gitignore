@@ -4,3 +4,4 @@ __pycache__/
 .claude/settings.local.json
 Thumbs.db
 .DS_Store
+rate_limit_state.json

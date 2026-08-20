@@ -10,7 +10,7 @@ static-only build (build_site.py) can't provide:
   GET /api/scan/research?company=<name>
       Server-Sent Events stream. If the company is already in the
       corpus, reports "done" immediately (already published). Otherwise
-      runs Stage 1 (retrieve.py --groq) and checks the researched
+      runs Stage 1 (retrieve.py --tavily) and checks the researched
       industry against GND's cold-chain/logistics/pharma scope. In
       scope: continues through Stage 2 + fact-check and reports
       "ready_for_review". Out of scope: stops and reports "confirm"
@@ -113,6 +113,13 @@ def corpus_matches(query: str, limit: int = 5) -> list:
     q = query.lower()
     matches = []
     for path in sorted(RAW_DATA_DIR.glob("*.json")):
+        # A raw_data file alone is an incomplete/abandoned draft (Stage 1
+        # ran, Stage 2 never finished or was never reviewed) -- it isn't
+        # visible via /api/companies and clicking it 404s. Require the
+        # matching analysis file too, so suggestions only ever point at
+        # something that's actually a real, viewable company.
+        if not (ANALYSIS_DIR / path.name).exists():
+            continue
         try:
             data = json.loads(path.read_text(encoding="utf-8"))
         except json.JSONDecodeError:
@@ -180,15 +187,24 @@ def sse(stage: str, **fields) -> str:
     return f"data: {json.dumps(payload)}\n\n"
 
 
-def finish_scan(company: str, slug: str):
+def finish_scan(company: str, slug: str, force: bool = False):
     """Stage 2 onward: analyze -> verify -> stop for review. Shared by the
     in-scope auto-continue path and /api/scan/continue after a confirmed
     warning. Does NOT publish to the site or corpus index -- that only
     happens if the user clicks Save on the /preview/<slug> page."""
     analysis_path = ANALYSIS_DIR / f"{slug}.json"
 
+    # Same reasoning as retrieve.py's --force above: analyze.py has its own
+    # "already cached" guard, and on a re-research the old analysis.json
+    # still exists on disk (only raw_data.json is guaranteed fresh at this
+    # point), so without --force it would silently skip and leave the old
+    # gaps/pitch in place.
+    analyze_args = ["analyze.py", company, "--groq"]
+    if force:
+        analyze_args.append("--force")
+
     yield sse("analyzing")
-    ok, output = run_stage(["analyze.py", company, "--groq"])
+    ok, output = run_stage(analyze_args)
     if not ok or not analysis_path.exists():
         yield sse("error", message=f"Analysis failed: {output[-400:]}")
         return
@@ -205,17 +221,43 @@ def scan_research():
     if not company:
         return Response(sse("error", message="No company name given."), mimetype="text/event-stream")
 
+    # force=1 skips the already-researched short-circuit -- used by a
+    # company page's explicit "Re-research" action. Plain search-bar
+    # lookups of an existing company should still short-circuit straight
+    # to the existing report instead of silently re-running research.
+    force = request.args.get("force") == "1"
+
     slug = slugify(company)
     raw_path = RAW_DATA_DIR / f"{slug}.json"
     analysis_path = ANALYSIS_DIR / f"{slug}.json"
 
     def generate():
-        if raw_path.exists() and analysis_path.exists():
+        if not force and raw_path.exists() and analysis_path.exists():
             yield sse("done", slug=slug, already_existed=True)
             return
 
+        # retrieve.py has its own independent "already cached, skip" guard
+        # (checks whether its own output file exists) -- entirely unaware
+        # of this endpoint's force flag on its own. --force tells it to
+        # skip that check. It's safe to pass unconditionally: the flag is
+        # only consulted when out_path already exists, and retrieve.py
+        # only overwrites that file *after* a successful fetch -- a failed
+        # search returns early and never touches the old file, so force
+        # can never destroy data on failure the way a pre-emptive delete
+        # would (that was tried and immediately took out cold_chain_3pl's
+        # data on a Groq rate-limit failure -- do not go back to that).
+        # --tavily (real search via Tavily + one separate extraction call)
+        # replaced --groq as the default here 2026-08-20, after a
+        # 15-company side-by-side found it both a bit richer on facts
+        # (won 9/15) and, more importantly, far more reliable -- zero
+        # failures across the last 10 companies tested, vs. groq/
+        # compound-mini's frequent rate-limit and malformed-JSON errors.
+        retrieve_args = ["retrieve.py", company, "--tavily"]
+        if force:
+            retrieve_args.append("--force")
+
         yield sse("searching")
-        ok, output = run_stage(["retrieve.py", company, "--groq"])
+        ok, output = run_stage(retrieve_args)
         if not ok or not raw_path.exists():
             yield sse("error", message=f"Search failed: {output[-400:]}")
             return
@@ -229,7 +271,7 @@ def scan_research():
             )
             return  # paused -- caller hits /continue or /cancel
 
-        yield from finish_scan(company, slug)
+        yield from finish_scan(company, slug, force=force)
 
     return Response(stream_with_context(generate()), mimetype="text/event-stream")
 
@@ -237,6 +279,7 @@ def scan_research():
 @app.route("/api/scan/continue")
 def scan_continue():
     company = request.args.get("company", "").strip()
+    force = request.args.get("force") == "1"
     slug = slugify(company)
     raw_path = RAW_DATA_DIR / f"{slug}.json"
     if not company or not raw_path.exists():
@@ -244,7 +287,9 @@ def scan_continue():
             sse("error", message="No paused research found for that company."),
             mimetype="text/event-stream",
         )
-    return Response(stream_with_context(finish_scan(company, slug)), mimetype="text/event-stream")
+    return Response(
+        stream_with_context(finish_scan(company, slug, force=force)), mimetype="text/event-stream"
+    )
 
 
 @app.route("/api/scan/cancel", methods=["POST"])
@@ -307,7 +352,10 @@ def load_company_json(slug: str) -> dict | None:
     analysis = json.loads(analysis_path.read_text(encoding="utf-8"))
     hq = raw.get("hq", "")
     country = hq.split(",")[-1].strip() if hq else "Unknown"
-    scanned_at = dt.date.fromtimestamp(raw_path.stat().st_mtime).isoformat()
+    # Full timestamp (not just date) so the frontend can show exactly when a
+    # research or re-research last completed -- raw_path's mtime updates
+    # automatically whenever retrieve.py rewrites it.
+    scanned_at = dt.datetime.fromtimestamp(raw_path.stat().st_mtime).isoformat()
 
     # verify.py's per-gap VERIFIED/WEAK/UNVERIFIED result was previously
     # computed and written to disk but never read by anything -- surfaced

@@ -69,7 +69,7 @@ Respond with ONLY a raw JSON object:
     }
   ],
   "pitch": {
-    "angle": "string - 2-3 sentences, specific to this company's actual situation",
+    "angle": "string - 2-4 short pointed statements, each on its own line prefixed with '- ', specific to this company's actual situation. Not a flowing paragraph -- a salesperson should be able to glance at each line on a call and know what to say next.",
     "opener": "string - one-sentence cold outreach line, not generic"
   }
 }

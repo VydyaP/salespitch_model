@@ -4,8 +4,27 @@ python-dotenv
 # only needed for --gemini (analyze.py: tested/verified; retrieve.py: untested, needs billing)
 google-genai
 
-# only needed for --groq (both retrieve.py and analyze.py: tested/verified, free tier)
+# needed for analyze.py (Stage 2, default live engine) and retrieve.py's
+# --groq flag (Stage 1, no longer the default -- see --tavily below) and
+# --tavily flag (the extraction call). Free tier.
 groq
+
+# needed for retrieve.py's --tavily flag -- the default Stage 1 (search)
+# engine as of 2026-08-20, replacing --groq after a 15-company comparison
+# found it more reliable. Free tier: 1,000 search credits/month.
+tavily-python
+
+# only needed for --mistral (analyze.py only, Stage 2 reasoning -- not yet
+# tested against verify.py's fact-check)
+mistralai
+
+# only needed for --cohere (analyze.py only, Stage 2 reasoning -- not yet
+# tested against verify.py's fact-check; trial keys not licensed for
+# production use)
+cohere
 
 # only needed to run server.py (the live-search website)
 flask
+
+# audit trail / research history (Postgres)
+psycopg[binary]
