@@ -1,0 +1,234 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap');
+
+:root {
+  --background: #F5F0E8;
+  --foreground: #1C1A15;
+  --primary: #E8A020;
+  --primary-foreground: #1C1A15;
+  --secondary: #E8E0D0;
+  --secondary-foreground: #3A3628;
+  --accent: #C07010;
+  --accent-foreground: #FFFFFF;
+  --muted: #D8D0BC;
+  --muted-foreground: #6B6454;
+  --card: #FAF6EE;
+  --card-foreground: #1C1A15;
+  --border: #C8BEA8;
+  --input: #EDE7DA;
+  --ring: #E8A020;
+  --radius: 4px;
+  --font-sans: 'Plus Jakarta Sans', sans-serif;
+  --font-mono: 'IBM Plex Mono', monospace;
+
+  --severity-high: #C0392B;
+  --severity-high-bg: #FAE8E6;
+  --severity-medium: #D4820A;
+  --severity-medium-bg: #FDF3E3;
+  --severity-low: #2E7D5A;
+  --severity-low-bg: #E8F5EE;
+
+  --service-cold: #1A6B8A;
+  --service-cold-bg: #E3F2F8;
+  --service-warehouse: #5A3E8A;
+  --service-warehouse-bg: #EEE8F8;
+  --service-asset: #2E7D5A;
+  --service-asset-bg: #E8F5EE;
+  --service-engineering: #8A4E1A;
+  --service-engineering-bg: #F8EDE3;
+  --service-platform: #1A5A8A;
+  --service-platform-bg: #E3EEF8;
+}
+
+.dark {
+  --background: #16140F;
+  --foreground: #EDE7DA;
+  --primary: #E8A020;
+  --primary-foreground: #1C1A15;
+  --secondary: #2A2820;
+  --secondary-foreground: #C8BEA8;
+  --accent: #F0B840;
+  --accent-foreground: #1C1A15;
+  --muted: #2A2820;
+  --muted-foreground: #8A7E6A;
+  --card: #1E1C16;
+  --card-foreground: #EDE7DA;
+  --border: #3A3628;
+  --input: #2A2820;
+  --ring: #E8A020;
+
+  --severity-high: #E05A4A;
+  --severity-high-bg: #2D1A18;
+  --severity-medium: #E8A020;
+  --severity-medium-bg: #2A2010;
+  --severity-low: #4CAF82;
+  --severity-low-bg: #182A20;
+
+  --service-cold: #4AB0D8;
+  --service-cold-bg: #0E2030;
+  --service-warehouse: #9A7ADA;
+  --service-warehouse-bg: #1A1228;
+  --service-asset: #4CAF82;
+  --service-asset-bg: #0E2018;
+  --service-engineering: #D88A4A;
+  --service-engineering-bg: #281A0E;
+  --service-platform: #4A8AD8;
+  --service-platform-bg: #0E1828;
+}
+
+@layer base {
+  * {
+    box-sizing: border-box;
+    border-color: var(--border);
+  }
+
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  h1, h2, h3, h4, h5, h6, p {
+    margin: 0;
+  }
+}
+
+@layer utilities {
+  .font-mono {
+    font-family: var(--font-mono);
+  }
+
+  .text-severity-high { color: var(--severity-high); }
+  .text-severity-medium { color: var(--severity-medium); }
+  .text-severity-low { color: var(--severity-low); }
+  .bg-severity-high { background-color: var(--severity-high-bg); }
+  .bg-severity-medium { background-color: var(--severity-medium-bg); }
+  .bg-severity-low { background-color: var(--severity-low-bg); }
+  .border-severity-high { border-color: var(--severity-high); }
+  .border-severity-medium { border-color: var(--severity-medium); }
+  .border-severity-low { border-color: var(--severity-low); }
+
+  .service-cold { color: var(--service-cold); background-color: var(--service-cold-bg); }
+  .service-warehouse { color: var(--service-warehouse); background-color: var(--service-warehouse-bg); }
+  .service-asset { color: var(--service-asset); background-color: var(--service-asset-bg); }
+  .service-engineering { color: var(--service-engineering); background-color: var(--service-engineering-bg); }
+  .service-platform { color: var(--service-platform); background-color: var(--service-platform-bg); }
+
+  .kraft-border {
+    border: 1.5px solid var(--border);
+  }
+
+  .kraft-card {
+    background-color: var(--card);
+    border: 1.5px solid var(--border);
+    border-radius: var(--radius);
+  }
+
+  .stamp-effect {
+    border: 2px solid var(--primary);
+    border-radius: 2px;
+    opacity: 0.85;
+  }
+
+  .tabular-nums {
+    font-variant-numeric: tabular-nums;
+  }
+
+  .text-stencil {
+    font-family: var(--font-mono);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 0.2s ease forwards;
+  }
+
+  .animate-slide-up {
+    animation: slideUp 0.25s ease forwards;
+  }
+
+  .animate-pulse-amber {
+    animation: pulseAmber 1.5s ease-in-out infinite;
+  }
+
+  .log-line-enter {
+    animation: logLineEnter 0.3s ease forwards;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center gap-2 px-4 py-2 bg-primary text-primary-foreground font-semibold text-sm rounded transition-all duration-150 hover:bg-accent active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center gap-2 px-4 py-2 bg-secondary text-secondary-foreground font-semibold text-sm rounded border border-border transition-all duration-150 hover:bg-muted active:scale-95 disabled:opacity-50;
+  }
+
+  .btn-ghost {
+    @apply inline-flex items-center gap-2 px-3 py-2 text-muted-foreground text-sm rounded transition-all duration-150 hover:bg-secondary hover:text-foreground active:scale-95;
+  }
+
+  .input-field {
+    @apply w-full px-3 py-2 bg-input border border-border rounded text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:border-transparent transition-all duration-150;
+  }
+
+  .severity-badge-high {
+    @apply inline-flex items-center gap-1 px-2 py-0.5 text-xs font-semibold rounded-sm bg-severity-high text-severity-high border border-severity-high;
+  }
+
+  .severity-badge-medium {
+    @apply inline-flex items-center gap-1 px-2 py-0.5 text-xs font-semibold rounded-sm bg-severity-medium text-severity-medium border border-severity-medium;
+  }
+
+  .severity-badge-low {
+    @apply inline-flex items-center gap-1 px-2 py-0.5 text-xs font-semibold rounded-sm bg-severity-low text-severity-low border border-severity-low;
+  }
+
+  .section-label {
+    @apply text-xs font-semibold text-muted-foreground uppercase tracking-widest font-mono;
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulseAmber {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+@keyframes logLineEnter {
+  from { opacity: 0; transform: translateX(-6px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+.scrollbar-thin::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+.scrollbar-thin::-webkit-scrollbar-track {
+  background: var(--muted);
+}
+.scrollbar-thin::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 2px;
+}
